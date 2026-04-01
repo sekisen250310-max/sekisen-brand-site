@@ -163,39 +163,37 @@
       .join("");
   }
 
-  function renderLineItems(items) {
+  function renderBrandTiles(items) {
     return items
       .map(function (item, index) {
         return (
-          '<article class="line-block' +
-          (index % 2 === 1 ? " line-block--reverse" : "") +
+          '<a class="brand-tile reveal-scale' +
+          (index > 0 ? " reveal-up--delay" : "") +
+          '" href="' +
+          escapeHtml(item.href) +
           '">' +
-          '<figure class="line-block__media reveal-side ' +
-          (index % 2 === 1 ? "reveal-side--left" : "reveal-side--right") +
-          '">' +
+          '<figure class="brand-tile__media">' +
           '<img src="' +
           escapeHtml(item.image) +
           '" alt="' +
           escapeHtml(item.alt) +
           '" loading="lazy" />' +
           "</figure>" +
-          '<div class="line-block__copy reveal-up">' +
+          '<div class="brand-tile__copy">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
           "</p>" +
-          '<h3 class="line-block__title">' +
+          '<h3 class="brand-tile__title">' +
           escapeHtml(item.title) +
           "</h3>" +
-          '<p class="line-block__text">' +
+          '<p class="brand-tile__text">' +
           escapeHtml(item.text) +
           "</p>" +
-          '<a class="text-link" href="' +
-          escapeHtml(item.href) +
-          '">' +
+          '<span class="text-link text-link--static">' +
           escapeHtml(item.action) +
-          "</a>" +
+          "</span>" +
           "</div>" +
-          "</article>"
+          "</a>"
         );
       })
       .join("");
@@ -227,36 +225,14 @@
       .join("");
   }
 
-  function renderCommitmentItems(items) {
+  function renderServiceItems(items) {
     return items
       .map(function (item, index) {
         return (
-          '<article class="commitment-item reveal-up' +
-          (index > 0 ? " reveal-up--delay" : "") +
+          '<article class="service-block' +
+          (index % 2 === 1 ? " service-block--reverse" : "") +
           '">' +
-          '<p class="commitment-item__label">' +
-          escapeHtml(item.label) +
-          "</p>" +
-          '<h3 class="commitment-item__title">' +
-          escapeHtml(item.title) +
-          "</h3>" +
-          '<p class="commitment-item__text">' +
-          escapeHtml(item.text) +
-          "</p>" +
-          "</article>"
-        );
-      })
-      .join("");
-  }
-
-  function renderProcessSteps(items) {
-    return items
-      .map(function (item, index) {
-        return (
-          '<article class="process-row' +
-          (index % 2 === 1 ? " process-row--reverse" : "") +
-          '">' +
-          '<figure class="process-row__media reveal-side ' +
+          '<figure class="service-block__media reveal-side ' +
           (index % 2 === 1 ? "reveal-side--left" : "reveal-side--right") +
           '">' +
           '<img src="' +
@@ -265,14 +241,14 @@
           escapeHtml(item.alt) +
           '" loading="lazy" />' +
           "</figure>" +
-          '<div class="process-row__copy reveal-up">' +
+          '<div class="service-block__copy reveal-up">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
           "</p>" +
-          '<h3 class="process-row__title">' +
+          '<h3 class="service-block__title">' +
           escapeHtml(item.title) +
           "</h3>" +
-          '<p class="process-row__text">' +
+          '<p class="service-block__text">' +
           escapeHtml(item.text) +
           "</p>" +
           "</div>" +
@@ -282,50 +258,43 @@
       .join("");
   }
 
-  function renderGuideItems(items) {
+  function renderServicePoints(items) {
     return items
       .map(function (item, index) {
         return (
-          '<a class="guide-block reveal-scale' +
-          (index > 0 ? " reveal-up--delay" : "") +
-          '" href="' +
-          escapeHtml(item.href) +
+          '<article class="service-point reveal-up' +
+          (index > 1 ? " reveal-up--delay" : "") +
           '">' +
-          '<figure class="guide-block__media">' +
-          '<img src="' +
-          escapeHtml(item.image) +
-          '" alt="' +
-          escapeHtml(item.alt) +
-          '" loading="lazy" />' +
-          "</figure>" +
-          '<div class="guide-block__copy">' +
-          '<p class="section-kicker">' +
-          escapeHtml(item.label) +
-          "</p>" +
-          '<h3 class="guide-block__title">' +
+          '<span class="service-point__number">' +
+          escapeHtml(item.number) +
+          "</span>" +
+          '<h3 class="service-point__title">' +
           escapeHtml(item.title) +
           "</h3>" +
-          '<p class="guide-block__text">' +
-          escapeHtml(item.text) +
-          "</p>" +
-          "</div>" +
-          "</a>"
+          "</article>"
         );
       })
       .join("");
   }
 
-  function renderUtilityLinks(items) {
+  function renderBottomLinks(items) {
     return items
-      .map(function (item) {
+      .map(function (item, index) {
         return (
-          '<a class="utility-link reveal-up" href="' +
+          '<a class="bottom-link reveal-up' +
+          (index > 1 ? " reveal-up--delay" : "") +
+          '" href="' +
           escapeHtml(item.href) +
           '">' +
-          '<strong class="utility-link__title">' +
+          '<span class="bottom-link__label">' +
           escapeHtml(item.label) +
+          "</span>" +
+          '<strong class="bottom-link__title">' +
+          escapeHtml(item.title) +
           "</strong>" +
-          '<span class="utility-link__meta">Open</span>' +
+          '<p class="bottom-link__text">' +
+          escapeHtml(item.text) +
+          "</p>" +
           "</a>"
         );
       })
@@ -464,51 +433,51 @@
       '<div class="hero__dots">' +
       renderHeroDots(home.hero.slides) +
       "</div>" +
-      '<a class="hero__scroll" href="#intro">Scroll</a>' +
+      '<a class="hero__scroll" href="#about">Scroll</a>' +
       "</div>" +
       "</div>" +
       "</section>" +
-      '<section class="section intro-stage" id="intro">' +
+      '<section class="section about-stage" id="about">' +
       '<div class="container">' +
-      '<div class="intro-stage__visuals reveal-track">' +
-      '<p class="intro-stage__lead">' +
-      escapeHtml(home.intro.visualLead) +
+      '<div class="about-stage__visuals reveal-track">' +
+      '<p class="about-stage__lead">' +
+      escapeHtml(home.about.visualLead) +
       "</p>" +
-      '<div class="intro-stage__gallery">' +
-      renderIntroVisuals(home.intro.visuals) +
+      '<div class="about-stage__gallery">' +
+      renderIntroVisuals(home.about.visuals) +
       "</div>" +
       "</div>" +
-      '<div class="intro-stage__copy">' +
+      '<div class="about-stage__copy">' +
       '<p class="section-kicker reveal-up">' +
-      escapeHtml(home.intro.eyebrow) +
+      escapeHtml(home.about.eyebrow) +
       "</p>" +
       '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.intro.title) +
+      escapeHtml(home.about.title) +
       "</h2>" +
       '<p class="section-lead reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.intro.lead) +
+      escapeHtml(home.about.lead) +
       "</p>" +
       '<p class="section-text reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.intro.text) +
+      escapeHtml(home.about.text) +
       "</p>" +
       "</div>" +
       "</div>" +
       "</section>" +
-      '<section class="section line-section">' +
+      '<section class="section brand-section">' +
       '<div class="container">' +
       '<div class="section-head section-head--compact">' +
       '<p class="section-kicker reveal-up">' +
-      escapeHtml(home.lines.eyebrow) +
+      escapeHtml(home.brands.eyebrow) +
       "</p>" +
       '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.lines.title) +
+      escapeHtml(home.brands.title) +
       "</h2>" +
       '<p class="section-text reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.lines.text) +
+      escapeHtml(home.brands.text) +
       "</p>" +
       "</div>" +
-      '<div class="line-section__stack">' +
-      renderLineItems(home.lines.items) +
+      '<div class="brand-section__grid">' +
+      renderBrandTiles(home.brands.items) +
       "</div>" +
       "</div>" +
       "</section>" +
@@ -532,72 +501,39 @@
       "</ul>" +
       "</div>" +
       "</section>" +
-      '<section class="section commitment-section">' +
+      '<section class="section service-section">' +
       '<div class="container">' +
       '<div class="section-head section-head--compact">' +
       '<p class="section-kicker reveal-up">' +
-      escapeHtml(home.commitment.eyebrow) +
+      escapeHtml(home.service.eyebrow) +
       "</p>" +
       '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.commitment.title) +
+      escapeHtml(home.service.title) +
       "</h2>" +
       '<p class="section-text reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.commitment.text) +
+      escapeHtml(home.service.text) +
       "</p>" +
       "</div>" +
-      '<div class="commitment-section__grid">' +
-      renderCommitmentItems(home.commitment.items) +
+      '<div class="service-section__stack">' +
+      renderServiceItems(home.service.items) +
+      "</div>" +
+      '<div class="service-points">' +
+      renderServicePoints(home.service.points) +
       "</div>" +
       "</div>" +
       "</section>" +
-      '<section class="section process-section">' +
-      '<div class="container">' +
-      '<div class="section-head">' +
-      '<p class="section-kicker reveal-up">' +
-      escapeHtml(home.process.eyebrow) +
-      "</p>" +
-      '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.process.title) +
-      "</h2>" +
-      '<p class="section-text reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.process.text) +
-      "</p>" +
-      "</div>" +
-      '<div class="process-section__stack">' +
-      renderProcessSteps(home.process.steps) +
-      "</div>" +
-      "</div>" +
-      "</section>" +
-      '<section class="section guide-section">' +
+      '<section class="section links-section">' +
       '<div class="container">' +
       '<div class="section-head section-head--compact">' +
       '<p class="section-kicker reveal-up">' +
-      escapeHtml(home.productGuide.eyebrow) +
+      escapeHtml(home.links.eyebrow) +
       "</p>" +
       '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.productGuide.title) +
-      "</h2>" +
-      '<p class="section-text reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.productGuide.text) +
-      "</p>" +
-      "</div>" +
-      '<div class="guide-section__grid">' +
-      renderGuideItems(home.productGuide.items) +
-      "</div>" +
-      "</div>" +
-      "</section>" +
-      '<section class="section utility-section">' +
-      '<div class="container">' +
-      '<div class="section-head section-head--compact">' +
-      '<p class="section-kicker reveal-up">' +
-      escapeHtml(home.utilityLinks.eyebrow) +
-      "</p>" +
-      '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.utilityLinks.title) +
+      escapeHtml(home.links.title) +
       "</h2>" +
       "</div>" +
-      '<div class="utility-section__grid">' +
-      renderUtilityLinks(home.utilityLinks.items) +
+      '<div class="links-section__grid">' +
+      renderBottomLinks(home.links.items) +
       "</div>" +
       "</div>" +
       "</section>" +
