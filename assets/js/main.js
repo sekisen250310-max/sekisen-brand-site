@@ -145,20 +145,102 @@
       .join("");
   }
 
-  function renderPromiseItems(items) {
+  function renderIntroVisuals(items) {
     return items
       .map(function (item, index) {
         return (
-          '<article class="promise-item reveal-up' +
-          (index > 0 ? " reveal-up--delay" : "") +
+          '<figure class="intro-visual intro-visual--' +
+          (index + 1) +
           '">' +
-          '<p class="promise-item__label">' +
+          '<img src="' +
+          escapeHtml(item.image) +
+          '" alt="' +
+          escapeHtml(item.alt) +
+          '" loading="lazy" />' +
+          "</figure>"
+        );
+      })
+      .join("");
+  }
+
+  function renderLineItems(items) {
+    return items
+      .map(function (item, index) {
+        return (
+          '<article class="line-block' +
+          (index % 2 === 1 ? " line-block--reverse" : "") +
+          '">' +
+          '<figure class="line-block__media reveal-side ' +
+          (index % 2 === 1 ? "reveal-side--left" : "reveal-side--right") +
+          '">' +
+          '<img src="' +
+          escapeHtml(item.image) +
+          '" alt="' +
+          escapeHtml(item.alt) +
+          '" loading="lazy" />' +
+          "</figure>" +
+          '<div class="line-block__copy reveal-up">' +
+          '<p class="section-kicker">' +
           escapeHtml(item.label) +
           "</p>" +
-          '<h3 class="promise-item__title">' +
+          '<h3 class="line-block__title">' +
           escapeHtml(item.title) +
           "</h3>" +
-          '<p class="promise-item__text">' +
+          '<p class="line-block__text">' +
+          escapeHtml(item.text) +
+          "</p>" +
+          '<a class="text-link" href="' +
+          escapeHtml(item.href) +
+          '">' +
+          escapeHtml(item.action) +
+          "</a>" +
+          "</div>" +
+          "</article>"
+        );
+      })
+      .join("");
+  }
+
+  function renderNewsItems(items) {
+    return items
+      .map(function (item) {
+        return (
+          '<li class="news-list__item reveal-up">' +
+          '<a class="news-list__link" href="' +
+          escapeHtml(item.href) +
+          '">' +
+          '<span class="news-list__meta">' +
+          "<time>" +
+          escapeHtml(item.date) +
+          "</time>" +
+          "<span>" +
+          escapeHtml(item.category) +
+          "</span>" +
+          "</span>" +
+          '<span class="news-list__title">' +
+          escapeHtml(item.title) +
+          "</span>" +
+          "</a>" +
+          "</li>"
+        );
+      })
+      .join("");
+  }
+
+  function renderCommitmentItems(items) {
+    return items
+      .map(function (item, index) {
+        return (
+          '<article class="commitment-item reveal-up' +
+          (index > 0 ? " reveal-up--delay" : "") +
+          '">' +
+          '<p class="commitment-item__label">' +
+          escapeHtml(item.label) +
+          "</p>" +
+          '<h3 class="commitment-item__title">' +
+          escapeHtml(item.title) +
+          "</h3>" +
+          '<p class="commitment-item__text">' +
           escapeHtml(item.text) +
           "</p>" +
           "</article>"
@@ -170,16 +252,12 @@
   function renderProcessSteps(items) {
     return items
       .map(function (item, index) {
-        var reverseClass = index % 2 === 1 ? " story-row--reverse" : "";
-        var imageReveal = index % 2 === 1 ? " reveal-side--right" : " reveal-side--left";
-        var copyReveal = index % 2 === 1 ? " reveal-side--left" : " reveal-side--right";
-
         return (
-          '<article class="story-row' +
-          reverseClass +
+          '<article class="process-row' +
+          (index % 2 === 1 ? " process-row--reverse" : "") +
           '">' +
-          '<figure class="story-row__media reveal-side ' +
-          imageReveal +
+          '<figure class="process-row__media reveal-side ' +
+          (index % 2 === 1 ? "reveal-side--left" : "reveal-side--right") +
           '">' +
           '<img src="' +
           escapeHtml(item.image) +
@@ -187,16 +265,14 @@
           escapeHtml(item.alt) +
           '" loading="lazy" />' +
           "</figure>" +
-          '<div class="story-row__copy reveal-side ' +
-          copyReveal +
-          '">' +
+          '<div class="process-row__copy reveal-up">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
           "</p>" +
-          '<h3 class="story-row__title">' +
+          '<h3 class="process-row__title">' +
           escapeHtml(item.title) +
           "</h3>" +
-          '<p class="story-row__text">' +
+          '<p class="process-row__text">' +
           escapeHtml(item.text) +
           "</p>" +
           "</div>" +
@@ -206,65 +282,50 @@
       .join("");
   }
 
-  function renderValueItems(items) {
+  function renderGuideItems(items) {
     return items
       .map(function (item, index) {
         return (
-          '<article class="value-item reveal-up' +
-          (index > 1 ? " reveal-up--delay" : "") +
+          '<a class="guide-block reveal-scale' +
+          (index > 0 ? " reveal-up--delay" : "") +
+          '" href="' +
+          escapeHtml(item.href) +
           '">' +
-          '<p class="value-item__label">' +
-          escapeHtml(item.label) +
-          "</p>" +
-          '<h3 class="value-item__title">' +
-          escapeHtml(item.title) +
-          "</h3>" +
-          '<p class="value-item__text">' +
-          escapeHtml(item.text) +
-          "</p>" +
-          "</article>"
-        );
-      })
-      .join("");
-  }
-
-  function renderGalleryItems(items) {
-    return items
-      .map(function (item) {
-        return (
-          '<article class="gallery-item gallery-item--' +
-          escapeHtml(item.size) +
-          ' reveal-scale">' +
+          '<figure class="guide-block__media">' +
           '<img src="' +
           escapeHtml(item.image) +
           '" alt="' +
           escapeHtml(item.alt) +
           '" loading="lazy" />' +
-          '<div class="gallery-item__meta">' +
-          '<p class="gallery-item__caption">' +
-          escapeHtml(item.caption) +
+          "</figure>" +
+          '<div class="guide-block__copy">' +
+          '<p class="section-kicker">' +
+          escapeHtml(item.label) +
           "</p>" +
-          '<p class="gallery-item__detail">' +
-          escapeHtml(item.detail) +
+          '<h3 class="guide-block__title">' +
+          escapeHtml(item.title) +
+          "</h3>" +
+          '<p class="guide-block__text">' +
+          escapeHtml(item.text) +
           "</p>" +
           "</div>" +
-          "</article>"
+          "</a>"
         );
       })
       .join("");
   }
 
-  function renderCtaLinks(items) {
+  function renderUtilityLinks(items) {
     return items
       .map(function (item) {
         return (
-          '<a class="cta-link reveal-up" href="' +
+          '<a class="utility-link reveal-up" href="' +
           escapeHtml(item.href) +
           '">' +
-          '<strong class="cta-link__title">' +
+          '<strong class="utility-link__title">' +
           escapeHtml(item.label) +
           "</strong>" +
-          '<span class="cta-link__arrow">Open</span>' +
+          '<span class="utility-link__meta">Open</span>' +
           "</a>"
         );
       })
@@ -299,16 +360,12 @@
   function renderDetailRows(items) {
     return items
       .map(function (item, index) {
-        var reverseClass = index % 2 === 1 ? " detail-row--reverse" : "";
-        var imageReveal = index % 2 === 1 ? " reveal-side--right" : " reveal-side--left";
-        var copyReveal = index % 2 === 1 ? " reveal-side--left" : " reveal-side--right";
-
         return (
           '<article class="detail-row' +
-          reverseClass +
+          (index % 2 === 1 ? " detail-row--reverse" : "") +
           '">' +
           '<figure class="detail-row__media reveal-side ' +
-          imageReveal +
+          (index % 2 === 1 ? "reveal-side--left" : "reveal-side--right") +
           '">' +
           '<img src="' +
           escapeHtml(item.image) +
@@ -316,9 +373,7 @@
           escapeHtml(item.alt) +
           '" loading="lazy" />' +
           "</figure>" +
-          '<div class="detail-row__copy reveal-side ' +
-          copyReveal +
-          '">' +
+          '<div class="detail-row__copy reveal-up">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
           "</p>" +
@@ -376,9 +431,9 @@
       renderHeroSlides(home.hero.slides) +
       "</div>" +
       '<div class="hero__veil"></div>' +
-      '<div class="hero__grid"></div>' +
+      '<div class="hero__grain"></div>' +
       '<div class="container hero__layout">' +
-      '<div class="hero__content reveal-up" data-hero-copy>' +
+      '<div class="hero__copy reveal-up" data-hero-copy>' +
       '<p class="hero__eyebrow" data-hero-eyebrow>' +
       escapeHtml(initialSlide.eyebrow) +
       "</p>" +
@@ -413,9 +468,17 @@
       "</div>" +
       "</div>" +
       "</section>" +
-      '<section class="section intro-section" id="intro">' +
-      '<div class="container intro-section__panel">' +
-      '<div class="intro-section__copy">' +
+      '<section class="section intro-stage" id="intro">' +
+      '<div class="container">' +
+      '<div class="intro-stage__visuals reveal-track">' +
+      '<p class="intro-stage__lead">' +
+      escapeHtml(home.intro.visualLead) +
+      "</p>" +
+      '<div class="intro-stage__gallery">' +
+      renderIntroVisuals(home.intro.visuals) +
+      "</div>" +
+      "</div>" +
+      '<div class="intro-stage__copy">' +
       '<p class="section-kicker reveal-up">' +
       escapeHtml(home.intro.eyebrow) +
       "</p>" +
@@ -429,45 +492,65 @@
       escapeHtml(home.intro.text) +
       "</p>" +
       "</div>" +
-      '<figure class="intro-section__media reveal-scale reveal-up--delay">' +
-      '<img src="' +
-      escapeHtml(home.intro.image) +
-      '" alt="' +
-      escapeHtml(home.intro.alt) +
-      '" loading="lazy" />' +
-      '<figcaption class="intro-section__note">' +
-      '<p class="intro-section__note-label">' +
-      escapeHtml(home.intro.noteLabel) +
-      "</p>" +
-      '<h3 class="intro-section__note-title">' +
-      escapeHtml(home.intro.noteTitle) +
-      "</h3>" +
-      '<p class="intro-section__note-text">' +
-      escapeHtml(home.intro.noteText) +
-      "</p>" +
-      "</figcaption>" +
-      "</figure>" +
       "</div>" +
       "</section>" +
-      '<section class="section promise-section" id="promise">' +
+      '<section class="section line-section">' +
       '<div class="container">' +
       '<div class="section-head section-head--compact">' +
       '<p class="section-kicker reveal-up">' +
-      escapeHtml(home.promise.eyebrow) +
+      escapeHtml(home.lines.eyebrow) +
       "</p>" +
       '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.promise.title) +
+      escapeHtml(home.lines.title) +
       "</h2>" +
       '<p class="section-text reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.promise.text) +
+      escapeHtml(home.lines.text) +
       "</p>" +
       "</div>" +
-      '<div class="promise-section__grid">' +
-      renderPromiseItems(home.promise.items) +
+      '<div class="line-section__stack">' +
+      renderLineItems(home.lines.items) +
       "</div>" +
       "</div>" +
       "</section>" +
-      '<section class="section process-section" id="process">' +
+      '<section class="section news-section">' +
+      '<div class="container news-section__layout">' +
+      '<div class="section-head section-head--compact">' +
+      '<p class="section-kicker reveal-up">' +
+      escapeHtml(home.news.eyebrow) +
+      "</p>" +
+      '<h2 class="section-title reveal-up reveal-up--delay">' +
+      escapeHtml(home.news.title) +
+      "</h2>" +
+      '<a class="text-link reveal-up reveal-up--delay-2" href="' +
+      escapeHtml(home.news.moreHref) +
+      '">' +
+      escapeHtml(home.news.moreLabel) +
+      "</a>" +
+      "</div>" +
+      '<ul class="news-list">' +
+      renderNewsItems(home.news.items) +
+      "</ul>" +
+      "</div>" +
+      "</section>" +
+      '<section class="section commitment-section">' +
+      '<div class="container">' +
+      '<div class="section-head section-head--compact">' +
+      '<p class="section-kicker reveal-up">' +
+      escapeHtml(home.commitment.eyebrow) +
+      "</p>" +
+      '<h2 class="section-title reveal-up reveal-up--delay">' +
+      escapeHtml(home.commitment.title) +
+      "</h2>" +
+      '<p class="section-text reveal-up reveal-up--delay-2">' +
+      escapeHtml(home.commitment.text) +
+      "</p>" +
+      "</div>" +
+      '<div class="commitment-section__grid">' +
+      renderCommitmentItems(home.commitment.items) +
+      "</div>" +
+      "</div>" +
+      "</section>" +
+      '<section class="section process-section">' +
       '<div class="container">' +
       '<div class="section-head">' +
       '<p class="section-kicker reveal-up">' +
@@ -485,67 +568,36 @@
       "</div>" +
       "</div>" +
       "</section>" +
-      '<section class="section value-section" id="value">' +
-      '<div class="container value-section__layout">' +
-      '<figure class="value-section__media reveal-scale">' +
-      '<img src="' +
-      escapeHtml(home.value.image) +
-      '" alt="' +
-      escapeHtml(home.value.alt) +
-      '" loading="lazy" />' +
-      "</figure>" +
-      '<div class="value-section__copy">' +
-      '<p class="section-kicker reveal-up">' +
-      escapeHtml(home.value.eyebrow) +
-      "</p>" +
-      '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.value.title) +
-      "</h2>" +
-      '<p class="section-lead reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.value.lead) +
-      "</p>" +
-      '<p class="section-text reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.value.text) +
-      "</p>" +
-      '<div class="value-section__grid">' +
-      renderValueItems(home.value.items) +
-      "</div>" +
-      "</div>" +
-      "</div>" +
-      "</section>" +
-      '<section class="section gallery-section" id="gallery">' +
+      '<section class="section guide-section">' +
       '<div class="container">' +
       '<div class="section-head section-head--compact">' +
       '<p class="section-kicker reveal-up">' +
-      escapeHtml(home.gallery.eyebrow) +
+      escapeHtml(home.productGuide.eyebrow) +
       "</p>" +
       '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.gallery.title) +
+      escapeHtml(home.productGuide.title) +
       "</h2>" +
       '<p class="section-text reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.gallery.text) +
+      escapeHtml(home.productGuide.text) +
       "</p>" +
       "</div>" +
-      '<div class="gallery-section__grid">' +
-      renderGalleryItems(home.gallery.items) +
+      '<div class="guide-section__grid">' +
+      renderGuideItems(home.productGuide.items) +
       "</div>" +
       "</div>" +
       "</section>" +
-      '<section class="section cta-section" id="cta">' +
+      '<section class="section utility-section">' +
       '<div class="container">' +
       '<div class="section-head section-head--compact">' +
       '<p class="section-kicker reveal-up">' +
-      escapeHtml(home.cta.eyebrow) +
+      escapeHtml(home.utilityLinks.eyebrow) +
       "</p>" +
       '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.cta.title) +
+      escapeHtml(home.utilityLinks.title) +
       "</h2>" +
-      '<p class="section-text reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.cta.text) +
-      "</p>" +
       "</div>" +
-      '<div class="cta-section__grid">' +
-      renderCtaLinks(home.cta.items) +
+      '<div class="utility-section__grid">' +
+      renderUtilityLinks(home.utilityLinks.items) +
       "</div>" +
       "</div>" +
       "</section>" +
@@ -556,7 +608,7 @@
   function renderSubhero(page) {
     return (
       '<section class="subhero">' +
-      '<div class="container subhero__shell">' +
+      '<div class="container subhero__layout">' +
       '<div class="subhero__copy reveal-up">' +
       '<p class="section-kicker">' +
       escapeHtml(page.eyebrow) +
@@ -568,7 +620,7 @@
       escapeHtml(page.lead) +
       "</p>" +
       "</div>" +
-      '<div class="subhero__side reveal-side reveal-side--right">' +
+      '<div class="subhero__aside reveal-side reveal-side--right">' +
       '<p class="subhero__side-label">SEKISEN</p>' +
       '<p class="subhero__side-text">' +
       escapeHtml(site.brand.description) +
@@ -675,7 +727,7 @@
   var nav = app.querySelector(".site-nav");
   var navToggle = app.querySelector(".nav-toggle");
   var revealItems = Array.prototype.slice.call(
-    app.querySelectorAll(".reveal-up, .reveal-side, .reveal-scale")
+    app.querySelectorAll(".reveal-up, .reveal-side, .reveal-scale, .reveal-track")
   );
   var hero = app.querySelector(".hero");
   var autoplayId = null;
@@ -697,12 +749,12 @@
       return;
     }
 
-    header.classList.toggle("is-scrolled", window.scrollY > 24);
+    header.classList.toggle("is-scrolled", window.scrollY > 28);
   }
 
   function revealImmediate() {
     revealItems.forEach(function (item, index) {
-      if (item.closest(".hero") || item.closest(".subhero") || item.closest(".intro-section")) {
+      if (item.closest(".hero") || item.closest(".subhero")) {
         window.setTimeout(function () {
           item.classList.add("is-visible");
         }, 80 + index * 70);
@@ -734,7 +786,7 @@
     );
 
     revealItems.forEach(function (item) {
-      if (!item.closest(".hero") && !item.closest(".subhero") && !item.closest(".intro-section")) {
+      if (!item.closest(".hero") && !item.closest(".subhero")) {
         observer.observe(item);
       }
     });
@@ -783,7 +835,7 @@
       }
 
       heroCopy.classList.add("is-changing");
-      copyTimer = window.setTimeout(applyCopy, 300);
+      copyTimer = window.setTimeout(applyCopy, 320);
     }
 
     function setSlide(nextIndex, immediate) {

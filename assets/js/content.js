@@ -42,7 +42,7 @@ window.SEKISEN_CONTENT = {
   },
   home: {
     hero: {
-      interval: 12800,
+      interval: 13200,
       slides: [
         {
           image: "./assets/images/hero-01.svg",
@@ -78,52 +78,109 @@ window.SEKISEN_CONTENT = {
     },
     intro: {
       eyebrow: "石戦とは",
+      visualLead: "商品の気配が、先に届く。",
+      visuals: [
+        {
+          image: "./assets/images/hero-01.svg",
+          alt: "SEKISEN hero product visual 01"
+        },
+        {
+          image: "./assets/images/hero-02.svg",
+          alt: "SEKISEN hero product visual 02"
+        },
+        {
+          image: "./assets/images/hero-03.svg",
+          alt: "SEKISEN hero product visual 03"
+        }
+      ],
       title: "普通の野菜ではなく、価値ある体験として届くトマトへ。",
       lead:
         "石戦は、果実そのものの魅力だけでなく、贈る所作や食後に残る余韻まで含めて整えるブランドです。",
       text:
-        "美味しさを単純な甘さだけで捉えるのではなく、香りの立ち方、みずみずしさ、口当たり、箱を開けた瞬間の印象まで含めて考える。そうした複数の価値を、静かな高級感として届けることを目指しています。",
-      image: "./assets/images/hero-02.svg",
-      alt: "SEKISEN philosophy visual",
-      noteLabel: "Brand Position",
-      noteTitle: "品質に見合う空気感を、画面全体で整える。",
-      noteText:
-        "価格を強く語らずとも、見た瞬間に格が伝わる。その設計そのものを石戦の価値と捉えています。"
+        "美味しさを単純な甘さだけで捉えるのではなく、香りの立ち方、みずみずしさ、口当たり、箱を開けた瞬間の印象まで含めて考える。そうした複数の価値を、静かな高級感として届けることを目指しています。"
     },
-    promise: {
-      eyebrow: "石戦の約束",
-      title: "石戦の価値は、静かな約束の積み重ねから生まれる。",
+    lines: {
+      eyebrow: "Brand / Product Value",
+      title: "届け方の違いが、石戦の魅力を広げる。",
       text:
-        "甘さだけでなく、印象全体に責任を持つ。そのための基準を、石戦ではいくつかの約束として整理しています。",
+        "贈答と日常では求められる温度が異なります。石戦ではラインごとに役割を整理し、見え方も整えています。",
       items: [
         {
-          label: "01",
-          title: "甘さだけでなく、旨みまで整える。",
+          label: "SEKISEN RESERVE",
+          title: "贈る所作まで美しく整える、石戦の象徴的なライン。",
           text:
-            "数値に現れる甘さだけでなく、口に入れたときの厚みや後味の心地よさまで丁寧に見ます。"
+            "箱を開けた瞬間の印象、並んだ姿の美しさ、余韻の残り方まで含めて磨き上げる、石戦のシグネチャーです。",
+          image: "./assets/images/hero-01.svg",
+          alt: "SEKISEN reserve visual",
+          href: "./lineup.html",
+          action: "贈答向けライン"
         },
         {
-          label: "02",
-          title: "皮際まで満足感のある味わいへ。",
+          label: "SEKISEN COLLECTION",
+          title: "日々の食卓へ、上質を自然に持ち込むもうひとつの届け方。",
           text:
-            "香りや食感のバランスを崩さず、最後まで印象が保たれる状態を品質の基準に置きます。"
+            "贈答性を保ちながらも、暮らしの中に無理なく馴染む距離へ調整したラインとして設計しています。",
+          image: "./assets/images/hero-02.svg",
+          alt: "SEKISEN collection visual",
+          href: "./lineup.html",
+          action: "日常向けライン"
+        }
+      ]
+    },
+    news: {
+      eyebrow: "News / Pick Up",
+      title: "ブランドの動きを、静かな温度で伝える。",
+      items: [
+        {
+          date: "2026.03.18",
+          category: "Brand",
+          title: "石戦ブランドサイトのプレビュー公開を開始しました。",
+          href: "./news.html"
         },
         {
-          label: "03",
-          title: "一箱に、味と所作の両方を宿す。",
-          text:
-            "食べる瞬間だけでなく、手に取る前の空気や贈る場面の美しさもブランド体験として整えます。"
+          date: "2026.03.08",
+          category: "Journal",
+          title: "選別と届け方に関する考え方を更新しました。",
+          href: "./news.html"
         },
         {
-          label: "04",
-          title: "高級感を、強く語らずに伝える。",
+          date: "2026.02.20",
+          category: "Season",
+          title: "春季出荷に向けた品質設計のトピックを追加しました。",
+          href: "./news.html"
+        }
+      ],
+      moreLabel: "VIEW MORE",
+      moreHref: "./news.html"
+    },
+    commitment: {
+      eyebrow: "Quality / Commitment / Service",
+      title: "石戦が何をしているブランドなのかを、静かに明確にする。",
+      text:
+        "味の設計、品質管理、届ける体験。その三つを一体として磨くことで、石戦の価値は成立します。",
+      items: [
+        {
+          label: "Environment",
+          title: "土と環境",
           text:
-            "派手な主張ではなく、整った余白と静かな見せ方によって品質に見合う格を伝えます。"
+            "果実の輪郭が立ち上がるための土台として、土や空気、水分の状態を細かく見て整えます。"
+        },
+        {
+          label: "Taste Design",
+          title: "味と食感",
+          text:
+            "甘さだけに寄らず、香り、厚み、張り、口当たりの美しさまで含めて設計します。"
+        },
+        {
+          label: "Delivery",
+          title: "贈る体験",
+          text:
+            "箱を開けた瞬間の印象や、渡す場面での所作まで含めて石戦らしい体験に整えます。"
         }
       ]
     },
     process: {
-      eyebrow: "こだわりの工程",
+      eyebrow: "Craft Process",
       title: "品質は、いくつもの小さな判断の積み重ねで決まる。",
       text:
         "土づくりから箱詰めまで、石戦の価値は一つの工程だけで決まるものではありません。順番に積み上がる精度が、最終的な体験を形づくります。",
@@ -170,94 +227,39 @@ window.SEKISEN_CONTENT = {
         }
       ]
     },
-    value: {
-      eyebrow: "体験価値",
-      title: "価格の説明ではなく、体験価値として伝える。",
-      lead:
-        "石戦の魅力は、希少性や数字だけでは語れません。食べる前後まで含めた体験の密度が、価値の理由になります。",
+    productGuide: {
+      eyebrow: "Product Guide",
+      title: "選ぶ場面に合わせて、石戦の入口を分ける。",
       text:
-        "味の輪郭、みずみずしさ、余韻、贈る場面との相性。石戦では、それぞれを独立した要素ではなく、ひとつの体験として整えています。",
-      image: "./assets/images/hero-03.svg",
-      alt: "SEKISEN value visual",
+        "特別な一箱として選ぶか、日々の食卓へ迎えるか。石戦では、その違いを静かに分けて案内します。",
       items: [
         {
-          label: "味わい",
-          title: "味の濃さ",
+          label: "Gift Selection",
+          title: "贈答向けラインを見る",
           text:
-            "ひと口目で分かる輪郭と、食べ終えたあとに残る満足感の両方を価値として捉えます。"
-        },
-        {
-          label: "瑞々しさ",
-          title: "みずみずしさ",
-          text:
-            "軽さだけではなく、張りや口当たりの美しさまで含めた瑞々しさを目指します。"
-        },
-        {
-          label: "贈る場面",
-          title: "贈答性",
-          text:
-            "渡す所作そのものが成立するように、見え方や箱を開けた瞬間の印象も整えます。"
-        },
-        {
-          label: "余韻",
-          title: "余韻",
-          text:
-            "食べた瞬間の驚きだけでなく、そのあとに残る静かな印象まで石戦の体験に含めます。"
-        }
-      ]
-    },
-    gallery: {
-      eyebrow: "ビジュアル",
-      title: "写真そのものが、ブランドの空気をつくる。",
-      text:
-        "果実そのもの、贈る所作、断面、食卓の気配。石戦のビジュアルは、情報ではなく空気感を伝えるために配置します。",
-      items: [
-        {
+            "大切な相手へ渡す場面にふさわしい構成や見え方を想定したラインです。",
           image: "./assets/images/hero-01.svg",
-          alt: "SEKISEN fruit visual",
-          caption: "Fruit Presence",
-          detail: "主役としての果実の存在感を見せるフレーム。",
-          size: "tall"
+          alt: "Gift selection visual",
+          href: "./lineup.html"
         },
         {
-          image: "./assets/images/hero-02.svg",
-          alt: "SEKISEN gift visual",
-          caption: "Gift Mood",
-          detail: "贈る場面を想起させるためのビジュアル。",
-          size: "wide"
-        },
-        {
+          label: "Online Shop",
+          title: "オンラインショップへ",
+          text:
+            "暮らしの中で石戦を選ぶための入口として、商品導線を整理してつなげていきます。",
           image: "./assets/images/hero-03.svg",
-          alt: "SEKISEN editorial visual",
-          caption: "Editorial Cut",
-          detail: "質感や余韻を伝えるための静かなカット。",
-          size: "square"
-        },
-        {
-          image: "./assets/images/hero-01.svg",
-          alt: "SEKISEN dining visual",
-          caption: "Dining Scene",
-          detail: "食卓に置かれた時の上品さを見せるための一枚。",
-          size: "square"
-        },
-        {
-          image: "./assets/images/hero-02.svg",
-          alt: "SEKISEN package visual",
-          caption: "Package View",
-          detail: "箱や届け方の印象へつなげるためのビジュアル。",
-          size: "wide"
+          alt: "Online shop visual",
+          href: "./lineup.html"
         }
       ]
     },
-    cta: {
-      eyebrow: "次の導線",
-      title: "石戦の世界から、次の導線へ。",
-      text:
-        "今後の商品導線や販売先情報の拡張も見据えながら、ブランド体験を崩さない形で最後の入口を整えています。",
+    utilityLinks: {
+      eyebrow: "Store / Contact",
+      title: "購入やご相談につながる導線を、最後まで上質に整理する。",
       items: [
         { label: "商品を見る", href: "./lineup.html" },
-        { label: "ブランドを知る", href: "./about.html" },
-        { label: "販売先を知る", href: "./lineup.html" },
+        { label: "オンラインショップ", href: "./lineup.html" },
+        { label: "ブランドについて", href: "./about.html" },
         { label: "お問い合わせ", href: "./contact.html" }
       ]
     }
