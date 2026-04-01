@@ -163,37 +163,39 @@
       .join("");
   }
 
-  function renderBrandTiles(items) {
+  function renderBrandRows(items) {
     return items
       .map(function (item, index) {
         return (
-          '<a class="brand-tile reveal-scale' +
-          (index > 0 ? " reveal-up--delay" : "") +
-          '" href="' +
-          escapeHtml(item.href) +
+          '<article class="brand-row' +
+          (index % 2 === 1 ? " brand-row--reverse" : "") +
           '">' +
-          '<figure class="brand-tile__media">' +
+          '<figure class="brand-row__media reveal-side ' +
+          (index % 2 === 1 ? "reveal-side--left" : "reveal-side--right") +
+          '">' +
           '<img src="' +
           escapeHtml(item.image) +
           '" alt="' +
           escapeHtml(item.alt) +
           '" loading="lazy" />' +
           "</figure>" +
-          '<div class="brand-tile__copy">' +
+          '<div class="brand-row__copy reveal-up">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
           "</p>" +
-          '<h3 class="brand-tile__title">' +
+          '<h3 class="brand-row__title">' +
           escapeHtml(item.title) +
           "</h3>" +
-          '<p class="brand-tile__text">' +
+          '<p class="brand-row__text">' +
           escapeHtml(item.text) +
           "</p>" +
-          '<span class="text-link text-link--static">' +
+          '<a class="text-link" href="' +
+          escapeHtml(item.href) +
+          '">' +
           escapeHtml(item.action) +
-          "</span>" +
+          "</a>" +
           "</div>" +
-          "</a>"
+          "</article>"
         );
       })
       .join("");
@@ -476,8 +478,8 @@
       escapeHtml(home.brands.text) +
       "</p>" +
       "</div>" +
-      '<div class="brand-section__grid">' +
-      renderBrandTiles(home.brands.items) +
+      '<div class="brand-section__stack">' +
+      renderBrandRows(home.brands.items) +
       "</div>" +
       "</div>" +
       "</section>" +

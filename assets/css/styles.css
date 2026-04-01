@@ -609,7 +609,6 @@ button {
   padding: 84px 0 0;
 }
 
-.brand-section__grid,
 .service-points,
 .links-section__grid,
 .contact-page__grid {
@@ -617,25 +616,52 @@ button {
   gap: 24px;
 }
 
-.brand-section__grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 58px;
+.brand-section__stack,
+.service-section__stack,
+.detail-section__stack {
+  margin-top: 72px;
 }
 
-.brand-tile {
+.brand-row,
+.service-block,
+.detail-row {
   display: grid;
-  gap: 24px;
-  padding-top: 24px;
-  border-top: 1px solid var(--line-strong);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 82px;
+  align-items: center;
 }
 
-.brand-tile__media,
+.brand-row + .brand-row,
+.service-block + .service-block,
+.detail-row + .detail-row {
+  margin-top: 118px;
+}
+
+.brand-row--reverse,
+.service-block--reverse,
+.detail-row--reverse {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+
+.brand-row--reverse .brand-row__media,
+.service-block--reverse .service-block__media,
+.detail-row--reverse .detail-row__media {
+  order: 2;
+}
+
+.brand-row--reverse .brand-row__copy,
+.service-block--reverse .service-block__copy,
+.detail-row--reverse .detail-row__copy {
+  order: 1;
+}
+
+.brand-row__media,
 .service-block__media,
 .detail-row__media {
   margin: 0;
 }
 
-.brand-tile__media img,
+.brand-row__media img,
 .service-block__media img,
 .detail-row__media img {
   width: 100%;
@@ -644,7 +670,15 @@ button {
   box-shadow: var(--shadow-soft);
 }
 
-.brand-tile__title,
+.brand-row__copy,
+.service-block__copy,
+.detail-row__copy {
+  max-width: 460px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.brand-row__title,
 .service-block__title,
 .detail-row__title,
 .bottom-link__title,
@@ -656,7 +690,7 @@ button {
   line-height: 1.18;
 }
 
-.brand-tile__text,
+.brand-row__text,
 .service-block__text,
 .detail-row__text,
 .bottom-link__text,
@@ -715,46 +749,6 @@ button {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(247, 242, 236, 0.42));
 }
 
-.service-section__stack,
-.detail-section__stack {
-  margin-top: 72px;
-}
-
-.service-block,
-.detail-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: 82px;
-  align-items: center;
-}
-
-.service-block + .service-block,
-.detail-row + .detail-row {
-  margin-top: 118px;
-}
-
-.service-block--reverse,
-.detail-row--reverse {
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-}
-
-.service-block--reverse .service-block__media,
-.detail-row--reverse .detail-row__media {
-  order: 2;
-}
-
-.service-block--reverse .service-block__copy,
-.detail-row--reverse .detail-row__copy {
-  order: 1;
-}
-
-.service-block__copy,
-.detail-row__copy {
-  max-width: 460px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
-}
-
 .service-points {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   margin-top: 54px;
@@ -805,14 +799,6 @@ button {
   height: 1px;
   background: currentColor;
   opacity: 0.4;
-}
-
-.text-link--static {
-  margin-top: 22px;
-}
-
-.text-link--static::after {
-  display: none;
 }
 
 .subhero {
@@ -972,6 +958,8 @@ button {
 
   .about-stage__gallery,
   .news-section__layout,
+  .brand-row,
+  .brand-row--reverse,
   .service-block,
   .service-block--reverse,
   .detail-row,
@@ -980,6 +968,8 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .brand-row--reverse .brand-row__media,
+  .brand-row--reverse .brand-row__copy,
   .service-block--reverse .service-block__media,
   .service-block--reverse .service-block__copy,
   .detail-row--reverse .detail-row__media,
@@ -987,7 +977,6 @@ button {
     order: initial;
   }
 
-  .brand-section__grid,
   .service-points,
   .links-section__grid,
   .contact-page__grid {
@@ -1144,7 +1133,7 @@ button {
   .subhero__lead,
   .section-text,
   .hero__description,
-  .brand-tile__text,
+  .brand-row__text,
   .service-block__text,
   .detail-row__text,
   .bottom-link__text,
@@ -1188,19 +1177,19 @@ button {
     gap: 10px;
   }
 
+  .brand-row + .brand-row,
   .service-block + .service-block,
   .detail-row + .detail-row {
     margin-top: 88px;
   }
 
-  .brand-section__grid,
   .service-points,
   .links-section__grid,
   .contact-page__grid {
     grid-template-columns: 1fr;
   }
 
-  .brand-tile__title,
+  .brand-row__title,
   .service-block__title,
   .detail-row__title,
   .bottom-link__title,

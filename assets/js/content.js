@@ -9,34 +9,34 @@ window.SEKISEN_CONTENT = {
       logo: "./assets/images/sekisen-logo.jpg"
     },
     navigation: [
-      { id: "about", label: "ブランド", href: "./about.html" },
-      { id: "lineup", label: "ライン", href: "./lineup.html" },
+      { id: "about", label: "石戦とは", href: "./about.html" },
+      { id: "lineup", label: "取扱ライン", href: "./lineup.html" },
       { id: "news", label: "お知らせ", href: "./news.html" },
-      { id: "experience", label: "品質", href: "./experience.html" },
+      { id: "experience", label: "事業内容", href: "./experience.html" },
       { id: "contact", label: "お問い合わせ", href: "./contact.html" }
     ],
     utilities: [
       {
-        label: "お問い合わせ",
-        href: "./contact.html",
+        label: "ONLINE SHOP",
+        href: "./lineup.html",
         style: "site-utility site-utility--dark"
       }
     ],
     footerNote: "SEKISEN Brand Preview Site",
     footerLinks: [
-      { label: "ブランド", href: "./about.html" },
-      { label: "ライン", href: "./lineup.html" },
+      { label: "石戦とは", href: "./about.html" },
+      { label: "取扱ライン", href: "./lineup.html" },
       { label: "お知らせ", href: "./news.html" },
-      { label: "品質", href: "./experience.html" },
+      { label: "事業内容", href: "./experience.html" },
       { label: "お問い合わせ", href: "./contact.html" }
     ],
     copyright: "© 2026 SEKISEN. All rights reserved.",
     titles: {
       home: "石戦 | SEKISEN",
-      about: "ブランド | SEKISEN",
-      lineup: "ライン | SEKISEN",
+      about: "石戦とは | SEKISEN",
+      lineup: "取扱ライン | SEKISEN",
       news: "お知らせ | SEKISEN",
-      experience: "品質 | SEKISEN",
+      experience: "事業内容 | SEKISEN",
       contact: "お問い合わせ | SEKISEN"
     }
   },
@@ -101,9 +101,9 @@ window.SEKISEN_CONTENT = {
     },
     brands: {
       eyebrow: "Lineup",
-      title: "石戦の価値を、ふたつの入口で届ける。",
+      title: "石戦の価値を、ふたつのラインで届ける。",
       text:
-        "特別な一箱として選ぶか、日々の食卓へ迎えるか。石戦では、その違いを静かに分けて案内します。",
+        "贈答のために選ぶか、日々の食卓へ迎えるか。石戦では、その違いを静かに分けて案内します。",
       items: [
         {
           label: "SEKISEN RESERVE",
@@ -155,9 +155,9 @@ window.SEKISEN_CONTENT = {
     },
     service: {
       eyebrow: "Service / Quality",
-      title: "栽培から届け方まで、石戦の価値は一体でつくられる。",
+      title: "開発から届け方まで、石戦の事業は一体でつくられる。",
       text:
-        "土や環境、選別、贈答性、販売導線まで切り離さずに設計することで、石戦らしい体験が完成します。",
+        "栽培環境、選別、贈答性、販売導線まで切り離さずに設計することで、石戦らしい体験が完成します。",
       items: [
         {
           label: "Quality Design",
@@ -190,21 +190,21 @@ window.SEKISEN_CONTENT = {
       items: [
         {
           label: "STORE",
-          title: "商品を見る",
-          text: "ラインや販売構成を確認するための入口です。",
+          title: "取扱ラインを見る",
+          text: "石戦のライン構成や販売の考え方を確認するための入口です。",
+          href: "./lineup.html"
+        },
+        {
+          label: "SHOP",
+          title: "販売導線を見る",
+          text: "贈答や日常使いに向けた選び方の入口を案内します。",
           href: "./lineup.html"
         },
         {
           label: "ONLINE SHOP",
           title: "オンラインショップ",
-          text: "石戦を選ぶための商品導線へつなげていきます。",
+          text: "石戦を選ぶための商品導線へ、静かにつなげていきます。",
           href: "./lineup.html"
-        },
-        {
-          label: "BRAND",
-          title: "ブランドについて",
-          text: "石戦の世界観や考え方をより深く紹介します。",
-          href: "./about.html"
         },
         {
           label: "CONTACT",
@@ -217,7 +217,7 @@ window.SEKISEN_CONTENT = {
   },
   pages: {
     about: {
-      eyebrow: "ブランド",
+      eyebrow: "石戦とは",
       title: "石戦は、果実の強さを静かな品格へ変えるブランドです。",
       lead:
         "目立つためではなく、選ばれる理由を整える。その姿勢から石戦の高級感は生まれます。",
@@ -243,7 +243,7 @@ window.SEKISEN_CONTENT = {
       ]
     },
     lineup: {
-      eyebrow: "ライン",
+      eyebrow: "取扱ライン",
       title: "届け方の違いによって、石戦の魅力を丁寧に分けて伝える。",
       lead:
         "同じ石戦の価値でも、贈答と日常では求められる温度が異なります。ラインごとに役割を整理し、見え方も整えています。",
@@ -305,10 +305,10 @@ window.SEKISEN_CONTENT = {
       ]
     },
     experience: {
-      eyebrow: "品質",
-      title: "石戦の価値は、食べる前から食べ終えたあとまで続く。",
+      eyebrow: "事業内容",
+      title: "石戦の価値は、育てることと届けることを分けずに整えることで生まれる。",
       lead:
-        "石戦は、数字や希少性だけで語るものではありません。味覚の前後に広がる印象全体を、ブランドとして整えていきます。",
+        "石戦は、数字や希少性だけで語るものではありません。栽培、選別、贈答、販売導線まで一体で設計し、印象全体をブランドとして整えています。",
       sections: [
         {
           label: "Cultivation",
