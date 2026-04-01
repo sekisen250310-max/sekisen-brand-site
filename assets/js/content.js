@@ -10,7 +10,7 @@ window.SEKISEN_CONTENT = {
     },
     navigation: [
       { id: "about", label: "石戦とは", href: "./about.html" },
-      { id: "lineup", label: "取扱ライン", href: "./lineup.html" },
+      { id: "lineup", label: "取扱ブランド", href: "./lineup.html" },
       { id: "news", label: "お知らせ", href: "./news.html" },
       { id: "experience", label: "事業内容", href: "./experience.html" },
       { id: "contact", label: "お問い合わせ", href: "./contact.html" }
@@ -25,7 +25,7 @@ window.SEKISEN_CONTENT = {
     footerNote: "SEKISEN Brand Preview Site",
     footerLinks: [
       { label: "石戦とは", href: "./about.html" },
-      { label: "取扱ライン", href: "./lineup.html" },
+      { label: "取扱ブランド", href: "./lineup.html" },
       { label: "お知らせ", href: "./news.html" },
       { label: "事業内容", href: "./experience.html" },
       { label: "お問い合わせ", href: "./contact.html" }
@@ -34,7 +34,7 @@ window.SEKISEN_CONTENT = {
     titles: {
       home: "石戦 | SEKISEN",
       about: "石戦とは | SEKISEN",
-      lineup: "取扱ライン | SEKISEN",
+      lineup: "取扱ブランド | SEKISEN",
       news: "お知らせ | SEKISEN",
       experience: "事業内容 | SEKISEN",
       contact: "お問い合わせ | SEKISEN"
@@ -100,8 +100,8 @@ window.SEKISEN_CONTENT = {
         "糖度の高さだけでなく、香り、みずみずしさ、口当たり、箱を開けたときの空気まで含めて価値を考える。石戦は、農業としての誠実さを保ちながら、高級ブランドとしての見え方を丁寧に設計します。"
     },
     brands: {
-      eyebrow: "Lineup",
-      title: "石戦の価値を、ふたつのラインで届ける。",
+      eyebrow: "Brands",
+      title: "石戦の価値を、ふたつのブランドラインで届ける。",
       text:
         "贈答のために選ぶか、日々の食卓へ迎えるか。石戦では、その違いを静かに分けて案内します。",
       items: [
@@ -154,8 +154,8 @@ window.SEKISEN_CONTENT = {
       moreHref: "./news.html"
     },
     service: {
-      eyebrow: "Service / Quality",
-      title: "開発から届け方まで、石戦の事業は一体でつくられる。",
+      eyebrow: "Business / Quality",
+      title: "育てることと届けることを分けずに、石戦の事業は設計される。",
       text:
         "栽培環境、選別、贈答性、販売導線まで切り離さずに設計することで、石戦らしい体験が完成します。",
       items: [
@@ -185,19 +185,13 @@ window.SEKISEN_CONTENT = {
       ]
     },
     links: {
-      eyebrow: "Store / Shop / Contact",
+      eyebrow: "Store / Online Shop / Contact",
       title: "購入やご相談につながる導線を、最後まで上質に整理する。",
       items: [
         {
           label: "STORE",
-          title: "取扱ラインを見る",
-          text: "石戦のライン構成や販売の考え方を確認するための入口です。",
-          href: "./lineup.html"
-        },
-        {
-          label: "SHOP",
-          title: "販売導線を見る",
-          text: "贈答や日常使いに向けた選び方の入口を案内します。",
+          title: "取扱ブランドを見る",
+          text: "石戦のブランド構成や販売の考え方を確認するための入口です。",
           href: "./lineup.html"
         },
         {
@@ -243,7 +237,7 @@ window.SEKISEN_CONTENT = {
       ]
     },
     lineup: {
-      eyebrow: "取扱ライン",
+      eyebrow: "取扱ブランド",
       title: "届け方の違いによって、石戦の魅力を丁寧に分けて伝える。",
       lead:
         "同じ石戦の価値でも、贈答と日常では求められる温度が異なります。ラインごとに役割を整理し、見え方も整えています。",
