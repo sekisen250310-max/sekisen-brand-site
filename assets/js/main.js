@@ -237,7 +237,7 @@
     '">' +
     escapeHtml(initialSlide.primaryLabel) +
     "</a>" +
-    '<a class="button button--outline-dark" data-hero-secondary href="' +
+    '<a class="button button--text-link" data-hero-secondary href="' +
     escapeHtml(initialSlide.secondaryHref) +
     '">' +
     escapeHtml(initialSlide.secondaryLabel) +
