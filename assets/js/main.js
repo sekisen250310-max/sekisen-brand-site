@@ -74,93 +74,41 @@
       .join("");
   }
 
-  function renderPromiseItems(items) {
+  function renderLineupItems(items) {
     return items
-      .map(function (item) {
-        return (
-          '<article class="promise-item reveal-up">' +
-          '<p class="promise-item__number">' +
-          escapeHtml(item.number) +
-          "</p>" +
-          '<h3 class="promise-item__title">' +
-          escapeHtml(item.title) +
-          "</h3>" +
-          '<p class="promise-item__text">' +
-          escapeHtml(item.text) +
-          "</p>" +
-          "</article>"
-        );
-      })
-      .join("");
-  }
+      .map(function (item, index) {
+        var reverseClass = index % 2 === 1 ? " lineup-card--reverse" : "";
+        var mediaReveal = index % 2 === 1 ? " reveal-side--right" : " reveal-side--left";
+        var copyReveal = index % 2 === 1 ? " reveal-side--left" : " reveal-side--right";
 
-  function renderStoryChapters(chapters) {
-    return chapters
-      .map(function (chapter, index) {
         return (
-          '<article class="story-chapter' +
-          (index % 2 === 1 ? " story-chapter--reverse" : "") +
+          '<article class="lineup-card' +
+          reverseClass +
           '">' +
-          '<div class="story-chapter__copy reveal-up">' +
-          '<p class="section-label">' +
-          escapeHtml(chapter.label) +
-          "</p>" +
-          '<h3 class="story-chapter__title">' +
-          escapeHtml(chapter.title) +
-          "</h3>" +
-          '<p class="story-chapter__text">' +
-          escapeHtml(chapter.text) +
-          "</p>" +
-          "</div>" +
-          '<figure class="story-chapter__media reveal-up reveal-up--delay">' +
-          '<img src="' +
-          escapeHtml(chapter.image) +
-          '" alt="' +
-          escapeHtml(chapter.alt) +
-          '" loading="lazy" />' +
-          "</figure>" +
-          "</article>"
-        );
-      })
-      .join("");
-  }
-
-  function renderValueItems(items) {
-    return items
-      .map(function (item) {
-        return (
-          '<article class="value-card reveal-up">' +
-          '<h3 class="value-card__title">' +
-          escapeHtml(item.title) +
-          "</h3>" +
-          '<p class="value-card__text">' +
-          escapeHtml(item.text) +
-          "</p>" +
-          "</article>"
-        );
-      })
-      .join("");
-  }
-
-  function renderGalleryItems(items) {
-    return items
-      .map(function (item) {
-        return (
-          '<article class="gallery-card gallery-card--' +
-          escapeHtml(item.size) +
-          ' reveal-up">' +
+          '<figure class="lineup-card__media reveal-side ' +
+          mediaReveal +
+          '">' +
           '<img src="' +
           escapeHtml(item.image) +
           '" alt="' +
           escapeHtml(item.alt) +
           '" loading="lazy" />' +
-          '<div class="gallery-card__overlay">' +
-          '<p class="gallery-card__caption">' +
-          escapeHtml(item.caption) +
+          "</figure>" +
+          '<div class="lineup-card__body reveal-side ' +
+          copyReveal +
+          '">' +
+          '<p class="lineup-card__name">' +
+          escapeHtml(item.name) +
           "</p>" +
-          '<p class="gallery-card__detail">' +
-          escapeHtml(item.detail) +
+          '<h3 class="lineup-card__lead">' +
+          escapeHtml(item.lead) +
+          "</h3>" +
+          '<p class="lineup-card__text">' +
+          escapeHtml(item.description) +
           "</p>" +
+          '<a class="text-link" href="' +
+          escapeHtml(item.href) +
+          '">Discover</a>' +
           "</div>" +
           "</article>"
         );
@@ -168,16 +116,93 @@
       .join("");
   }
 
-  function renderActions(actions) {
-    return actions
-      .map(function (action) {
+  function renderNewsItems(items) {
+    return items
+      .map(function (item) {
         return (
-          '<a class="button ' +
-          escapeHtml(action.style) +
-          '" href="' +
-          escapeHtml(action.href) +
+          '<li class="news-item reveal-up">' +
+          '<a class="news-item__link" href="' +
+          escapeHtml(item.href) +
           '">' +
-          escapeHtml(action.label) +
+          '<span class="news-item__meta">' +
+          '<time datetime="' +
+          escapeHtml(item.date.replace(/\.\s*/g, "-")) +
+          '">' +
+          escapeHtml(item.date) +
+          "</time>" +
+          "<span>" +
+          escapeHtml(item.category) +
+          "</span>" +
+          "</span>" +
+          '<span class="news-item__title">' +
+          escapeHtml(item.title) +
+          "</span>" +
+          '<span class="news-item__arrow">View</span>' +
+          "</a>" +
+          "</li>"
+        );
+      })
+      .join("");
+  }
+
+  function renderExperienceItems(items) {
+    return items
+      .map(function (item, index) {
+        var reverseClass = index % 2 === 1 ? " experience-story--reverse" : "";
+        var mediaReveal = index % 2 === 1 ? " reveal-side--right" : " reveal-side--left";
+        var copyReveal = index % 2 === 1 ? " reveal-side--left" : " reveal-side--right";
+
+        return (
+          '<article class="experience-story' +
+          reverseClass +
+          '">' +
+          '<figure class="experience-story__media reveal-side ' +
+          mediaReveal +
+          '">' +
+          '<img src="' +
+          escapeHtml(item.image) +
+          '" alt="' +
+          escapeHtml(item.alt) +
+          '" loading="lazy" />' +
+          "</figure>" +
+          '<div class="experience-story__copy reveal-side ' +
+          copyReveal +
+          '">' +
+          '<p class="section-label">' +
+          escapeHtml(item.label) +
+          "</p>" +
+          '<h3 class="experience-story__title">' +
+          escapeHtml(item.title) +
+          "</h3>" +
+          '<p class="experience-story__text">' +
+          escapeHtml(item.text) +
+          "</p>" +
+          '<a class="text-link" href="' +
+          escapeHtml(item.href) +
+          '">' +
+          escapeHtml(item.linkLabel) +
+          "</a>" +
+          "</div>" +
+          "</article>"
+        );
+      })
+      .join("");
+  }
+
+  function renderLinkTiles(items) {
+    return items
+      .map(function (item) {
+        return (
+          '<a class="link-tile reveal-up" href="' +
+          escapeHtml(item.href) +
+          '">' +
+          '<span class="link-tile__label">' +
+          escapeHtml(item.label) +
+          "</span>" +
+          '<strong class="link-tile__title">' +
+          escapeHtml(item.title) +
+          "</strong>" +
+          '<span class="link-tile__arrow">Open</span>' +
           "</a>"
         );
       })
@@ -209,52 +234,32 @@
     "</div>" +
     '<div class="hero__veil"></div>' +
     '<div class="hero__grain"></div>' +
-    '<div class="hero__frame"></div>' +
-    '<div class="hero__orb hero__orb--one"></div>' +
-    '<div class="hero__orb hero__orb--two"></div>' +
-    '<div class="container hero__layout">' +
-    '<div class="hero__content reveal-up" data-hero-copy>' +
-    '<p class="section-label hero__label" data-hero-eyebrow>' +
+    '<div class="container hero__inner">' +
+    '<div class="hero__copy reveal-up" data-hero-copy>' +
+    '<p class="hero__eyebrow" data-hero-eyebrow>' +
     escapeHtml(initialSlide.eyebrow) +
     "</p>" +
     '<p class="hero__tagline">' +
     escapeHtml(content.brand.tagline) +
     "</p>" +
-    '<h1 class="hero__title">' +
-    '<span data-hero-title-top>' +
-    escapeHtml(initialSlide.titleTop) +
-    "</span>" +
-    '<span data-hero-title-bottom>' +
-    escapeHtml(initialSlide.titleBottom) +
-    "</span>" +
+    '<h1 class="hero__title" data-hero-title>' +
+    escapeHtml(initialSlide.title).replace(/\n/g, "<br />") +
     "</h1>" +
     '<p class="hero__description" data-hero-description>' +
     escapeHtml(initialSlide.description) +
     "</p>" +
     '<div class="hero__actions">' +
-    '<a class="button button--primary-dark" data-hero-primary href="' +
-    escapeHtml(initialSlide.primaryHref) +
+    '<a class="button button--dark" data-hero-action href="' +
+    escapeHtml(initialSlide.actionHref) +
     '">' +
-    escapeHtml(initialSlide.primaryLabel) +
-    "</a>" +
-    '<a class="button button--text-link" data-hero-secondary href="' +
-    escapeHtml(initialSlide.secondaryHref) +
-    '">' +
-    escapeHtml(initialSlide.secondaryLabel) +
+    escapeHtml(initialSlide.actionLabel) +
     "</a>" +
     "</div>" +
     "</div>" +
-    '<aside class="hero__note reveal-up reveal-up--delay">' +
-    '<p class="hero__note-label">' +
-    escapeHtml(content.hero.note.label) +
-    "</p>" +
-    '<h2 class="hero__note-title">' +
-    escapeHtml(content.hero.note.title) +
-    "</h2>" +
-    '<p class="hero__note-text">' +
-    escapeHtml(content.hero.note.text) +
-    "</p>" +
-    "</aside>" +
+    '<div class="hero__aside reveal-up reveal-up--delay">' +
+    '<p class="hero__aside-label">Brand Note</p>' +
+    '<p class="hero__aside-text">品質の説得力を、静かな導線と余白で伝える。</p>' +
+    "</div>" +
     "</div>" +
     '<div class="container hero__footer">' +
     '<div class="hero__counter">' +
@@ -269,155 +274,83 @@
     '<div class="hero__dots">' +
     renderHeroDots(content.hero.slides) +
     "</div>" +
-    '<a class="hero__scroll" href="#concept">Scroll</a>' +
+    '<a class="hero__scroll" href="#about">Scroll</a>' +
     "</div>" +
     "</section>" +
-    '<section class="intro" id="concept">' +
-    '<div class="container">' +
-    '<div class="intro__panel">' +
-    '<div class="intro__grid">' +
-    '<div class="intro__copy">' +
+    '<section class="section about" id="about">' +
+    '<div class="container about__inner">' +
     '<p class="section-label reveal-up">' +
-    escapeHtml(content.intro.eyebrow) +
+    escapeHtml(content.about.eyebrow) +
     "</p>" +
     '<h2 class="section-title reveal-up reveal-up--delay">' +
-    escapeHtml(content.intro.title) +
-    "</h2>" +
-    '<p class="intro__lead reveal-up reveal-up--delay-2">' +
-    escapeHtml(content.intro.lead) +
-    "</p>" +
-    '<p class="section-text reveal-up reveal-up--delay-2">' +
-    escapeHtml(content.intro.description) +
-    "</p>" +
-    "</div>" +
-    '<figure class="intro__media reveal-up reveal-up--delay">' +
-    '<img src="' +
-    escapeHtml(content.intro.image) +
-    '" alt="' +
-    escapeHtml(content.intro.alt) +
-    '" loading="lazy" />' +
-    '<figcaption class="intro__aside">' +
-    '<p class="intro__aside-label">' +
-    escapeHtml(content.intro.asideLabel) +
-    "</p>" +
-    '<h3 class="intro__aside-title">' +
-    escapeHtml(content.intro.asideTitle) +
-    "</h3>" +
-    '<p class="intro__aside-text">' +
-    escapeHtml(content.intro.asideText) +
-    "</p>" +
-    "</figcaption>" +
-    "</figure>" +
-    "</div>" +
-    "</div>" +
-    "</div>" +
-    "</section>" +
-    '<section class="section promise" id="promise">' +
-    '<div class="container">' +
-    '<div class="section-head section-head--narrow">' +
-    '<p class="section-label reveal-up">' +
-    escapeHtml(content.promise.eyebrow) +
-    "</p>" +
-    '<h2 class="section-title reveal-up reveal-up--delay">' +
-    escapeHtml(content.promise.title) +
+    escapeHtml(content.about.title) +
     "</h2>" +
     '<p class="section-text reveal-up reveal-up--delay-2">' +
-    escapeHtml(content.promise.description) +
+    escapeHtml(content.about.description) +
     "</p>" +
     "</div>" +
-    '<div class="promise__grid">' +
-    renderPromiseItems(content.promise.items) +
-    "</div>" +
-    "</div>" +
     "</section>" +
-    '<section class="section story" id="story">' +
+    '<section class="section lineup" id="lineup">' +
     '<div class="container">' +
     '<div class="section-head">' +
     '<p class="section-label reveal-up">' +
-    escapeHtml(content.story.eyebrow) +
+    escapeHtml(content.lineup.eyebrow) +
     "</p>" +
     '<h2 class="section-title reveal-up reveal-up--delay">' +
-    escapeHtml(content.story.title) +
+    escapeHtml(content.lineup.title) +
     "</h2>" +
-    '<p class="section-text reveal-up reveal-up--delay-2">' +
-    escapeHtml(content.story.description) +
-    "</p>" +
     "</div>" +
-    '<div class="story__stack">' +
-    renderStoryChapters(content.story.chapters) +
+    '<div class="lineup__stack">' +
+    renderLineupItems(content.lineup.items) +
     "</div>" +
     "</div>" +
     "</section>" +
-    '<section class="section value" id="value">' +
-    '<div class="container">' +
-    '<div class="value__intro">' +
-    '<div class="value__copy">' +
+    '<section class="section news" id="news">' +
+    '<div class="container news__inner">' +
+    '<div class="section-head section-head--compact">' +
     '<p class="section-label reveal-up">' +
-    escapeHtml(content.value.eyebrow) +
+    escapeHtml(content.news.eyebrow) +
     "</p>" +
     '<h2 class="section-title reveal-up reveal-up--delay">' +
-    escapeHtml(content.value.title) +
+    escapeHtml(content.news.title) +
     "</h2>" +
-    '<p class="section-text reveal-up reveal-up--delay-2">' +
-    escapeHtml(content.value.description) +
-    "</p>" +
     "</div>" +
-    '<aside class="value__spotlight reveal-up reveal-up--delay">' +
-    '<span class="value__spotlight-label">' +
-    escapeHtml(content.value.spotlight.label) +
-    "</span>" +
-    '<strong class="value__spotlight-value">' +
-    escapeHtml(content.value.spotlight.value) +
-    "</strong>" +
-    '<p class="value__spotlight-text">' +
-    escapeHtml(content.value.spotlight.text) +
-    "</p>" +
-    "</aside>" +
-    "</div>" +
-    '<div class="value__grid">' +
-    renderValueItems(content.value.items) +
-    "</div>" +
+    '<ul class="news__list">' +
+    renderNewsItems(content.news.items) +
+    "</ul>" +
+    '<a class="text-link news__more reveal-up" href="' +
+    escapeHtml(content.news.moreHref) +
+    '">' +
+    escapeHtml(content.news.moreLabel) +
+    "</a>" +
     "</div>" +
     "</section>" +
-    '<section class="section gallery" id="gallery">' +
+    '<section class="section experience" id="experience">' +
     '<div class="container">' +
     '<div class="section-head">' +
     '<p class="section-label reveal-up">' +
-    escapeHtml(content.gallery.eyebrow) +
+    escapeHtml(content.experience.eyebrow) +
     "</p>" +
     '<h2 class="section-title reveal-up reveal-up--delay">' +
-    escapeHtml(content.gallery.title) +
+    escapeHtml(content.experience.title) +
     "</h2>" +
     '<p class="section-text reveal-up reveal-up--delay-2">' +
-    escapeHtml(content.gallery.description) +
+    escapeHtml(content.experience.description) +
     "</p>" +
     "</div>" +
-    '<div class="gallery__grid">' +
-    renderGalleryItems(content.gallery.items) +
+    '<div class="experience__stack">' +
+    renderExperienceItems(content.experience.items) +
     "</div>" +
     "</div>" +
     "</section>" +
-    '<section class="section cta" id="contact">' +
-    '<div class="container">' +
-    '<div class="cta__panel reveal-up">' +
-    '<p class="section-label">' +
-    escapeHtml(content.cta.eyebrow) +
-    "</p>" +
-    '<h2 class="section-title">' +
-    escapeHtml(content.cta.title) +
-    "</h2>" +
-    '<p class="section-text">' +
-    escapeHtml(content.cta.description) +
-    "</p>" +
-    '<div class="cta__actions">' +
-    renderActions(content.cta.actions) +
-    "</div>" +
-    "</div>" +
+    '<section class="section link-band" id="contact">' +
+    '<div class="container link-band__grid">' +
+    renderLinkTiles(content.links.items) +
     "</div>" +
     "</section>" +
     "</main>" +
     '<footer class="site-footer">' +
-    '<div class="container site-footer__inner">' +
+    '<div class="container site-footer__top">' +
     '<div class="site-footer__brand">' +
     '<span class="brand-mark__ja">' +
     escapeHtml(content.brand.nameJa) +
@@ -429,6 +362,11 @@
     '<p class="site-footer__note">' +
     escapeHtml(content.footer.note) +
     "</p>" +
+    "</div>" +
+    '<div class="container site-footer__bottom">' +
+    '<nav class="site-footer__nav">' +
+    renderNavigation(content.footer.links) +
+    "</nav>" +
     '<p class="site-footer__copyright">' +
     escapeHtml(content.footer.copyright) +
     "</p>" +
@@ -442,14 +380,12 @@
   var hero = app.querySelector(".hero");
   var heroCopy = app.querySelector("[data-hero-copy]");
   var heroEyebrow = app.querySelector("[data-hero-eyebrow]");
-  var heroTitleTop = app.querySelector("[data-hero-title-top]");
-  var heroTitleBottom = app.querySelector("[data-hero-title-bottom]");
+  var heroTitle = app.querySelector("[data-hero-title]");
   var heroDescription = app.querySelector("[data-hero-description]");
-  var heroPrimary = app.querySelector("[data-hero-primary]");
-  var heroSecondary = app.querySelector("[data-hero-secondary]");
+  var heroAction = app.querySelector("[data-hero-action]");
   var currentCounter = app.querySelector("[data-hero-current]");
   var revealItems = Array.prototype.slice.call(
-    app.querySelectorAll(".reveal-up")
+    app.querySelectorAll(".reveal-up, .reveal-side")
   );
   var slideElements = Array.prototype.slice.call(
     app.querySelectorAll(".hero-slide")
@@ -467,15 +403,15 @@
   }
 
   function handleHeader() {
-    header.classList.toggle("is-scrolled", window.scrollY > 20);
+    header.classList.toggle("is-scrolled", window.scrollY > 24);
   }
 
-  function revealHero() {
+  function revealImmediate() {
     revealItems.forEach(function (item, index) {
-      if (item.closest(".hero") || item.closest(".intro")) {
+      if (item.closest(".hero") || item.closest(".about")) {
         window.setTimeout(function () {
           item.classList.add("is-visible");
-        }, 100 + index * 90);
+        }, 90 + index * 80);
       }
     });
   }
@@ -499,12 +435,12 @@
       },
       {
         threshold: 0.18,
-        rootMargin: "0px 0px -6% 0px"
+        rootMargin: "0px 0px -8% 0px"
       }
     );
 
     revealItems.forEach(function (item) {
-      if (!item.closest(".hero") && !item.closest(".intro")) {
+      if (!item.closest(".hero") && !item.closest(".about")) {
         observer.observe(item);
       }
     });
@@ -515,13 +451,10 @@
 
     function applyCopy() {
       heroEyebrow.textContent = slide.eyebrow;
-      heroTitleTop.textContent = slide.titleTop;
-      heroTitleBottom.textContent = slide.titleBottom;
+      heroTitle.innerHTML = escapeHtml(slide.title).replace(/\n/g, "<br />");
       heroDescription.textContent = slide.description;
-      heroPrimary.textContent = slide.primaryLabel;
-      heroPrimary.href = slide.primaryHref;
-      heroSecondary.textContent = slide.secondaryLabel;
-      heroSecondary.href = slide.secondaryHref;
+      heroAction.textContent = slide.actionLabel;
+      heroAction.href = slide.actionHref;
       heroCopy.classList.remove("is-changing");
     }
 
@@ -531,7 +464,7 @@
     }
 
     heroCopy.classList.add("is-changing");
-    copyTimer = window.setTimeout(applyCopy, 220);
+    copyTimer = window.setTimeout(applyCopy, 260);
   }
 
   function setSlide(nextIndex, immediate) {
@@ -605,7 +538,7 @@
   });
 
   handleHeader();
-  revealHero();
+  revealImmediate();
   observeSections();
   setSlide(0, true);
   startAutoplay();
