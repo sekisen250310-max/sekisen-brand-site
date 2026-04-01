@@ -23,7 +23,7 @@
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
+      .replace(/\"/g, "&quot;")
       .replace(/'/g, "&#39;");
   }
 
@@ -151,6 +151,8 @@
         return (
           '<figure class="intro-visual intro-visual--' +
           (index + 1) +
+          ' reveal-mask reveal-mask--sweep intro-visual--delay-' +
+          (index + 1) +
           '">' +
           '<img src="' +
           escapeHtml(item.image) +
@@ -170,8 +172,8 @@
           '<article class="brand-row' +
           (index % 2 === 1 ? " brand-row--reverse" : "") +
           '">' +
-          '<figure class="brand-row__media reveal-side ' +
-          (index % 2 === 1 ? "reveal-side--left" : "reveal-side--right") +
+          '<figure class="brand-row__media reveal-mask ' +
+          (index % 2 === 1 ? "reveal-mask--left" : "reveal-mask--right") +
           '">' +
           '<img src="' +
           escapeHtml(item.image) +
@@ -179,7 +181,7 @@
           escapeHtml(item.alt) +
           '" loading="lazy" />' +
           "</figure>" +
-          '<div class="brand-row__copy reveal-up">' +
+          '<div class="brand-row__copy reveal-up reveal-up--delay">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
           "</p>" +
@@ -234,8 +236,8 @@
           '<article class="service-block' +
           (index % 2 === 1 ? " service-block--reverse" : "") +
           '">' +
-          '<figure class="service-block__media reveal-side ' +
-          (index % 2 === 1 ? "reveal-side--left" : "reveal-side--right") +
+          '<figure class="service-block__media reveal-mask ' +
+          (index % 2 === 1 ? "reveal-mask--left" : "reveal-mask--right") +
           '">' +
           '<img src="' +
           escapeHtml(item.image) +
@@ -243,7 +245,7 @@
           escapeHtml(item.alt) +
           '" loading="lazy" />' +
           "</figure>" +
-          '<div class="service-block__copy reveal-up">' +
+          '<div class="service-block__copy reveal-up reveal-up--delay">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
           "</p>" +
@@ -665,7 +667,7 @@
   var nav = app.querySelector(".site-nav");
   var navToggle = app.querySelector(".nav-toggle");
   var revealItems = Array.prototype.slice.call(
-    app.querySelectorAll(".reveal-up, .reveal-side, .reveal-scale, .reveal-track")
+    app.querySelectorAll(".reveal-up, .reveal-side, .reveal-scale, .reveal-track, .reveal-mask")
   );
   var hero = app.querySelector(".hero");
   var autoplayId = null;
@@ -718,8 +720,8 @@
         });
       },
       {
-        threshold: 0.16,
-        rootMargin: "0px 0px -10% 0px"
+        threshold: 0.1,
+        rootMargin: "0px 0px -6% 0px"
       }
     );
 

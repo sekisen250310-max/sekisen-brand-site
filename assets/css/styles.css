@@ -310,7 +310,7 @@ button {
   inset: 0;
   opacity: 0;
   transform: scale(1.02);
-  transition: opacity 2400ms ease, transform 2400ms ease;
+  transition: opacity 3200ms ease, transform 3200ms ease;
 }
 
 .hero-slide.is-active {
@@ -324,7 +324,7 @@ button {
   object-fit: cover;
   object-position: center;
   transform: scale(1.05);
-  transition: transform 13.6s ease;
+  transition: transform 16.8s ease;
 }
 
 .hero-slide.is-active img {
@@ -355,11 +355,14 @@ button {
 
 .hero__copy {
   max-width: 470px;
+  transition:
+    opacity 680ms ease,
+    transform 980ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .hero__copy.is-changing {
-  opacity: 0.44;
-  transform: translateY(18px);
+  opacity: 0;
+  transform: translateY(12px);
 }
 
 .hero__eyebrow,
@@ -580,6 +583,7 @@ button {
 .intro-visual {
   margin: 0;
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .intro-visual img {
@@ -587,6 +591,14 @@ button {
   height: 100%;
   object-fit: cover;
   box-shadow: var(--shadow-soft);
+}
+
+.intro-visual--delay-2 {
+  transition-delay: 160ms;
+}
+
+.intro-visual--delay-3 {
+  transition-delay: 280ms;
 }
 
 .intro-visual--1 {
@@ -657,6 +669,7 @@ button {
 .service-block__media,
 .detail-row__media {
   margin: 0;
+  overflow: hidden;
 }
 
 .brand-row__media img,
@@ -665,6 +678,7 @@ button {
   aspect-ratio: 5 / 4;
   object-fit: cover;
   box-shadow: var(--shadow-soft);
+  transition: transform 1800ms cubic-bezier(0.2, 0.65, 0.2, 1);
 }
 
 .detail-row__media img {
@@ -672,6 +686,7 @@ button {
   aspect-ratio: 4 / 5;
   object-fit: cover;
   box-shadow: var(--shadow-soft);
+  transition: transform 1800ms cubic-bezier(0.2, 0.65, 0.2, 1);
 }
 
 .brand-row__copy,
@@ -916,28 +931,58 @@ button {
 .reveal-up,
 .reveal-side,
 .reveal-scale,
-.reveal-track {
+.reveal-track,
+.reveal-mask {
   opacity: 0;
+  will-change: transform, opacity, clip-path;
   transition:
-    opacity 920ms ease,
-    transform 920ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    opacity 1180ms ease,
+    transform 1180ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .reveal-up {
-  transform: translateY(26px);
+  transform: translateY(18px);
 }
 
 .reveal-side--left {
-  transform: translateX(-38px);
+  transform: translateX(-18px);
 }
 
 .reveal-side--right,
 .reveal-track {
-  transform: translateX(42px);
+  transform: translateX(20px);
 }
 
 .reveal-scale {
-  transform: scale(0.975);
+  transform: scale(0.988);
+}
+
+.reveal-mask {
+  transform: translateY(18px);
+  clip-path: inset(0 0 100% 0);
+  transition:
+    opacity 1180ms ease,
+    transform 1380ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    clip-path 1380ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal-mask img {
+  transform: scale(1.06);
+}
+
+.reveal-mask--right {
+  transform: translateX(22px);
+  clip-path: inset(0 100% 0 0);
+}
+
+.reveal-mask--left {
+  transform: translateX(-22px);
+  clip-path: inset(0 0 0 100%);
+}
+
+.reveal-mask--sweep {
+  transform: translateX(26px);
+  clip-path: inset(0 100% 0 0);
 }
 
 .reveal-up--delay {
@@ -951,9 +996,18 @@ button {
 .reveal-up.is-visible,
 .reveal-side.is-visible,
 .reveal-scale.is-visible,
-.reveal-track.is-visible {
+.reveal-track.is-visible,
+.reveal-mask.is-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
+}
+
+.reveal-mask.is-visible {
+  clip-path: inset(0 0 0 0);
+}
+
+.reveal-mask.is-visible img {
+  transform: scale(1);
 }
 
 @media (max-width: 1200px) {
