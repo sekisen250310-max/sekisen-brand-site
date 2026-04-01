@@ -1,0 +1,42 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="144" y1="104" x2="1462" y2="1138" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDF8" />
+      <stop offset="0.5" stop-color="#F3E6D7" />
+      <stop offset="1" stop-color="#D8BEA8" />
+    </linearGradient>
+    <linearGradient id="tomato" x1="1065" y1="294" x2="1288" y2="914" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D94B3D" />
+      <stop offset="0.55" stop-color="#A61F22" />
+      <stop offset="1" stop-color="#651217" />
+    </linearGradient>
+    <linearGradient id="plinth" x1="202" y1="146" x2="812" y2="1052" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDF9" />
+      <stop offset="1" stop-color="#E9D7C4" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1150 274) rotate(90) scale(214)">
+      <stop stop-color="#FFF7ED" stop-opacity="0.92" />
+      <stop offset="1" stop-color="#FFF7ED" stop-opacity="0" />
+    </radialGradient>
+    <filter id="noise" x="0" y="0" width="1600" height="1200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="2" seed="21" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.05" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#bg)" />
+  <rect width="1600" height="1200" fill="url(#glow)" />
+  <rect x="176" y="124" width="662" height="958" rx="34" fill="url(#plinth)" />
+  <circle cx="1158" cy="602" r="296" fill="url(#tomato)" />
+  <circle cx="1011" cy="420" r="44" fill="#FCE6D7" fill-opacity="0.95" />
+  <circle cx="723" cy="844" r="114" fill="#F2D6BF" fill-opacity="0.7" />
+  <path d="M1115 296C1141 248 1185 222 1228 208C1271 194 1310 196 1337 203" stroke="#6E7B4C" stroke-width="12" stroke-linecap="round" />
+  <path d="M1077 344C1126 377 1166 388 1216 392" stroke="#EFE1D5" stroke-width="3" stroke-opacity="0.78" />
+  <path d="M246 836C524 728 738 682 972 688C1206 693 1402 768 1600 920V1200H0V956C86 930 162 882 246 836Z" fill="#1F1613" fill-opacity="0.12" />
+  <path d="M269 268H760" stroke="#E7D6C5" stroke-width="2" />
+  <path d="M269 340H760" stroke="#E7D6C5" stroke-width="2" stroke-opacity="0.6" />
+  <path d="M1168 182C1288 260 1358 318 1456 436" stroke="#D8B18E" stroke-width="2" />
+  <rect width="1600" height="1200" fill="#FFFFFF" filter="url(#noise)" opacity="0.28" />
+</svg>

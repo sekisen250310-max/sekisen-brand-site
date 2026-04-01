@@ -1,0 +1,44 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="146" y1="98" x2="1462" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDF9" />
+      <stop offset="0.54" stop-color="#F1E4D8" />
+      <stop offset="1" stop-color="#DABAA3" />
+    </linearGradient>
+    <linearGradient id="plinth" x1="196" y1="146" x2="826" y2="1042" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDFB" />
+      <stop offset="1" stop-color="#EAD8C7" />
+    </linearGradient>
+    <linearGradient id="tomato" x1="1091" y1="296" x2="1296" y2="878" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C73833" />
+      <stop offset="0.52" stop-color="#8D1C21" />
+      <stop offset="1" stop-color="#571216" />
+    </linearGradient>
+    <linearGradient id="glass" x1="771" y1="218" x2="1095" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.74" />
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.08" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1144 276) rotate(90) scale(274)">
+      <stop stop-color="#FFF8EF" stop-opacity="0.96" />
+      <stop offset="1" stop-color="#FFF8EF" stop-opacity="0" />
+    </radialGradient>
+    <filter id="noise" x="0" y="0" width="1600" height="1200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.74" numOctaves="2" seed="14" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.05" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#bg)" />
+  <rect width="1600" height="1200" fill="url(#glow)" />
+  <rect x="196" y="124" width="638" height="958" rx="34" fill="url(#plinth)" />
+  <rect x="756" y="224" width="286" height="532" rx="22" fill="url(#glass)" stroke="#FFFFFF" stroke-opacity="0.42" />
+  <circle cx="1162" cy="644" r="274" fill="url(#tomato)" />
+  <circle cx="1068" cy="468" r="42" fill="#FCDCCB" />
+  <path d="M1142 334C1172 280 1218 250 1260 236C1302 222 1342 225 1368 236" stroke="#667044" stroke-width="12" stroke-linecap="round" />
+  <path d="M1124 380C1190 404 1235 414 1304 416" stroke="#F2DED1" stroke-width="3" stroke-opacity="0.8" />
+  <path d="M294 852C496 736 624 688 846 654" stroke="#E9D7C7" stroke-width="2" />
+  <path d="M0 1004C241 930 468 902 756 908C1070 914 1354 986 1600 1114V1200H0V1004Z" fill="#181311" fill-opacity="0.1" />
+  <rect width="1600" height="1200" fill="#FFFFFF" filter="url(#noise)" opacity="0.3" />
+</svg>
