@@ -42,7 +42,7 @@ window.SEKISEN_CONTENT = {
   },
   home: {
     hero: {
-      interval: 13600,
+      interval: 13800,
       slides: [
         {
           image: "./assets/images/hero-01.svg",
@@ -51,79 +51,79 @@ window.SEKISEN_CONTENT = {
           title: "一粒の印象を、\n静かな品格へ。",
           text:
             "味わいの説得力を、誇張ではなく余白と所作で伝えるプレミアムトマトブランドです。",
-          actionLabel: "ブランドを知る",
+          actionLabel: "石戦とは",
           actionHref: "./about.html"
         },
         {
           image: "./assets/images/hero-02.svg",
           alt: "SEKISEN gift visual",
-          eyebrow: "Gift & Daily",
+          eyebrow: "Gift Selection",
           title: "贈るための美しさも、\n味わいの一部。",
           text:
-            "日常にも贈答にも自然に馴染む距離感を持たせることで、石戦らしい高級感を整えています。",
-          actionLabel: "ラインを見る",
+            "食卓用としての魅力だけでなく、大切な相手へ渡したくなる存在感まで含めて整えています。",
+          actionLabel: "取扱ブランド",
           actionHref: "./lineup.html"
         },
         {
           image: "./assets/images/hero-03.svg",
           alt: "SEKISEN experience visual",
-          eyebrow: "Experience",
+          eyebrow: "Quality",
           title: "食べる前から、\n余韻は始まっている。",
           text:
             "香り、みずみずしさ、箱を開けた瞬間の空気まで。石戦の価値はひと口の前後に広がります。",
-          actionLabel: "品質を知る",
+          actionLabel: "品質を見る",
           actionHref: "./experience.html"
         }
       ]
     },
-    about: {
+    intro: {
       eyebrow: "石戦とは",
-      visualLead: "商品の気配が、先に届く。",
+      visualLead: "ブランドの世界観を、まずは静かに見せる。",
       visuals: [
         {
           image: "./assets/images/hero-01.svg",
-          alt: "SEKISEN hero product visual 01"
+          alt: "SEKISEN intro visual 01"
         },
         {
           image: "./assets/images/hero-02.svg",
-          alt: "SEKISEN hero product visual 02"
+          alt: "SEKISEN intro visual 02"
         },
         {
           image: "./assets/images/hero-03.svg",
-          alt: "SEKISEN hero product visual 03"
+          alt: "SEKISEN intro visual 03"
         }
       ],
-      title: "ひと粒の説得力を、ブランドの品格へ。",
+      title: "味わいだけでなく、選ぶ理由まで整えるブランドへ。",
       lead:
         "石戦は、果実そのものの魅力だけでなく、選ぶ瞬間から食べ終えたあとまでの印象を整えるプレミアムトマトブランドです。",
       text:
-        "糖度の高さだけでなく、香り、みずみずしさ、口当たり、箱を開けたときの空気まで含めて価値を考える。石戦は、農業としての誠実さを保ちながら、高級ブランドとしての見え方を丁寧に設計します。"
+        "糖度の高さだけでなく、香り、みずみずしさ、口当たり、箱を開けたときの空気まで含めて価値を考える。農業としての誠実さを保ちながら、高級ブランドとしての見え方を丁寧に設計しています。"
     },
-    brands: {
-      eyebrow: "Brands",
-      title: "石戦の価値を、ふたつのブランドラインで届ける。",
+    values: {
+      eyebrow: "Brand / Product Value",
+      title: "石戦の価値を、用途ごとに静かに分けて届ける。",
       text:
-        "贈答のために選ぶか、日々の食卓へ迎えるか。石戦では、その違いを静かに分けて案内します。",
+        "贈答のために選ぶのか、日々の食卓へ迎えるのか。その違いに合わせて、石戦では価値の見せ方を整理しています。",
       items: [
         {
           label: "SEKISEN RESERVE",
-          title: "贈る所作まで美しく整える、石戦のシグネチャーライン。",
+          title: "特別な一箱としての説得力を整える、石戦のシグネチャーライン。",
           text:
-            "箱を開けた瞬間の印象、並んだ姿の美しさ、余韻の残り方まで含めて磨き上げる、石戦の象徴的なラインです。",
+            "箱を開けた瞬間の印象、並んだ姿の美しさ、余韻の残り方まで含めて磨き上げる、贈答向けの中心ラインです。",
           image: "./assets/images/hero-01.svg",
           alt: "SEKISEN reserve visual",
           href: "./lineup.html",
-          action: "贈答向けライン"
+          action: "贈答向けラインを見る"
         },
         {
           label: "SEKISEN COLLECTION",
-          title: "日々の食卓へ、上質を自然に持ち込むもうひとつの届け方。",
+          title: "日々の食卓へ、上質を自然に持ち込むもうひとつの入口。",
           text:
-            "贈答性を保ちながらも、暮らしの中に無理なく馴染む距離へ調整したラインとして設計しています。",
+            "贈答性を保ちながらも、暮らしの中に無理なく馴染む距離へ整えたラインです。日常のための上質として設計しています。",
           image: "./assets/images/hero-02.svg",
           alt: "SEKISEN collection visual",
           href: "./lineup.html",
-          action: "日常向けライン"
+          action: "日常向けラインを見る"
         }
       ]
     },
@@ -153,45 +153,66 @@ window.SEKISEN_CONTENT = {
       moreLabel: "VIEW MORE",
       moreHref: "./news.html"
     },
-    service: {
-      eyebrow: "Business / Quality",
-      title: "育てることと届けることを分けずに、石戦の事業は設計される。",
+    quality: {
+      eyebrow: "Quality / Commitment / Service",
+      title: "育て方、見極め方、届け方までが、石戦の品質になる。",
       text:
-        "栽培環境、選別、贈答性、販売導線まで切り離さずに設計することで、石戦らしい体験が完成します。",
-      items: [
+        "栽培環境、味わいの設計、選別、贈答性、販売導線までを切り離さずに整えることで、石戦らしい体験が生まれます。",
+      pillars: [
         {
-          label: "Quality Design",
-          title: "土・栽培・選別を、味わいの輪郭として整える。",
+          label: "Cultivation",
+          title: "土と環境を読む",
           text:
-            "土づくり、栽培環境、水分と食感、収穫タイミング、選別。そのすべてを、ひと口目の印象につながる設計として捉えています。",
-          image: "./assets/images/hero-03.svg",
-          alt: "SEKISEN quality design visual"
+            "果実の輪郭が過不足なく立ち上がるように、土や空気、水分の状態を細かく見て整えます。"
         },
         {
-          label: "Store / Delivery",
-          title: "オンラインと贈答の接点まで、上質に設計する。",
+          label: "Taste Design",
+          title: "味と食感を設計する",
           text:
-            "食べる前の期待、箱を開けた瞬間の静かな高揚感、渡す場面での所作。届け方まで含めて石戦の価値にしています。",
-          image: "./assets/images/hero-01.svg",
-          alt: "SEKISEN delivery visual"
+            "甘さだけではなく、みずみずしさ、厚み、口当たりの美しさまで含めて品質を考えます。"
+        },
+        {
+          label: "Delivery",
+          title: "贈る体験まで整える",
+          text:
+            "箱を開けた瞬間の印象や、渡す場面での所作まで含めて石戦の価値として設計します。"
         }
       ],
-      points: [
-        { number: "01", title: "土と環境" },
-        { number: "02", title: "みずみずしさと食感" },
-        { number: "03", title: "収穫タイミング" },
-        { number: "04", title: "選別と箱詰め" },
-        { number: "05", title: "贈答性" }
+      stories: [
+        {
+          label: "01 Soil & Climate",
+          title: "土と環境の整い方が、味の輪郭を支える。",
+          text:
+            "土づくり、光、空気、水分の細かな差を読みながら、果実の印象が美しく立ち上がる状態へ整えます。",
+          image: "./assets/images/hero-03.svg",
+          alt: "SEKISEN soil and climate visual"
+        },
+        {
+          label: "02 Texture & Timing",
+          title: "水分と食感、収穫の見極めで印象が変わる。",
+          text:
+            "みずみずしさと密度の両立を意識しながら、もっとも美しく届くタイミングを見極めて収穫します。",
+          image: "./assets/images/hero-02.svg",
+          alt: "SEKISEN texture and timing visual"
+        },
+        {
+          label: "03 Selection & Gift",
+          title: "選別と箱詰めで、ブランド体験の最後を整える。",
+          text:
+            "並んだ姿の美しさ、箱を開けたときの静かな高揚感、贈る場面での説得力まで含めて石戦らしさを整えます。",
+          image: "./assets/images/hero-01.svg",
+          alt: "SEKISEN selection and gift visual"
+        }
       ]
     },
     links: {
-      eyebrow: "Store / Online Shop / Contact",
-      title: "購入やご相談につながる導線を、最後まで上質に整理する。",
+      eyebrow: "Store / Shop / Online Shop",
+      title: "購入やご相談につながる入口を、最後まで上質に整理する。",
       items: [
         {
           label: "STORE",
           title: "取扱ブランドを見る",
-          text: "石戦のブランド構成や販売の考え方を確認するための入口です。",
+          text: "石戦のライン構成や商品価値の違いを確認するための入口です。",
           href: "./lineup.html"
         },
         {
@@ -203,7 +224,7 @@ window.SEKISEN_CONTENT = {
         {
           label: "CONTACT",
           title: "お問い合わせ",
-          text: "導入や掲載、取材などのご相談はこちらです。",
+          text: "導入や掲載、取材などのご相談はこちらからお送りいただけます。",
           href: "./contact.html"
         }
       ]

@@ -23,7 +23,7 @@
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
-      .replace(/\"/g, "&quot;")
+      .replace(/"/g, "&quot;")
       .replace(/'/g, "&#39;");
   }
 
@@ -165,14 +165,16 @@
       .join("");
   }
 
-  function renderBrandRows(items) {
+  function renderValueCards(items) {
     return items
       .map(function (item, index) {
         return (
-          '<article class="brand-row' +
-          (index % 2 === 1 ? " brand-row--reverse" : "") +
+          '<a class="value-card reveal-up' +
+          (index > 0 ? " reveal-up--delay" : "") +
+          '" href="' +
+          escapeHtml(item.href) +
           '">' +
-          '<figure class="brand-row__media reveal-mask ' +
+          '<figure class="value-card__media reveal-mask ' +
           (index % 2 === 1 ? "reveal-mask--left" : "reveal-mask--right") +
           '">' +
           '<img src="' +
@@ -181,23 +183,21 @@
           escapeHtml(item.alt) +
           '" loading="lazy" />' +
           "</figure>" +
-          '<div class="brand-row__copy reveal-up reveal-up--delay">' +
+          '<div class="value-card__copy">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
           "</p>" +
-          '<h3 class="brand-row__title">' +
+          '<h3 class="value-card__title">' +
           escapeHtml(item.title) +
           "</h3>" +
-          '<p class="brand-row__text">' +
+          '<p class="value-card__text">' +
           escapeHtml(item.text) +
           "</p>" +
-          '<a class="text-link" href="' +
-          escapeHtml(item.href) +
-          '">' +
+          '<span class="value-card__action">' +
           escapeHtml(item.action) +
-          "</a>" +
+          "</span>" +
           "</div>" +
-          "</article>"
+          "</a>"
         );
       })
       .join("");
@@ -229,14 +229,36 @@
       .join("");
   }
 
-  function renderServiceItems(items) {
+  function renderQualityPillars(items) {
     return items
       .map(function (item, index) {
         return (
-          '<article class="service-block' +
-          (index % 2 === 1 ? " service-block--reverse" : "") +
+          '<article class="pillar-card reveal-up' +
+          (index > 0 ? " reveal-up--delay" : "") +
           '">' +
-          '<figure class="service-block__media reveal-mask ' +
+          '<p class="pillar-card__label">' +
+          escapeHtml(item.label) +
+          "</p>" +
+          '<h3 class="pillar-card__title">' +
+          escapeHtml(item.title) +
+          "</h3>" +
+          '<p class="pillar-card__text">' +
+          escapeHtml(item.text) +
+          "</p>" +
+          "</article>"
+        );
+      })
+      .join("");
+  }
+
+  function renderQualityStories(items) {
+    return items
+      .map(function (item, index) {
+        return (
+          '<article class="quality-story' +
+          (index % 2 === 1 ? " quality-story--reverse" : "") +
+          '">' +
+          '<figure class="quality-story__media reveal-mask ' +
           (index % 2 === 1 ? "reveal-mask--left" : "reveal-mask--right") +
           '">' +
           '<img src="' +
@@ -245,14 +267,14 @@
           escapeHtml(item.alt) +
           '" loading="lazy" />' +
           "</figure>" +
-          '<div class="service-block__copy reveal-up reveal-up--delay">' +
+          '<div class="quality-story__copy reveal-up reveal-up--delay">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
           "</p>" +
-          '<h3 class="service-block__title">' +
+          '<h3 class="quality-story__title">' +
           escapeHtml(item.title) +
           "</h3>" +
-          '<p class="service-block__text">' +
+          '<p class="quality-story__text">' +
           escapeHtml(item.text) +
           "</p>" +
           "</div>" +
@@ -262,41 +284,22 @@
       .join("");
   }
 
-  function renderServicePoints(items) {
+  function renderShopLinks(items) {
     return items
       .map(function (item, index) {
         return (
-          '<article class="service-point reveal-up' +
-          (index > 1 ? " reveal-up--delay" : "") +
-          '">' +
-          '<span class="service-point__number">' +
-          escapeHtml(item.number) +
-          "</span>" +
-          '<h3 class="service-point__title">' +
-          escapeHtml(item.title) +
-          "</h3>" +
-          "</article>"
-        );
-      })
-      .join("");
-  }
-
-  function renderBottomLinks(items) {
-    return items
-      .map(function (item, index) {
-        return (
-          '<a class="bottom-link reveal-up' +
+          '<a class="shop-link reveal-up' +
           (index > 1 ? " reveal-up--delay" : "") +
           '" href="' +
           escapeHtml(item.href) +
           '">' +
-          '<span class="bottom-link__label">' +
+          '<span class="shop-link__label">' +
           escapeHtml(item.label) +
           "</span>" +
-          '<strong class="bottom-link__title">' +
+          '<strong class="shop-link__title">' +
           escapeHtml(item.title) +
           "</strong>" +
-          '<p class="bottom-link__text">' +
+          '<p class="shop-link__text">' +
           escapeHtml(item.text) +
           "</p>" +
           "</a>"
@@ -437,53 +440,53 @@
       '<div class="hero__dots">' +
       renderHeroDots(home.hero.slides) +
       "</div>" +
-      '<a class="hero__scroll" href="#about">Scroll</a>' +
+      '<a class="hero__scroll" href="#intro">Scroll</a>' +
       "</div>" +
       "</div>" +
       "</section>" +
-      '<section class="section about-stage" id="about">' +
-      '<div class="container">' +
-      '<div class="about-stage__visuals-shell reveal-rise reveal-rise--hero">' +
-      '<div class="about-stage__visuals">' +
-      '<p class="about-stage__lead">' +
-      escapeHtml(home.about.visualLead) +
+      '<section class="section intro-stage" id="intro">' +
+      '<div class="container intro-stage__shell">' +
+      '<div class="intro-stage__visual-shell reveal-rise reveal-rise--hero">' +
+      '<div class="intro-stage__visual-panel">' +
+      '<p class="intro-stage__lead">' +
+      escapeHtml(home.intro.visualLead) +
       "</p>" +
-      '<div class="about-stage__gallery">' +
-      renderIntroVisuals(home.about.visuals) +
+      '<div class="intro-stage__gallery">' +
+      renderIntroVisuals(home.intro.visuals) +
       "</div>" +
       "</div>" +
       "</div>" +
-      '<div class="about-stage__copy">' +
+      '<div class="intro-stage__copy">' +
       '<p class="section-kicker reveal-up">' +
-      escapeHtml(home.about.eyebrow) +
+      escapeHtml(home.intro.eyebrow) +
       "</p>" +
       '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.about.title) +
+      escapeHtml(home.intro.title) +
       "</h2>" +
       '<p class="section-lead reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.about.lead) +
+      escapeHtml(home.intro.lead) +
       "</p>" +
       '<p class="section-text reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.about.text) +
+      escapeHtml(home.intro.text) +
       "</p>" +
       "</div>" +
       "</div>" +
       "</section>" +
-      '<section class="section brand-section">' +
+      '<section class="section value-stage">' +
       '<div class="container">' +
       '<div class="section-head section-head--compact">' +
       '<p class="section-kicker reveal-up">' +
-      escapeHtml(home.brands.eyebrow) +
+      escapeHtml(home.values.eyebrow) +
       "</p>" +
       '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.brands.title) +
+      escapeHtml(home.values.title) +
       "</h2>" +
       '<p class="section-text reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.brands.text) +
+      escapeHtml(home.values.text) +
       "</p>" +
       "</div>" +
-      '<div class="brand-section__stack">' +
-      renderBrandRows(home.brands.items) +
+      '<div class="value-stage__grid">' +
+      renderValueCards(home.values.items) +
       "</div>" +
       "</div>" +
       "</section>" +
@@ -507,28 +510,28 @@
       "</ul>" +
       "</div>" +
       "</section>" +
-      '<section class="section service-section">' +
+      '<section class="section quality-stage">' +
       '<div class="container">' +
       '<div class="section-head section-head--compact">' +
       '<p class="section-kicker reveal-up">' +
-      escapeHtml(home.service.eyebrow) +
+      escapeHtml(home.quality.eyebrow) +
       "</p>" +
       '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.service.title) +
+      escapeHtml(home.quality.title) +
       "</h2>" +
       '<p class="section-text reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.service.text) +
+      escapeHtml(home.quality.text) +
       "</p>" +
       "</div>" +
-      '<div class="service-section__stack">' +
-      renderServiceItems(home.service.items) +
+      '<div class="quality-stage__pillars">' +
+      renderQualityPillars(home.quality.pillars) +
       "</div>" +
-      '<div class="service-points">' +
-      renderServicePoints(home.service.points) +
+      '<div class="quality-stage__stories">' +
+      renderQualityStories(home.quality.stories) +
       "</div>" +
       "</div>" +
       "</section>" +
-      '<section class="section links-section">' +
+      '<section class="section shop-stage">' +
       '<div class="container">' +
       '<div class="section-head section-head--compact">' +
       '<p class="section-kicker reveal-up">' +
@@ -538,8 +541,8 @@
       escapeHtml(home.links.title) +
       "</h2>" +
       "</div>" +
-      '<div class="links-section__grid">' +
-      renderBottomLinks(home.links.items) +
+      '<div class="shop-stage__grid">' +
+      renderShopLinks(home.links.items) +
       "</div>" +
       "</div>" +
       "</section>" +

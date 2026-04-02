@@ -371,8 +371,11 @@ button {
 .news-article__meta,
 .subhero__side-label,
 .about-stage__lead,
+.intro-stage__lead,
 .bottom-link__label,
-.service-point__number {
+.shop-link__label,
+.service-point__number,
+.pillar-card__label {
   margin: 0 0 16px;
   font-size: 0.64rem;
   letter-spacing: 0.22em;
@@ -384,6 +387,10 @@ button {
 .section-title,
 .subhero__title,
 .service-block__title,
+.value-card__title,
+.quality-story__title,
+.shop-link__title,
+.pillar-card__title,
 .detail-row__title,
 .bottom-link__title,
 .service-point__title,
@@ -404,6 +411,10 @@ button {
 .section-text,
 .section-lead,
 .service-block__text,
+.value-card__text,
+.quality-story__text,
+.shop-link__text,
+.pillar-card__text,
 .detail-row__text,
 .bottom-link__text,
 .contact-panel__text,
@@ -548,23 +559,27 @@ button {
   margin: 18px 0 0;
 }
 
-.about-stage {
+.about-stage,
+.intro-stage {
   margin-top: 0;
   padding-top: 0;
 }
 
-.about-stage::before {
+.about-stage::before,
+.intro-stage::before {
   display: none;
 }
 
-.about-stage__visuals-shell {
+.about-stage__visuals-shell,
+.intro-stage__visual-shell {
   position: relative;
   z-index: 3;
   max-width: 1180px;
   margin: -206px auto 0;
 }
 
-.about-stage__visuals-shell::before {
+.about-stage__visuals-shell::before,
+.intro-stage__visual-shell::before {
   content: "";
   position: absolute;
   inset: auto 34px -26px;
@@ -575,7 +590,8 @@ button {
   pointer-events: none;
 }
 
-.about-stage__visuals {
+.about-stage__visuals,
+.intro-stage__visual-panel {
   position: relative;
   z-index: 2;
   overflow: hidden;
@@ -586,11 +602,13 @@ button {
   box-shadow: 0 30px 76px rgba(24, 20, 18, 0.1);
 }
 
-.about-stage__lead {
+.about-stage__lead,
+.intro-stage__lead {
   margin-bottom: 24px;
 }
 
-.about-stage__gallery {
+.about-stage__gallery,
+.intro-stage__gallery {
   display: grid;
   grid-template-columns: 2.1fr 1fr 1fr;
   gap: 18px;
@@ -631,9 +649,152 @@ button {
   height: min(420px, 31vw);
 }
 
-.about-stage__copy {
+.about-stage__copy,
+.intro-stage__copy {
   max-width: 760px;
   padding: 88px 0 0;
+}
+
+.value-stage__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  margin-top: 68px;
+}
+
+.value-card {
+  display: grid;
+  gap: 26px;
+}
+
+.value-card__media,
+.quality-story__media {
+  margin: 0;
+  overflow: hidden;
+}
+
+.value-card__media img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
+  transition: transform 1800ms cubic-bezier(0.2, 0.65, 0.2, 1);
+}
+
+.value-card__copy {
+  max-width: 470px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.value-card__title,
+.quality-story__title,
+.shop-link__title,
+.pillar-card__title {
+  margin-top: 16px;
+  font-size: 1.82rem;
+  line-height: 1.24;
+}
+
+.value-card__text,
+.quality-story__text,
+.shop-link__text,
+.pillar-card__text {
+  margin: 16px 0 0;
+}
+
+.value-card__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  color: rgba(24, 20, 18, 0.66);
+}
+
+.value-card__action::after {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.4;
+}
+
+.quality-stage {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(247, 242, 236, 0.42));
+}
+
+.quality-stage__pillars {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+  margin-top: 56px;
+}
+
+.pillar-card {
+  padding-top: 20px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.pillar-card__title {
+  font-size: 1.22rem;
+  line-height: 1.55;
+}
+
+.quality-stage__stories {
+  margin-top: 86px;
+}
+
+.quality-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 104px;
+  align-items: center;
+}
+
+.quality-story + .quality-story {
+  margin-top: 138px;
+}
+
+.quality-story--reverse {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+
+.quality-story--reverse .quality-story__media {
+  order: 2;
+}
+
+.quality-story--reverse .quality-story__copy {
+  order: 1;
+}
+
+.quality-story__media img {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
+  transition: transform 1800ms cubic-bezier(0.2, 0.65, 0.2, 1);
+}
+
+.quality-story__copy {
+  max-width: 430px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.shop-stage__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 62px;
+}
+
+.shop-link {
+  display: grid;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-strong);
 }
 
 .service-points,
@@ -1053,11 +1214,14 @@ button {
   }
 
   .about-stage__gallery,
+  .intro-stage__gallery,
   .news-section__layout,
   .brand-row,
   .brand-row--reverse,
   .service-block,
   .service-block--reverse,
+  .quality-story,
+  .quality-story--reverse,
   .detail-row,
   .detail-row--reverse,
   .subhero__layout {
@@ -1073,7 +1237,14 @@ button {
     order: initial;
   }
 
+  .quality-story--reverse .quality-story__media,
+  .quality-story--reverse .quality-story__copy {
+    order: initial;
+  }
+
   .service-points,
+  .quality-stage__pillars,
+  .shop-stage__grid,
   .links-section__grid,
   .contact-page__grid {
     grid-template-columns: 1fr 1fr;
@@ -1278,6 +1449,36 @@ button {
     padding-top: 34px;
   }
 
+  .intro-stage {
+    margin-top: 0;
+  }
+
+  .intro-stage__visual-shell {
+    margin-top: -54px;
+  }
+
+  .intro-stage__visual-shell::before {
+    inset: auto 18px -18px;
+    height: 42px;
+    filter: blur(16px);
+  }
+
+  .intro-stage__visual-panel {
+    padding: 24px 20px 26px;
+  }
+
+  .intro-stage__lead {
+    margin-bottom: 18px;
+  }
+
+  .intro-stage__gallery {
+    gap: 14px;
+  }
+
+  .intro-stage__copy {
+    padding-top: 34px;
+  }
+
   .news-list__link {
     grid-template-columns: 1fr;
     gap: 10px;
@@ -1285,11 +1486,15 @@ button {
 
   .brand-row + .brand-row,
   .service-block + .service-block,
+  .quality-story + .quality-story,
   .detail-row + .detail-row {
     margin-top: 74px;
   }
 
   .service-points,
+  .value-stage__grid,
+  .quality-stage__pillars,
+  .shop-stage__grid,
   .links-section__grid,
   .contact-page__grid {
     grid-template-columns: 1fr;
@@ -1297,6 +1502,10 @@ button {
 
   .brand-row__title,
   .service-block__title,
+  .value-card__title,
+  .quality-story__title,
+  .shop-link__title,
+  .pillar-card__title,
   .detail-row__title,
   .bottom-link__title,
   .service-point__title,
