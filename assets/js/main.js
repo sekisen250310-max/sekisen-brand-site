@@ -443,12 +443,14 @@
       "</section>" +
       '<section class="section about-stage" id="about">' +
       '<div class="container">' +
-      '<div class="about-stage__visuals reveal-track">' +
+      '<div class="about-stage__visuals-shell reveal-rise reveal-rise--hero">' +
+      '<div class="about-stage__visuals">' +
       '<p class="about-stage__lead">' +
       escapeHtml(home.about.visualLead) +
       "</p>" +
       '<div class="about-stage__gallery">' +
       renderIntroVisuals(home.about.visuals) +
+      "</div>" +
       "</div>" +
       "</div>" +
       '<div class="about-stage__copy">' +
@@ -667,7 +669,7 @@
   var nav = app.querySelector(".site-nav");
   var navToggle = app.querySelector(".nav-toggle");
   var revealItems = Array.prototype.slice.call(
-    app.querySelectorAll(".reveal-up, .reveal-side, .reveal-scale, .reveal-track, .reveal-mask")
+    app.querySelectorAll(".reveal-up, .reveal-side, .reveal-scale, .reveal-track, .reveal-mask, .reveal-rise")
   );
   var hero = app.querySelector(".hero");
   var autoplayId = null;
@@ -694,7 +696,11 @@
 
   function revealImmediate() {
     revealItems.forEach(function (item, index) {
-      if (item.closest(".hero") || item.closest(".subhero")) {
+      if (
+        item.closest(".hero") ||
+        item.closest(".subhero") ||
+        item.classList.contains("reveal-rise--hero")
+      ) {
         window.setTimeout(function () {
           item.classList.add("is-visible");
         }, 80 + index * 70);
