@@ -162,12 +162,28 @@
       .join("");
   }
 
+  function getRevealSlideDelayClass(index) {
+    if (index === 1) {
+      return " reveal-slide--delay";
+    }
+
+    if (index === 2) {
+      return " reveal-slide--delay-2";
+    }
+
+    if (index >= 3) {
+      return " reveal-slide--delay-3";
+    }
+
+    return "";
+  }
+
   function renderStorySteps(items) {
     return items
       .map(function (item, index) {
         return (
-          '<article class="story-step reveal-sheet' +
-          (index === 1 ? " reveal-sheet--delay" : index === 2 ? " reveal-sheet--delay-2" : "") +
+          '<article class="story-step reveal-slide' +
+          getRevealSlideDelayClass(index) +
           '">' +
           '<figure class="story-step__media">' +
           '<img src="' +
@@ -215,8 +231,8 @@
         return (
           '<figure class="product-visual product-visual--' +
           (index === 0 ? "main" : "secondary") +
-          " reveal-sheet reveal-sheet--warm" +
-          (index === 1 ? " reveal-sheet--delay" : "") +
+          " reveal-slide reveal-slide--media" +
+          getRevealSlideDelayClass(index) +
           '">' +
           '<img src="' +
           escapeHtml(item.image) +
@@ -236,8 +252,8 @@
     return items
       .map(function (item, index) {
         return (
-          '<article class="product-highlight reveal-up' +
-          (index > 0 ? " reveal-up--delay" : "") +
+          '<article class="product-highlight reveal-slide' +
+          getRevealSlideDelayClass(index) +
           '">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
@@ -256,9 +272,11 @@
 
   function renderProductComparisonRows(items) {
     return items
-      .map(function (item) {
+      .map(function (item, index) {
         return (
-          '<div class="product-compare__row reveal-up">' +
+          '<div class="product-compare__row reveal-slide' +
+          getRevealSlideDelayClass(index) +
+          '">' +
           '<div class="product-compare__cell product-compare__cell--label">' +
           escapeHtml(item.label) +
           "</div>" +
@@ -309,8 +327,8 @@
     return items
       .map(function (item, index) {
         return (
-          '<article class="reason-item reveal-up' +
-          (index > 0 ? " reveal-up--delay" : "") +
+          '<article class="reason-item reveal-slide' +
+          getRevealSlideDelayClass(index) +
           '">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
@@ -331,8 +349,8 @@
     return items
       .map(function (item, index) {
         return (
-          '<article class="trust-stat reveal-up' +
-          (index > 0 ? " reveal-up--delay" : "") +
+          '<article class="trust-stat reveal-slide' +
+          getRevealSlideDelayClass(index) +
           '">' +
           '<strong class="trust-stat__value">' +
           escapeHtml(item.value) +
@@ -353,8 +371,8 @@
     return items
       .map(function (item, index) {
         return (
-          '<article class="trust-voice reveal-up' +
-          (index > 0 ? " reveal-up--delay" : "") +
+          '<article class="trust-voice reveal-slide' +
+          getRevealSlideDelayClass(index) +
           '">' +
           '<h3 class="trust-voice__title">' +
           escapeHtml(item.title) +
@@ -375,8 +393,8 @@
     return items
       .map(function (item, index) {
         return (
-          '<article class="limited-item reveal-up' +
-          (index > 0 ? " reveal-up--delay" : "") +
+          '<article class="limited-item reveal-slide' +
+          getRevealSlideDelayClass(index) +
           '">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
@@ -392,9 +410,11 @@
 
   function renderNewsItems(items) {
     return items
-      .map(function (item) {
+      .map(function (item, index) {
         return (
-          '<li class="news-list__item reveal-up">' +
+          '<li class="news-list__item reveal-slide' +
+          getRevealSlideDelayClass(index) +
+          '">' +
           '<a class="news-list__link" href="' +
           escapeHtml(item.href) +
           '">' +
@@ -417,8 +437,8 @@
     return items
       .map(function (item, index) {
         return (
-          '<article class="service-point reveal-up' +
-          (index > 0 ? " reveal-up--delay" : "") +
+          '<article class="service-point reveal-slide' +
+          getRevealSlideDelayClass(index) +
           '">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
@@ -438,11 +458,7 @@
   function renderShopLinks(items) {
     return items
       .map(function (item, index) {
-        var classes = "shop-link reveal-up";
-
-        if (index > 0) {
-          classes += " reveal-up--delay";
-        }
+        var classes = "shop-link reveal-slide" + getRevealSlideDelayClass(index);
 
         return (
           '<a class="' +
@@ -604,21 +620,21 @@
       "</div>" +
       '<section class="section brand-intro" id="brand-intro">' +
       '<div class="container brand-intro__shell">' +
-      '<div class="brand-intro__copy" data-intro-copy>' +
-      '<p class="section-kicker reveal-up reveal-up--delay-2">' +
+      '<div class="brand-intro__copy reveal-slide" data-intro-copy>' +
+      '<p class="section-kicker">' +
       escapeHtml(home.intro.eyebrow) +
       "</p>" +
-      '<h2 class="section-title reveal-up reveal-up--delay-3">' +
+      '<h2 class="section-title">' +
       toMarkup(home.intro.title) +
       "</h2>" +
-      '<p class="section-lead reveal-up reveal-up--delay-4">' +
+      '<p class="section-lead">' +
       escapeHtml(home.intro.lead) +
       "</p>" +
-      '<p class="section-text reveal-up reveal-up--delay-4">' +
+      '<p class="section-text">' +
       escapeHtml(home.intro.text) +
       "</p>" +
       "</div>" +
-      '<aside class="brand-intro__aside reveal-up reveal-up--delay-4">' +
+      '<aside class="brand-intro__aside reveal-slide reveal-slide--delay">' +
       '<p class="brand-intro__aside-label">' +
       escapeHtml(home.intro.note.label) +
       "</p>" +
@@ -632,7 +648,7 @@
       renderIntroFacts(home.intro.facts) +
       "</div>" +
       "</aside>" +
-      '<div class="brand-intro__visual-shell reveal-rise reveal-rise--hero">' +
+      '<div class="brand-intro__visual-shell reveal-slide reveal-slide--delay-2">' +
       '<div class="brand-intro__visual-meta">' +
       '<p class="brand-intro__lead">' +
       escapeHtml(home.intro.visualLead) +
@@ -654,14 +670,14 @@
       "</section>" +
       '<section class="section story-stage">' +
       '<div class="container">' +
-      '<div class="section-head section-head--compact">' +
-      '<p class="section-kicker reveal-up">' +
+      '<div class="section-head section-head--compact reveal-slide">' +
+      '<p class="section-kicker">' +
       escapeHtml(home.story.eyebrow) +
       "</p>" +
-      '<h2 class="section-title reveal-up reveal-up--delay">' +
+      '<h2 class="section-title">' +
       escapeHtml(home.story.title) +
       "</h2>" +
-      '<p class="section-text reveal-up reveal-up--delay-2">' +
+      '<p class="section-text">' +
       escapeHtml(home.story.text) +
       "</p>" +
       "</div>" +
@@ -672,14 +688,14 @@
       "</section>" +
       '<section class="section product-stage" id="product-stage">' +
       '<div class="container">' +
-      '<div class="section-head section-head--compact">' +
-      '<p class="section-kicker reveal-up">' +
+      '<div class="section-head section-head--compact reveal-slide">' +
+      '<p class="section-kicker">' +
       escapeHtml(home.product.eyebrow) +
       "</p>" +
-      '<h2 class="section-title reveal-up reveal-up--delay">' +
+      '<h2 class="section-title">' +
       escapeHtml(home.product.title) +
       "</h2>" +
-      '<p class="section-lead reveal-up reveal-up--delay-2">' +
+      '<p class="section-lead">' +
       escapeHtml(home.product.lead) +
       "</p>" +
       "</div>" +
@@ -691,7 +707,7 @@
       '<div class="product-stage__highlights">' +
       renderProductHighlights(home.product.highlights) +
       "</div>" +
-      '<div class="product-compare reveal-up">' +
+      '<div class="product-compare reveal-slide reveal-slide--delay-2">' +
       '<p class="section-kicker">' +
       escapeHtml(home.product.comparison.title) +
       "</p>" +
@@ -705,7 +721,7 @@
       "</div>" +
       "</div>" +
       '<div class="product-stage__meta">' +
-      '<div class="product-meta reveal-up">' +
+      '<div class="product-meta reveal-slide reveal-slide--delay-2">' +
       '<p class="section-kicker">' +
       escapeHtml(home.product.scenes.title) +
       "</p>" +
@@ -713,7 +729,7 @@
       renderSceneItems(home.product.scenes.items) +
       "</ul>" +
       "</div>" +
-      '<div class="product-meta reveal-up reveal-up--delay">' +
+      '<div class="product-meta reveal-slide reveal-slide--delay-3">' +
       '<p class="section-kicker">' +
       escapeHtml(home.product.specs.title) +
       "</p>" +
@@ -722,7 +738,7 @@
       "</div>" +
       "</div>" +
       "</div>" +
-      '<div class="cta-row reveal-up reveal-up--delay-2">' +
+      '<div class="cta-row reveal-slide reveal-slide--delay-3">' +
       renderActionButtons(home.product.ctas) +
       "</div>" +
       "</div>" +
@@ -731,21 +747,21 @@
       "</section>" +
       '<section class="section reason-stage" id="reason-stage">' +
       '<div class="container">' +
-      '<div class="section-head section-head--compact">' +
-      '<p class="section-kicker reveal-up">' +
+      '<div class="section-head section-head--compact reveal-slide">' +
+      '<p class="section-kicker">' +
       escapeHtml(home.reason.eyebrow) +
       "</p>" +
-      '<h2 class="section-title reveal-up reveal-up--delay">' +
+      '<h2 class="section-title">' +
       escapeHtml(home.reason.title) +
       "</h2>" +
-      '<p class="section-text reveal-up reveal-up--delay-2">' +
+      '<p class="section-text">' +
       escapeHtml(home.reason.text) +
       "</p>" +
       "</div>" +
       '<div class="reason-stage__grid">' +
       renderReasonItems(home.reason.items) +
       "</div>" +
-      '<div class="reason-stage__foot reveal-up reveal-up--delay-2">' +
+      '<div class="reason-stage__foot reveal-slide reveal-slide--delay-2">' +
       '<p class="reason-stage__summary">' +
       escapeHtml(home.reason.summary) +
       "</p>" +
@@ -757,7 +773,7 @@
       "</section>" +
       '<section class="section trust-stage" id="trust-stage">' +
       '<div class="container trust-stage__layout">' +
-      '<div class="trust-stage__story reveal-up">' +
+      '<div class="trust-stage__story reveal-slide">' +
       '<p class="section-kicker">' +
       escapeHtml(home.trust.eyebrow) +
       "</p>" +
@@ -779,14 +795,14 @@
       "</p>" +
       "</div>" +
       "</div>" +
-      '<div class="trust-stage__proof">' +
+      '<div class="trust-stage__proof reveal-slide reveal-slide--delay">' +
       '<div class="trust-stats">' +
       renderTrustStats(home.trust.stats) +
       "</div>" +
       '<div class="trust-voices">' +
       renderTrustVoices(home.trust.voices) +
       "</div>" +
-      '<p class="section-note reveal-up reveal-up--delay-2">' +
+      '<p class="section-note">' +
       escapeHtml(home.trust.note) +
       "</p>" +
       "</div>" +
@@ -794,20 +810,20 @@
       "</section>" +
       '<section class="section limited-stage" id="limited-stage">' +
       '<div class="container">' +
-      '<div class="limited-stage__shell">' +
-      '<p class="section-kicker reveal-up">' +
+      '<div class="limited-stage__shell reveal-slide">' +
+      '<p class="section-kicker">' +
       escapeHtml(home.limited.eyebrow) +
       "</p>" +
-      '<h2 class="section-title reveal-up reveal-up--delay">' +
+      '<h2 class="section-title">' +
       escapeHtml(home.limited.title) +
       "</h2>" +
-      '<p class="section-text reveal-up reveal-up--delay-2">' +
+      '<p class="section-text">' +
       escapeHtml(home.limited.text) +
       "</p>" +
       '<div class="limited-stage__items">' +
       renderLimitedItems(home.limited.items) +
       "</div>" +
-      '<div class="cta-row reveal-up reveal-up--delay-2">' +
+      '<div class="cta-row reveal-slide reveal-slide--delay-2">' +
       renderActionButtons(home.limited.ctas) +
       "</div>" +
       "</div>" +
@@ -815,14 +831,14 @@
       "</section>" +
       '<section class="section news-section">' +
       '<div class="container news-section__layout">' +
-      '<div class="section-head section-head--compact">' +
-      '<p class="section-kicker reveal-up">' +
+      '<div class="section-head section-head--compact reveal-slide">' +
+      '<p class="section-kicker">' +
       escapeHtml(home.news.eyebrow) +
       "</p>" +
-      '<h2 class="section-title reveal-up reveal-up--delay">' +
+      '<h2 class="section-title">' +
       escapeHtml(home.news.title) +
       "</h2>" +
-      '<a class="text-link reveal-up reveal-up--delay-2" href="' +
+      '<a class="text-link" href="' +
       escapeHtml(home.news.moreHref) +
       '">' +
       escapeHtml(home.news.moreLabel) +
@@ -835,14 +851,14 @@
       "</section>" +
       '<section class="section service-section">' +
       '<div class="container service-section__layout">' +
-      '<div class="section-head section-head--compact">' +
-      '<p class="section-kicker reveal-up">' +
+      '<div class="section-head section-head--compact reveal-slide">' +
+      '<p class="section-kicker">' +
       escapeHtml(home.service.eyebrow) +
       "</p>" +
-      '<h2 class="section-title reveal-up reveal-up--delay">' +
+      '<h2 class="section-title">' +
       escapeHtml(home.service.title) +
       "</h2>" +
-      '<p class="section-text reveal-up reveal-up--delay-2">' +
+      '<p class="section-text">' +
       escapeHtml(home.service.text) +
       "</p>" +
       "</div>" +
@@ -853,14 +869,14 @@
       "</section>" +
       '<section class="section shop-stage" id="shop-stage">' +
       '<div class="container">' +
-      '<div class="section-head section-head--compact">' +
-      '<p class="section-kicker reveal-up">' +
+      '<div class="section-head section-head--compact reveal-slide">' +
+      '<p class="section-kicker">' +
       escapeHtml(home.shop.eyebrow) +
       "</p>" +
-      '<h2 class="section-title reveal-up reveal-up--delay">' +
+      '<h2 class="section-title">' +
       escapeHtml(home.shop.title) +
       "</h2>" +
-      '<p class="section-text reveal-up reveal-up--delay-2">' +
+      '<p class="section-text">' +
       escapeHtml(home.shop.text) +
       "</p>" +
       "</div>" +
@@ -995,7 +1011,7 @@
   var nav = app.querySelector(".site-nav");
   var navToggle = app.querySelector(".nav-toggle");
   var revealItems = Array.prototype.slice.call(
-    app.querySelectorAll(".reveal-up, .reveal-side, .reveal-scale, .reveal-track, .reveal-mask, .reveal-rise, .reveal-sheet")
+    app.querySelectorAll(".reveal-up, .reveal-side, .reveal-scale, .reveal-track, .reveal-mask, .reveal-rise, .reveal-sheet, .reveal-slide")
   );
   var hero = app.querySelector(".hero");
   var introCopy = app.querySelector("[data-intro-copy]");
