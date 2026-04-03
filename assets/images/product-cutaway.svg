@@ -1,0 +1,51 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="148" y1="116" x2="1450" y2="1112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDF9" />
+      <stop offset="0.48" stop-color="#F3E6DA" />
+      <stop offset="1" stop-color="#D6B8A4" />
+    </linearGradient>
+    <linearGradient id="panel" x1="168" y1="140" x2="908" y2="1064" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDFB" />
+      <stop offset="1" stop-color="#E9D6C7" />
+    </linearGradient>
+    <linearGradient id="skin" x1="910" y1="312" x2="1286" y2="872" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D74F42" />
+      <stop offset="0.52" stop-color="#9A1E22" />
+      <stop offset="1" stop-color="#611216" />
+    </linearGradient>
+    <radialGradient id="flesh" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1088 602) rotate(90) scale(244)">
+      <stop stop-color="#FFE0C9" />
+      <stop offset="1" stop-color="#F7B289" />
+    </radialGradient>
+    <radialGradient id="seedGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1092 610) rotate(90) scale(132)">
+      <stop stop-color="#FFF4D8" stop-opacity="0.92" />
+      <stop offset="1" stop-color="#FFF4D8" stop-opacity="0" />
+    </radialGradient>
+    <filter id="noise" x="0" y="0" width="1600" height="1200" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.74" numOctaves="2" seed="31" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.045" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#bg)" />
+  <rect x="160" y="132" width="726" height="936" rx="30" fill="url(#panel)" />
+  <path d="M232 840C478 724 700 678 922 686C1144 694 1370 760 1600 908V1200H0V980C96 938 166 874 232 840Z" fill="#191412" fill-opacity="0.1" />
+  <circle cx="1092" cy="604" r="280" fill="url(#skin)" />
+  <circle cx="1092" cy="604" r="214" fill="url(#flesh)" />
+  <path d="M1092 390C1162 448 1196 532 1196 604C1196 676 1162 760 1092 818C1022 760 988 676 988 604C988 532 1022 448 1092 390Z" fill="#F8C095" />
+  <path d="M1274 262C1296 212 1336 186 1376 174C1416 162 1450 168 1476 182" stroke="#687246" stroke-width="12" stroke-linecap="round" />
+  <circle cx="1008" cy="530" r="18" fill="#FFF3DF" />
+  <circle cx="1174" cy="530" r="18" fill="#FFF3DF" />
+  <circle cx="1008" cy="676" r="18" fill="#FFF3DF" />
+  <circle cx="1174" cy="676" r="18" fill="#FFF3DF" />
+  <ellipse cx="1092" cy="532" rx="48" ry="26" fill="#FCE9BC" />
+  <ellipse cx="1092" cy="676" rx="48" ry="26" fill="#FCE9BC" />
+  <rect x="248" y="266" width="548" height="2" fill="#E9D8C8" />
+  <rect x="248" y="350" width="548" height="2" fill="#E9D8C8" fill-opacity="0.72" />
+  <rect x="248" y="434" width="548" height="2" fill="#E9D8C8" fill-opacity="0.48" />
+  <circle cx="1092" cy="604" r="142" fill="url(#seedGlow)" />
+  <rect width="1600" height="1200" fill="#FFFFFF" filter="url(#noise)" opacity="0.28" />
+</svg>
