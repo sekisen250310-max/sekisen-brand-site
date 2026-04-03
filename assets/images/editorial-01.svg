@@ -1,0 +1,34 @@
+<svg width="1200" height="1500" viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1500" fill="#F8F3ED"/>
+  <rect x="68" y="68" width="1064" height="1364" rx="34" fill="#FFFDFB"/>
+  <rect x="120" y="120" width="960" height="820" rx="28" fill="url(#bg)"/>
+  <circle cx="424" cy="632" r="232" fill="url(#fruit)"/>
+  <circle cx="680" cy="492" r="132" fill="url(#fruit2)"/>
+  <circle cx="782" cy="742" r="76" fill="#C34F38"/>
+  <circle cx="686" cy="464" r="24" fill="#2F5E43"/>
+  <path d="M688 461C712 425 754 413 788 426" stroke="#2F5E43" stroke-width="10" stroke-linecap="round"/>
+  <rect x="140" y="1010" width="146" height="22" rx="11" fill="#E6D8C9"/>
+  <rect x="140" y="1062" width="320" height="18" rx="9" fill="#382922"/>
+  <rect x="140" y="1100" width="272" height="18" rx="9" fill="#544036"/>
+  <rect x="140" y="1172" width="920" height="12" rx="6" fill="#D6C6B5"/>
+  <rect x="140" y="1200" width="874" height="12" rx="6" fill="#D6C6B5"/>
+  <rect x="140" y="1228" width="900" height="12" rx="6" fill="#D6C6B5"/>
+  <text x="140" y="184" fill="#84705F" font-family="Arial, sans-serif" font-size="18" letter-spacing="4">SEKISEN / 01</text>
+  <text x="140" y="1040" fill="#86705D" font-family="Georgia, serif" font-size="30" letter-spacing="6">TASTE</text>
+  <defs>
+    <linearGradient id="bg" x1="600" y1="120" x2="600" y2="940" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2E7DA"/>
+      <stop offset="1" stop-color="#E8D7C7"/>
+    </linearGradient>
+    <radialGradient id="fruit" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(424 558) rotate(88.991) scale(330.051)">
+      <stop stop-color="#F8B67D"/>
+      <stop offset="0.48" stop-color="#D36545"/>
+      <stop offset="1" stop-color="#8D3028"/>
+    </radialGradient>
+    <radialGradient id="fruit2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(680 444) rotate(90) scale(178)">
+      <stop stop-color="#F6D29A"/>
+      <stop offset="0.54" stop-color="#DA7D55"/>
+      <stop offset="1" stop-color="#9A392D"/>
+    </radialGradient>
+  </defs>
+</svg>

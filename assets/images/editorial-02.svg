@@ -1,0 +1,30 @@
+<svg width="1200" height="1500" viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1500" fill="#F4EEE6"/>
+  <rect x="68" y="68" width="1064" height="1364" rx="34" fill="#FBF7F2"/>
+  <rect x="126" y="140" width="948" height="724" rx="26" fill="#F0E6DA"/>
+  <rect x="210" y="244" width="780" height="516" rx="24" fill="url(#box)"/>
+  <rect x="258" y="292" width="684" height="420" rx="20" fill="#FFFDFC"/>
+  <g fill="#C53F34">
+    <circle cx="392" cy="474" r="72"/>
+    <circle cx="544" cy="474" r="72"/>
+    <circle cx="696" cy="474" r="72"/>
+    <circle cx="848" cy="474" r="72"/>
+    <circle cx="468" cy="610" r="72"/>
+    <circle cx="620" cy="610" r="72"/>
+    <circle cx="772" cy="610" r="72"/>
+  </g>
+  <rect x="140" y="1010" width="216" height="22" rx="11" fill="#E2D3C4"/>
+  <rect x="140" y="1062" width="364" height="18" rx="9" fill="#382922"/>
+  <rect x="140" y="1100" width="314" height="18" rx="9" fill="#544036"/>
+  <rect x="140" y="1172" width="920" height="12" rx="6" fill="#D6C6B5"/>
+  <rect x="140" y="1200" width="874" height="12" rx="6" fill="#D6C6B5"/>
+  <rect x="140" y="1228" width="900" height="12" rx="6" fill="#D6C6B5"/>
+  <text x="140" y="184" fill="#84705F" font-family="Arial, sans-serif" font-size="18" letter-spacing="4">SEKISEN / 02</text>
+  <text x="140" y="1040" fill="#86705D" font-family="Georgia, serif" font-size="30" letter-spacing="6">SELECTION</text>
+  <defs>
+    <linearGradient id="box" x1="600" y1="244" x2="600" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0C9B4"/>
+      <stop offset="1" stop-color="#D3B49B"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -145,59 +145,244 @@
       .join("");
   }
 
-  function renderIntroVisuals(items) {
+  function renderIntroFacts(items) {
     return items
-      .map(function (item, index) {
+      .map(function (item) {
         return (
-          '<figure class="intro-visual intro-visual--' +
-          (index + 1) +
-          ' reveal-mask reveal-mask--sweep intro-visual--delay-' +
-          (index + 1) +
-          '">' +
-          '<img src="' +
-          escapeHtml(item.image) +
-          '" alt="' +
-          escapeHtml(item.alt) +
-          '" loading="lazy" />' +
-          "</figure>"
+          '<div class="brand-intro__fact">' +
+          '<p class="brand-intro__fact-label">' +
+          escapeHtml(item.label) +
+          "</p>" +
+          '<p class="brand-intro__fact-value">' +
+          escapeHtml(item.value) +
+          "</p>" +
+          "</div>"
         );
       })
       .join("");
   }
 
-  function renderValueCards(items) {
+  function renderStorySteps(items) {
     return items
-      .map(function (item, index) {
+      .map(function (item) {
         return (
-          '<a class="value-card reveal-up' +
-          (index > 0 ? " reveal-up--delay" : "") +
-          '" href="' +
-          escapeHtml(item.href) +
-          '">' +
-          '<figure class="value-card__media reveal-mask ' +
-          (index % 2 === 1 ? "reveal-mask--left" : "reveal-mask--right") +
-          '">' +
+          '<article class="story-step">' +
+          '<figure class="story-step__media">' +
           '<img src="' +
           escapeHtml(item.image) +
           '" alt="' +
           escapeHtml(item.alt) +
           '" loading="lazy" />' +
           "</figure>" +
-          '<div class="value-card__copy">' +
+          '<div class="story-step__copy reveal-up reveal-up--delay-2">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
           "</p>" +
-          '<h3 class="value-card__title">' +
+          '<h3 class="story-step__title">' +
           escapeHtml(item.title) +
           "</h3>" +
-          '<p class="value-card__text">' +
+          '<p class="story-step__text">' +
           escapeHtml(item.text) +
           "</p>" +
-          '<span class="value-card__action">' +
-          escapeHtml(item.action) +
-          "</span>" +
           "</div>" +
+          "</article>"
+        );
+      })
+      .join("");
+  }
+
+  function renderActionButtons(items) {
+    return items
+      .map(function (item) {
+        return (
+          '<a class="' +
+          escapeHtml(item.style) +
+          '" href="' +
+          escapeHtml(item.href) +
+          '">' +
+          escapeHtml(item.label) +
           "</a>"
+        );
+      })
+      .join("");
+  }
+
+  function renderProductVisuals(items) {
+    return items
+      .map(function (item, index) {
+        return (
+          '<figure class="product-visual product-visual--' +
+          (index === 0 ? "main" : "secondary") +
+          " reveal-mask " +
+          (index === 0 ? "reveal-mask--right" : "reveal-mask--left") +
+          '">' +
+          '<img src="' +
+          escapeHtml(item.image) +
+          '" alt="' +
+          escapeHtml(item.alt) +
+          '" loading="lazy" />' +
+          '<figcaption class="product-visual__caption">' +
+          escapeHtml(item.caption) +
+          "</figcaption>" +
+          "</figure>"
+        );
+      })
+      .join("");
+  }
+
+  function renderProductHighlights(items) {
+    return items
+      .map(function (item, index) {
+        return (
+          '<article class="product-highlight reveal-up' +
+          (index > 0 ? " reveal-up--delay" : "") +
+          '">' +
+          '<p class="section-kicker">' +
+          escapeHtml(item.label) +
+          "</p>" +
+          '<h3 class="product-highlight__title">' +
+          escapeHtml(item.title) +
+          "</h3>" +
+          '<p class="product-highlight__text">' +
+          escapeHtml(item.text) +
+          "</p>" +
+          "</article>"
+        );
+      })
+      .join("");
+  }
+
+  function renderProductComparisonRows(items) {
+    return items
+      .map(function (item) {
+        return (
+          '<div class="product-compare__row reveal-up">' +
+          '<div class="product-compare__cell product-compare__cell--label">' +
+          escapeHtml(item.label) +
+          "</div>" +
+          '<div class="product-compare__cell">' +
+          '<span class="product-compare__caption">石戦</span>' +
+          escapeHtml(item.sekisen) +
+          "</div>" +
+          '<div class="product-compare__cell">' +
+          '<span class="product-compare__caption">一般的なトマト</span>' +
+          escapeHtml(item.regular) +
+          "</div>" +
+          "</div>"
+        );
+      })
+      .join("");
+  }
+
+  function renderSceneItems(items) {
+    return items
+      .map(function (item) {
+        return (
+          '<li class="product-scene__item">' +
+          escapeHtml(item) +
+          "</li>"
+        );
+      })
+      .join("");
+  }
+
+  function renderSpecItems(items) {
+    return items
+      .map(function (item) {
+        return (
+          '<div class="product-spec">' +
+          '<span class="product-spec__label">' +
+          escapeHtml(item.label) +
+          "</span>" +
+          '<span class="product-spec__value">' +
+          escapeHtml(item.value) +
+          "</span>" +
+          "</div>"
+        );
+      })
+      .join("");
+  }
+
+  function renderReasonItems(items) {
+    return items
+      .map(function (item, index) {
+        return (
+          '<article class="reason-item reveal-up' +
+          (index > 0 ? " reveal-up--delay" : "") +
+          '">' +
+          '<p class="section-kicker">' +
+          escapeHtml(item.label) +
+          "</p>" +
+          '<h3 class="reason-item__title">' +
+          escapeHtml(item.title) +
+          "</h3>" +
+          '<p class="reason-item__text">' +
+          escapeHtml(item.text) +
+          "</p>" +
+          "</article>"
+        );
+      })
+      .join("");
+  }
+
+  function renderTrustStats(items) {
+    return items
+      .map(function (item, index) {
+        return (
+          '<article class="trust-stat reveal-up' +
+          (index > 0 ? " reveal-up--delay" : "") +
+          '">' +
+          '<strong class="trust-stat__value">' +
+          escapeHtml(item.value) +
+          "</strong>" +
+          '<span class="trust-stat__label">' +
+          escapeHtml(item.label) +
+          "</span>" +
+          '<span class="trust-stat__note">' +
+          escapeHtml(item.note) +
+          "</span>" +
+          "</article>"
+        );
+      })
+      .join("");
+  }
+
+  function renderTrustVoices(items) {
+    return items
+      .map(function (item, index) {
+        return (
+          '<article class="trust-voice reveal-up' +
+          (index > 0 ? " reveal-up--delay" : "") +
+          '">' +
+          '<h3 class="trust-voice__title">' +
+          escapeHtml(item.title) +
+          "</h3>" +
+          '<p class="trust-voice__text">' +
+          escapeHtml(item.text) +
+          "</p>" +
+          '<p class="trust-voice__meta">' +
+          escapeHtml(item.meta) +
+          "</p>" +
+          "</article>"
+        );
+      })
+      .join("");
+  }
+
+  function renderLimitedItems(items) {
+    return items
+      .map(function (item, index) {
+        return (
+          '<article class="limited-item reveal-up' +
+          (index > 0 ? " reveal-up--delay" : "") +
+          '">' +
+          '<p class="section-kicker">' +
+          escapeHtml(item.label) +
+          "</p>" +
+          '<p class="limited-item__text">' +
+          escapeHtml(item.text) +
+          "</p>" +
+          "</article>"
         );
       })
       .join("");
@@ -215,9 +400,6 @@
           "<time>" +
           escapeHtml(item.date) +
           "</time>" +
-          "<span>" +
-          escapeHtml(item.category) +
-          "</span>" +
           "</span>" +
           '<span class="news-list__title">' +
           escapeHtml(item.title) +
@@ -229,55 +411,22 @@
       .join("");
   }
 
-  function renderQualityPillars(items) {
+  function renderServicePoints(items) {
     return items
       .map(function (item, index) {
         return (
-          '<article class="pillar-card reveal-up' +
+          '<article class="service-point reveal-up' +
           (index > 0 ? " reveal-up--delay" : "") +
           '">' +
-          '<p class="pillar-card__label">' +
-          escapeHtml(item.label) +
-          "</p>" +
-          '<h3 class="pillar-card__title">' +
-          escapeHtml(item.title) +
-          "</h3>" +
-          '<p class="pillar-card__text">' +
-          escapeHtml(item.text) +
-          "</p>" +
-          "</article>"
-        );
-      })
-      .join("");
-  }
-
-  function renderQualityStories(items) {
-    return items
-      .map(function (item, index) {
-        return (
-          '<article class="quality-story' +
-          (index % 2 === 1 ? " quality-story--reverse" : "") +
-          '">' +
-          '<figure class="quality-story__media reveal-mask ' +
-          (index % 2 === 1 ? "reveal-mask--left" : "reveal-mask--right") +
-          '">' +
-          '<img src="' +
-          escapeHtml(item.image) +
-          '" alt="' +
-          escapeHtml(item.alt) +
-          '" loading="lazy" />' +
-          "</figure>" +
-          '<div class="quality-story__copy reveal-up reveal-up--delay">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
           "</p>" +
-          '<h3 class="quality-story__title">' +
+          '<h3 class="service-point__title">' +
           escapeHtml(item.title) +
           "</h3>" +
-          '<p class="quality-story__text">' +
+          '<p class="service-point__text">' +
           escapeHtml(item.text) +
           "</p>" +
-          "</div>" +
           "</article>"
         );
       })
@@ -287,9 +436,15 @@
   function renderShopLinks(items) {
     return items
       .map(function (item, index) {
+        var classes = "shop-link reveal-up";
+
+        if (index > 0) {
+          classes += " reveal-up--delay";
+        }
+
         return (
-          '<a class="shop-link reveal-up' +
-          (index > 1 ? " reveal-up--delay" : "") +
+          '<a class="' +
+          classes +
           '" href="' +
           escapeHtml(item.href) +
           '">' +
@@ -401,8 +556,9 @@
     var initialSlide = home.hero.slides[0];
 
     return (
-      '<main class="site-main">' +
-      '<section class="hero">' +
+      '<main class="site-main site-main--home">' +
+      '<section class="hero-stage">' +
+      '<div class="hero">' +
       '<div class="hero__slides">' +
       renderHeroSlides(home.hero.slides) +
       "</div>" +
@@ -440,53 +596,218 @@
       '<div class="hero__dots">' +
       renderHeroDots(home.hero.slides) +
       "</div>" +
-      '<a class="hero__scroll" href="#intro">Scroll</a>' +
-      "</div>" +
-      "</div>" +
-      "</section>" +
-      '<section class="section intro-stage" id="intro">' +
-      '<div class="container intro-stage__shell">' +
-      '<div class="intro-stage__visual-shell reveal-rise reveal-rise--hero">' +
-      '<div class="intro-stage__visual-panel">' +
-      '<p class="intro-stage__lead">' +
-      escapeHtml(home.intro.visualLead) +
-      "</p>" +
-      '<div class="intro-stage__gallery">' +
-      renderIntroVisuals(home.intro.visuals) +
+      '<a class="hero__scroll" href="#brand-intro">Scroll</a>' +
       "</div>" +
       "</div>" +
       "</div>" +
-      '<div class="intro-stage__copy">' +
-      '<p class="section-kicker reveal-up">' +
+      '<section class="section brand-intro" id="brand-intro">' +
+      '<div class="container brand-intro__shell">' +
+      '<div class="brand-intro__copy" data-intro-copy>' +
+      '<p class="section-kicker reveal-up reveal-up--delay-2">' +
       escapeHtml(home.intro.eyebrow) +
       "</p>" +
-      '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.intro.title) +
+      '<h2 class="section-title reveal-up reveal-up--delay-3">' +
+      toMarkup(home.intro.title) +
       "</h2>" +
-      '<p class="section-lead reveal-up reveal-up--delay-2">' +
+      '<p class="section-lead reveal-up reveal-up--delay-4">' +
       escapeHtml(home.intro.lead) +
       "</p>" +
-      '<p class="section-text reveal-up reveal-up--delay-2">' +
+      '<p class="section-text reveal-up reveal-up--delay-4">' +
       escapeHtml(home.intro.text) +
       "</p>" +
       "</div>" +
+      '<aside class="brand-intro__aside reveal-up reveal-up--delay-4">' +
+      '<p class="brand-intro__aside-label">' +
+      escapeHtml(home.intro.note.label) +
+      "</p>" +
+      '<h3 class="brand-intro__aside-title">' +
+      escapeHtml(home.intro.note.title) +
+      "</h3>" +
+      '<p class="brand-intro__aside-text">' +
+      escapeHtml(home.intro.note.text) +
+      "</p>" +
+      '<div class="brand-intro__facts">' +
+      renderIntroFacts(home.intro.facts) +
+      "</div>" +
+      "</aside>" +
+      '<div class="brand-intro__visual-shell reveal-rise reveal-rise--hero">' +
+      '<div class="brand-intro__visual-meta">' +
+      '<p class="brand-intro__lead">' +
+      escapeHtml(home.intro.visualLead) +
+      "</p>" +
+      '<p class="brand-intro__caption">' +
+      escapeHtml(home.intro.caption) +
+      "</p>" +
+      "</div>" +
+      '<figure class="brand-intro__visual">' +
+      '<img src="' +
+      escapeHtml(home.intro.image) +
+      '" alt="' +
+      escapeHtml(home.intro.alt) +
+      '" loading="lazy" />' +
+      "</figure>" +
+      "</div>" +
       "</div>" +
       "</section>" +
-      '<section class="section value-stage">' +
+      "</section>" +
+      '<section class="section story-stage">' +
       '<div class="container">' +
       '<div class="section-head section-head--compact">' +
       '<p class="section-kicker reveal-up">' +
-      escapeHtml(home.values.eyebrow) +
+      escapeHtml(home.story.eyebrow) +
       "</p>" +
       '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.values.title) +
+      escapeHtml(home.story.title) +
       "</h2>" +
       '<p class="section-text reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.values.text) +
+      escapeHtml(home.story.text) +
       "</p>" +
       "</div>" +
-      '<div class="value-stage__grid">' +
-      renderValueCards(home.values.items) +
+      '<div class="story-stage__stack">' +
+      renderStorySteps(home.story.steps) +
+      "</div>" +
+      "</div>" +
+      "</section>" +
+      '<section class="section product-stage" id="product-stage">' +
+      '<div class="container">' +
+      '<div class="section-head section-head--compact">' +
+      '<p class="section-kicker reveal-up">' +
+      escapeHtml(home.product.eyebrow) +
+      "</p>" +
+      '<h2 class="section-title reveal-up reveal-up--delay">' +
+      escapeHtml(home.product.title) +
+      "</h2>" +
+      '<p class="section-lead reveal-up reveal-up--delay-2">' +
+      escapeHtml(home.product.lead) +
+      "</p>" +
+      "</div>" +
+      '<div class="product-stage__layout">' +
+      '<div class="product-stage__visuals">' +
+      renderProductVisuals(home.product.visuals) +
+      "</div>" +
+      '<div class="product-stage__details">' +
+      '<div class="product-stage__highlights">' +
+      renderProductHighlights(home.product.highlights) +
+      "</div>" +
+      '<div class="product-compare reveal-up">' +
+      '<p class="section-kicker">' +
+      escapeHtml(home.product.comparison.title) +
+      "</p>" +
+      '<div class="product-compare__head">' +
+      '<span></span>' +
+      "<span>石戦</span>" +
+      "<span>一般的なトマト</span>" +
+      "</div>" +
+      '<div class="product-compare__table">' +
+      renderProductComparisonRows(home.product.comparison.rows) +
+      "</div>" +
+      "</div>" +
+      '<div class="product-stage__meta">' +
+      '<div class="product-meta reveal-up">' +
+      '<p class="section-kicker">' +
+      escapeHtml(home.product.scenes.title) +
+      "</p>" +
+      '<ul class="product-scene">' +
+      renderSceneItems(home.product.scenes.items) +
+      "</ul>" +
+      "</div>" +
+      '<div class="product-meta reveal-up reveal-up--delay">' +
+      '<p class="section-kicker">' +
+      escapeHtml(home.product.specs.title) +
+      "</p>" +
+      '<div class="product-specs">' +
+      renderSpecItems(home.product.specs.items) +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      '<div class="cta-row reveal-up reveal-up--delay-2">' +
+      renderActionButtons(home.product.ctas) +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</section>" +
+      '<section class="section reason-stage" id="reason-stage">' +
+      '<div class="container">' +
+      '<div class="section-head section-head--compact">' +
+      '<p class="section-kicker reveal-up">' +
+      escapeHtml(home.reason.eyebrow) +
+      "</p>" +
+      '<h2 class="section-title reveal-up reveal-up--delay">' +
+      escapeHtml(home.reason.title) +
+      "</h2>" +
+      '<p class="section-text reveal-up reveal-up--delay-2">' +
+      escapeHtml(home.reason.text) +
+      "</p>" +
+      "</div>" +
+      '<div class="reason-stage__grid">' +
+      renderReasonItems(home.reason.items) +
+      "</div>" +
+      '<div class="reason-stage__foot reveal-up reveal-up--delay-2">' +
+      '<p class="reason-stage__summary">' +
+      escapeHtml(home.reason.summary) +
+      "</p>" +
+      '<div class="cta-row">' +
+      renderActionButtons(home.reason.ctas) +
+      "</div>" +
+      "</div>" +
+      "</div>" +
+      "</section>" +
+      '<section class="section trust-stage" id="trust-stage">' +
+      '<div class="container trust-stage__layout">' +
+      '<div class="trust-stage__story reveal-up">' +
+      '<p class="section-kicker">' +
+      escapeHtml(home.trust.eyebrow) +
+      "</p>" +
+      '<h2 class="section-title">' +
+      escapeHtml(home.trust.title) +
+      "</h2>" +
+      '<p class="section-text">' +
+      escapeHtml(home.trust.text) +
+      "</p>" +
+      '<div class="trust-producer">' +
+      '<p class="section-kicker">' +
+      escapeHtml(home.trust.producer.label) +
+      "</p>" +
+      '<h3 class="trust-producer__title">' +
+      escapeHtml(home.trust.producer.title) +
+      "</h3>" +
+      '<p class="trust-producer__text">' +
+      escapeHtml(home.trust.producer.text) +
+      "</p>" +
+      "</div>" +
+      "</div>" +
+      '<div class="trust-stage__proof">' +
+      '<div class="trust-stats">' +
+      renderTrustStats(home.trust.stats) +
+      "</div>" +
+      '<div class="trust-voices">' +
+      renderTrustVoices(home.trust.voices) +
+      "</div>" +
+      '<p class="section-note reveal-up reveal-up--delay-2">' +
+      escapeHtml(home.trust.note) +
+      "</p>" +
+      "</div>" +
+      "</div>" +
+      "</section>" +
+      '<section class="section limited-stage" id="limited-stage">' +
+      '<div class="container">' +
+      '<div class="limited-stage__shell">' +
+      '<p class="section-kicker reveal-up">' +
+      escapeHtml(home.limited.eyebrow) +
+      "</p>" +
+      '<h2 class="section-title reveal-up reveal-up--delay">' +
+      escapeHtml(home.limited.title) +
+      "</h2>" +
+      '<p class="section-text reveal-up reveal-up--delay-2">' +
+      escapeHtml(home.limited.text) +
+      "</p>" +
+      '<div class="limited-stage__items">' +
+      renderLimitedItems(home.limited.items) +
+      "</div>" +
+      '<div class="cta-row reveal-up reveal-up--delay-2">' +
+      renderActionButtons(home.limited.ctas) +
+      "</div>" +
       "</div>" +
       "</div>" +
       "</section>" +
@@ -510,39 +831,39 @@
       "</ul>" +
       "</div>" +
       "</section>" +
-      '<section class="section quality-stage">' +
-      '<div class="container">' +
+      '<section class="section service-section">' +
+      '<div class="container service-section__layout">' +
       '<div class="section-head section-head--compact">' +
       '<p class="section-kicker reveal-up">' +
-      escapeHtml(home.quality.eyebrow) +
+      escapeHtml(home.service.eyebrow) +
       "</p>" +
       '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.quality.title) +
+      escapeHtml(home.service.title) +
       "</h2>" +
       '<p class="section-text reveal-up reveal-up--delay-2">' +
-      escapeHtml(home.quality.text) +
+      escapeHtml(home.service.text) +
       "</p>" +
       "</div>" +
-      '<div class="quality-stage__pillars">' +
-      renderQualityPillars(home.quality.pillars) +
-      "</div>" +
-      '<div class="quality-stage__stories">' +
-      renderQualityStories(home.quality.stories) +
+      '<div class="service-points">' +
+      renderServicePoints(home.service.items) +
       "</div>" +
       "</div>" +
       "</section>" +
-      '<section class="section shop-stage">' +
+      '<section class="section shop-stage" id="shop-stage">' +
       '<div class="container">' +
       '<div class="section-head section-head--compact">' +
       '<p class="section-kicker reveal-up">' +
-      escapeHtml(home.links.eyebrow) +
+      escapeHtml(home.shop.eyebrow) +
       "</p>" +
       '<h2 class="section-title reveal-up reveal-up--delay">' +
-      escapeHtml(home.links.title) +
+      escapeHtml(home.shop.title) +
       "</h2>" +
+      '<p class="section-text reveal-up reveal-up--delay-2">' +
+      escapeHtml(home.shop.text) +
+      "</p>" +
       "</div>" +
       '<div class="shop-stage__grid">' +
-      renderShopLinks(home.links.items) +
+      renderShopLinks(home.shop.items) +
       "</div>" +
       "</div>" +
       "</section>" +
@@ -675,9 +996,12 @@
     app.querySelectorAll(".reveal-up, .reveal-side, .reveal-scale, .reveal-track, .reveal-mask, .reveal-rise")
   );
   var hero = app.querySelector(".hero");
+  var introCopy = app.querySelector("[data-intro-copy]");
   var autoplayId = null;
   var copyTimer = null;
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var headerTicking = false;
+  var headerScrolled = false;
 
   function closeNav() {
     if (!nav || !navToggle) {
@@ -689,12 +1013,48 @@
     document.body.classList.remove("nav-open");
   }
 
-  function handleHeader() {
+  function handleHeader(force) {
     if (!header) {
       return;
     }
 
-    header.classList.toggle("is-scrolled", window.scrollY > 28);
+    if (pageKey !== "home") {
+      header.classList.add("is-scrolled");
+      header.classList.add("is-intro-visible");
+      headerScrolled = true;
+      return;
+    }
+
+    var shouldBeScrolled = false;
+
+    if (introCopy) {
+      var introRect = introCopy.getBoundingClientRect();
+      var introThreshold = window.innerHeight - Math.min(window.innerHeight * 0.18, 160);
+      var hysteresis = headerScrolled ? 18 : 0;
+
+      shouldBeScrolled = introRect.top <= introThreshold - hysteresis;
+    } else {
+      var scrollY = window.scrollY || window.pageYOffset || 0;
+      shouldBeScrolled = headerScrolled ? scrollY > 20 : scrollY > 68;
+    }
+
+    if (force || shouldBeScrolled !== headerScrolled) {
+      headerScrolled = shouldBeScrolled;
+      header.classList.toggle("is-scrolled", headerScrolled);
+      header.classList.toggle("is-intro-visible", headerScrolled);
+    }
+  }
+
+  function queueHeaderUpdate() {
+    if (headerTicking) {
+      return;
+    }
+
+    headerTicking = true;
+    window.requestAnimationFrame(function () {
+      headerTicking = false;
+      handleHeader(false);
+    });
   }
 
   function revealImmediate() {
@@ -843,14 +1203,14 @@
     startAutoplay();
   }
 
-  window.addEventListener("scroll", handleHeader, { passive: true });
+  window.addEventListener("scroll", queueHeaderUpdate, { passive: true });
   window.addEventListener("resize", function () {
     if (window.innerWidth > 900) {
       closeNav();
     }
   });
 
-  handleHeader();
+  handleHeader(true);
   revealImmediate();
   observeSections();
 })();

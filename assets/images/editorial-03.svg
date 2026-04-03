@@ -1,0 +1,31 @@
+<svg width="1200" height="1500" viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1500" fill="#F7F1EB"/>
+  <rect x="68" y="68" width="1064" height="1364" rx="34" fill="#FFFDFB"/>
+  <rect x="126" y="140" width="948" height="794" rx="26" fill="#EEE3D6"/>
+  <rect x="188" y="246" width="824" height="582" rx="28" fill="#F9F3EB"/>
+  <rect x="252" y="310" width="312" height="454" rx="22" fill="#E3C5AC"/>
+  <rect x="610" y="346" width="318" height="168" rx="24" fill="#FFF"/>
+  <rect x="610" y="544" width="318" height="168" rx="24" fill="#FFF"/>
+  <circle cx="410" cy="532" r="118" fill="url(#fruit)"/>
+  <circle cx="402" cy="498" r="20" fill="#2F5E43"/>
+  <path d="M404 495C424 463 459 454 490 463" stroke="#2F5E43" stroke-width="8" stroke-linecap="round"/>
+  <rect x="650" y="392" width="136" height="18" rx="9" fill="#E5D7C8"/>
+  <rect x="650" y="434" width="220" height="12" rx="6" fill="#C4AE98"/>
+  <rect x="650" y="590" width="96" height="18" rx="9" fill="#E5D7C8"/>
+  <rect x="650" y="632" width="188" height="12" rx="6" fill="#C4AE98"/>
+  <rect x="140" y="1010" width="208" height="22" rx="11" fill="#E2D3C4"/>
+  <rect x="140" y="1062" width="340" height="18" rx="9" fill="#382922"/>
+  <rect x="140" y="1100" width="286" height="18" rx="9" fill="#544036"/>
+  <rect x="140" y="1172" width="920" height="12" rx="6" fill="#D6C6B5"/>
+  <rect x="140" y="1200" width="874" height="12" rx="6" fill="#D6C6B5"/>
+  <rect x="140" y="1228" width="900" height="12" rx="6" fill="#D6C6B5"/>
+  <text x="140" y="184" fill="#84705F" font-family="Arial, sans-serif" font-size="18" letter-spacing="4">SEKISEN / 03</text>
+  <text x="140" y="1040" fill="#86705D" font-family="Georgia, serif" font-size="30" letter-spacing="6">GIFT SCENE</text>
+  <defs>
+    <radialGradient id="fruit" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(410 486) rotate(90) scale(164)">
+      <stop stop-color="#F8C087"/>
+      <stop offset="0.54" stop-color="#D86D49"/>
+      <stop offset="1" stop-color="#96362B"/>
+    </radialGradient>
+  </defs>
+</svg>
