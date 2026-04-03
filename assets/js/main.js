@@ -1047,7 +1047,11 @@
 
     if (introCopy) {
       var introRect = introCopy.getBoundingClientRect();
-      var introThreshold = window.innerHeight - Math.min(window.innerHeight * 0.18, 160);
+      var viewportHeight =
+        (window.visualViewport && window.visualViewport.height) ||
+        document.documentElement.clientHeight ||
+        window.innerHeight;
+      var introThreshold = viewportHeight - Math.min(viewportHeight * 0.18, 160);
       var hysteresis = headerScrolled ? 18 : 0;
 
       shouldBeScrolled = introRect.top <= introThreshold - hysteresis;
