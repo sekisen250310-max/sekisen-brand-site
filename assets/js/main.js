@@ -1230,9 +1230,22 @@
     if (window.innerWidth > 900) {
       closeNav();
     }
+
+    queueHeaderUpdate();
+  });
+
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", queueHeaderUpdate);
+    window.visualViewport.addEventListener("scroll", queueHeaderUpdate);
+  }
+
+  window.addEventListener("load", function () {
+    handleHeader(true);
   });
 
   handleHeader(true);
   revealImmediate();
   observeSections();
+  window.setTimeout(queueHeaderUpdate, 120);
+  window.setTimeout(queueHeaderUpdate, 720);
 })();
