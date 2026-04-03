@@ -2177,6 +2177,95 @@ button {
   clip-path: inset(0 0 100% 0);
 }
 
+.reveal-sheet {
+  --sheet-delay: 0ms;
+  --sheet-edge: clamp(52px, 5vw, 84px);
+  --sheet-cover: linear-gradient(180deg, #ffffff 0%, #f6f0e8 100%);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.reveal-sheet::before,
+.reveal-sheet::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.reveal-sheet::before {
+  inset: 0;
+  z-index: 4;
+  background: var(--sheet-cover);
+  transform: translate3d(0, 0, 0);
+  transition: transform 940ms cubic-bezier(0.22, 0.61, 0.36, 1) var(--sheet-delay);
+}
+
+.reveal-sheet::after {
+  top: -8%;
+  right: calc(-1 * var(--sheet-edge));
+  bottom: -8%;
+  width: var(--sheet-edge);
+  z-index: 5;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.74) 34%,
+      rgba(255, 255, 255, 0.98) 56%,
+      rgba(216, 202, 186, 0.34) 80%,
+      rgba(24, 20, 18, 0.14) 100%
+    );
+  transform: translate3d(0, 0, 0) skewX(-14deg);
+  transition: transform 940ms cubic-bezier(0.22, 0.61, 0.36, 1) var(--sheet-delay);
+}
+
+.reveal-sheet > * {
+  position: relative;
+  z-index: 1;
+  opacity: 0.001;
+  transform: translate3d(28px, 0, 0) scale(0.995);
+  transition:
+    opacity 680ms ease calc(var(--sheet-delay) + 150ms),
+    transform 1180ms cubic-bezier(0.2, 0.72, 0.2, 1) calc(var(--sheet-delay) + 150ms);
+}
+
+.reveal-sheet.is-visible::before {
+  transform: translate3d(calc(-100% - var(--sheet-edge)), 0, 0);
+}
+
+.reveal-sheet.is-visible::after {
+  transform: translate3d(calc(-100vw - var(--sheet-edge)), 0, 0) skewX(-14deg);
+}
+
+.reveal-sheet.is-visible > * {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.reveal-sheet--warm {
+  --sheet-cover: linear-gradient(180deg, #f8f3ec 0%, #f4ece3 42%, #ffffff 100%);
+}
+
+.reveal-sheet--delay {
+  --sheet-delay: 120ms;
+}
+
+.reveal-sheet--delay-2 {
+  --sheet-delay: 240ms;
+}
+
+.story-step.reveal-sheet .story-step__media img,
+.product-visual.reveal-sheet img {
+  transform: scale(1.04);
+  transition: transform 1700ms cubic-bezier(0.2, 0.7, 0.2, 1) calc(var(--sheet-delay) + 170ms);
+}
+
+.story-step.reveal-sheet.is-visible .story-step__media img,
+.product-visual.reveal-sheet.is-visible img {
+  transform: scale(1);
+}
+
 .reveal-up--delay {
   transition-delay: 140ms;
 }

@@ -164,9 +164,11 @@
 
   function renderStorySteps(items) {
     return items
-      .map(function (item) {
+      .map(function (item, index) {
         return (
-          '<article class="story-step">' +
+          '<article class="story-step reveal-sheet' +
+          (index === 1 ? " reveal-sheet--delay" : index === 2 ? " reveal-sheet--delay-2" : "") +
+          '">' +
           '<figure class="story-step__media">' +
           '<img src="' +
           escapeHtml(item.image) +
@@ -174,7 +176,7 @@
           escapeHtml(item.alt) +
           '" loading="lazy" />' +
           "</figure>" +
-          '<div class="story-step__copy reveal-up reveal-up--delay-2">' +
+          '<div class="story-step__copy">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
           "</p>" +
@@ -213,8 +215,8 @@
         return (
           '<figure class="product-visual product-visual--' +
           (index === 0 ? "main" : "secondary") +
-          " reveal-mask " +
-          (index === 0 ? "reveal-mask--right" : "reveal-mask--left") +
+          " reveal-sheet reveal-sheet--warm" +
+          (index === 1 ? " reveal-sheet--delay" : "") +
           '">' +
           '<img src="' +
           escapeHtml(item.image) +
@@ -993,7 +995,7 @@
   var nav = app.querySelector(".site-nav");
   var navToggle = app.querySelector(".nav-toggle");
   var revealItems = Array.prototype.slice.call(
-    app.querySelectorAll(".reveal-up, .reveal-side, .reveal-scale, .reveal-track, .reveal-mask, .reveal-rise")
+    app.querySelectorAll(".reveal-up, .reveal-side, .reveal-scale, .reveal-track, .reveal-mask, .reveal-rise, .reveal-sheet")
   );
   var hero = app.querySelector(".hero");
   var introCopy = app.querySelector("[data-intro-copy]");
