@@ -11,7 +11,7 @@
   --shadow: 0 20px 44px rgba(24, 20, 18, 0.05);
   --shadow-soft: 0 10px 22px rgba(24, 20, 18, 0.035);
   --shadow-image: 0 26px 58px rgba(24, 20, 18, 0.07);
-  --container: min(1460px, calc(100vw - 152px));
+  --container: min(1520px, calc(100vw - 120px));
   --section-space: 176px;
   --section-space-mobile: 86px;
   --hero-overlap: clamp(120px, 18vh, 220px);
@@ -829,16 +829,16 @@ button {
 
 .section-title,
 .subhero__title {
-  font-size: clamp(2.3rem, 3vw, 3.28rem);
+  font-size: clamp(2.18rem, 2.8vw, 3.08rem);
   line-height: 1.18;
 }
 
 .section-lead,
 .subhero__lead {
-  max-width: 560px;
+  max-width: 580px;
   margin: 18px 0 0;
   font-size: 0.88rem;
-  line-height: 2.1;
+  line-height: 2.02;
   color: rgba(24, 20, 18, 0.82);
 }
 
@@ -2086,7 +2086,7 @@ button {
 .brand-section__stack,
 .service-section__stack,
 .detail-section__stack {
-  margin-top: 86px;
+  margin-top: 68px;
 }
 
 .brand-row,
@@ -2094,14 +2094,14 @@ button {
 .detail-row {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: 104px;
+  gap: 88px;
   align-items: center;
 }
 
 .brand-row + .brand-row,
 .service-block + .service-block,
 .detail-row + .detail-row {
-  margin-top: 138px;
+  margin-top: 118px;
 }
 
 .brand-row--reverse,
@@ -2132,16 +2132,18 @@ button {
 .brand-row__media img,
 .service-block__media img {
   width: 100%;
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 16 / 11.5;
   object-fit: cover;
+  object-position: 58% center;
   box-shadow: var(--shadow-soft);
   transition: transform 1800ms cubic-bezier(0.2, 0.65, 0.2, 1);
 }
 
 .detail-row__media img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 5 / 6;
   object-fit: cover;
+  object-position: 56% center;
   box-shadow: var(--shadow-soft);
   transition: transform 1800ms cubic-bezier(0.2, 0.65, 0.2, 1);
 }
@@ -2302,18 +2304,18 @@ button {
 }
 
 .subhero {
-  padding: 164px 0 64px;
+  padding: 152px 0 40px;
 }
 
 .subhero__layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(250px, 320px);
-  gap: 56px;
+  gap: 48px;
   align-items: end;
 }
 
 .subhero__aside {
-  padding-top: 20px;
+  padding-top: 18px;
   border-top: 1px solid var(--line);
 }
 
@@ -2324,7 +2326,7 @@ button {
 .detail-section,
 .news-page,
 .contact-page {
-  padding-top: 96px;
+  padding-top: 72px;
 }
 
 .news-page__stack {
@@ -2793,6 +2795,26 @@ button {
     aspect-ratio: 16 / 10.5;
   }
 
+  .subhero__layout {
+    gap: 30px;
+  }
+
+  .subhero__aside {
+    max-width: 440px;
+  }
+
+  .detail-section,
+  .news-page,
+  .contact-page {
+    padding-top: 60px;
+  }
+
+  .brand-section__stack,
+  .service-section__stack,
+  .detail-section__stack {
+    margin-top: 54px;
+  }
+
   .brand-intro__copy {
     padding-top: 68px;
   }
@@ -3044,8 +3066,8 @@ button {
 
   .section-title,
   .subhero__title {
-    font-size: clamp(1.88rem, 7.8vw, 2.5rem);
-    line-height: 1.2;
+    font-size: clamp(1.72rem, 6.9vw, 2.18rem);
+    line-height: 1.24;
   }
 
   .section-lead,
@@ -3063,8 +3085,38 @@ button {
   .news-list__title,
   .news-article__body,
   .subhero__side-text {
-    font-size: 0.88rem;
-    line-height: 1.94;
+    font-size: 0.82rem;
+    line-height: 1.88;
+  }
+
+  .subhero {
+    padding: 104px 0 30px;
+  }
+
+  .subhero__layout {
+    gap: 24px;
+  }
+
+  .subhero__aside {
+    padding-top: 14px;
+  }
+
+  .detail-section,
+  .news-page,
+  .contact-page {
+    padding-top: 48px;
+  }
+
+  .brand-section__stack,
+  .service-section__stack,
+  .detail-section__stack {
+    margin-top: 40px;
+  }
+
+  .brand-row + .brand-row,
+  .service-block + .service-block,
+  .detail-row + .detail-row {
+    margin-top: 84px;
   }
 
   .site-main--home .brand-intro {
@@ -3257,6 +3309,13 @@ button {
     border-radius: 22px;
   }
 
+  .brand-row__media img,
+  .service-block__media img,
+  .detail-row__media img {
+    aspect-ratio: 16 / 11.8;
+    object-position: 60% center;
+  }
+
   .process-step__title {
     font-size: 1.26rem;
     line-height: 1.48;
@@ -3428,10 +3487,6 @@ button {
     width: 100%;
     min-width: 0;
     min-height: 48px;
-  }
-
-  .subhero {
-    padding: 118px 0 48px;
   }
 
   .site-footer__inner {
