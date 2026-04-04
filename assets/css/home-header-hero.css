@@ -252,6 +252,154 @@ body[data-page="home"] .hero-slide.is-active img {
   transform: scale(1.01);
 }
 
+body[data-page="home"] .site-main--home .brand-intro.brand-intro--threshold {
+  margin-top: clamp(132px, 17vh, 208px);
+  padding: clamp(34px, 6vh, 74px) 0 var(--section-space);
+  background: linear-gradient(180deg, #fffdfa 0%, #ffffff 22%, #ffffff 100%);
+  border-radius: 46px 46px 0 0;
+  box-shadow: 0 -32px 82px rgba(24, 20, 18, 0.1);
+}
+
+body[data-page="home"] .site-main--home .brand-intro.brand-intro--threshold::after {
+  content: "";
+  position: absolute;
+  inset: 22px 36px auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(24, 20, 18, 0.12), transparent);
+  pointer-events: none;
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__shell {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+body[data-page="home"] .brand-intro__threshold {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  width: 100%;
+  margin: -86px auto 26px;
+  pointer-events: none;
+}
+
+body[data-page="home"] .brand-intro__threshold-line {
+  width: min(10vw, 82px);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(24, 20, 18, 0), rgba(24, 20, 18, 0.28), rgba(24, 20, 18, 0));
+}
+
+body[data-page="home"] .brand-intro__threshold-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 88px;
+  height: 88px;
+  padding: 0 18px;
+  border: 1px solid rgba(24, 20, 18, 0.12);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 244, 238, 0.98));
+  box-shadow: 0 20px 42px rgba(24, 20, 18, 0.08);
+  font-family: var(--font-serif);
+  font-size: 0.96rem;
+  letter-spacing: 0.24em;
+  color: rgba(24, 20, 18, 0.82);
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__visual-shell {
+  display: block;
+  max-width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__visual-shell::before {
+  inset: auto 28px -24px;
+  height: 60px;
+  background: linear-gradient(180deg, rgba(24, 20, 18, 0.16), rgba(24, 20, 18, 0));
+  filter: blur(18px);
+  opacity: 0.2;
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__visual-meta {
+  display: none;
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__visual {
+  border-radius: 30px;
+  background: linear-gradient(180deg, #f8f5f0 0%, #efe9e1 100%);
+  box-shadow: 0 28px 68px rgba(24, 20, 18, 0.08);
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__visual img {
+  aspect-ratio: 16 / 8.8;
+  box-shadow: none;
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(280px, 0.72fr);
+  gap: 40px 52px;
+  align-items: start;
+  margin-top: 56px;
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__copy {
+  max-width: 640px;
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__copy .section-kicker {
+  margin-bottom: 18px;
+  color: rgba(24, 20, 18, 0.44);
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__copy .section-title {
+  max-width: 12ch;
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__copy .section-lead {
+  max-width: 32rem;
+  margin-top: 22px;
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__copy .section-text {
+  max-width: 35rem;
+  margin-top: 18px;
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__aside {
+  max-width: 100%;
+  margin-top: 54px;
+  padding: 22px 0 0;
+  border-top: 1px solid rgba(24, 20, 18, 0.1);
+  background: transparent;
+  box-shadow: none;
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__aside-title {
+  font-size: 1.12rem;
+  line-height: 1.74;
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__facts {
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__fact {
+  padding-top: 14px;
+  border-top: 1px solid rgba(24, 20, 18, 0.08);
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__fact:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
 @media (max-width: 1200px) {
   body[data-page="home"] .site-header__inner {
     min-height: 104px;
@@ -270,6 +418,20 @@ body[data-page="home"] .hero-slide.is-active img {
 
   body[data-page="home"] .hero__title {
     font-size: clamp(3rem, 5.4vw, 4.4rem);
+  }
+
+  body[data-page="home"] .site-main--home .brand-intro.brand-intro--threshold {
+    margin-top: clamp(116px, 15vh, 182px);
+  }
+
+  body[data-page="home"] .brand-intro--threshold .brand-intro__body {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 44px;
+  }
+
+  body[data-page="home"] .brand-intro--threshold .brand-intro__aside {
+    margin-top: 0;
   }
 }
 
@@ -366,5 +528,61 @@ body[data-page="home"] .hero-slide.is-active img {
     font-size: 0.68rem;
     line-height: 1.76;
     letter-spacing: 0.06em;
+  }
+
+  body[data-page="home"] .site-main--home .brand-intro.brand-intro--threshold {
+    margin-top: clamp(74px, 11vh, 104px);
+    padding: 20px 0 var(--section-space-mobile);
+    border-radius: 28px 28px 0 0;
+    box-shadow: 0 -20px 48px rgba(24, 20, 18, 0.08);
+  }
+
+  body[data-page="home"] .site-main--home .brand-intro.brand-intro--threshold::after {
+    inset: 14px 18px auto;
+  }
+
+  body[data-page="home"] .brand-intro__threshold {
+    gap: 12px;
+    margin: -52px auto 20px;
+  }
+
+  body[data-page="home"] .brand-intro__threshold-line {
+    width: min(16vw, 42px);
+  }
+
+  body[data-page="home"] .brand-intro__threshold-mark {
+    min-width: 64px;
+    height: 64px;
+    padding: 0 12px;
+    font-size: 0.74rem;
+    letter-spacing: 0.18em;
+    box-shadow: 0 12px 26px rgba(24, 20, 18, 0.08);
+  }
+
+  body[data-page="home"] .brand-intro--threshold .brand-intro__visual-shell::before {
+    inset: auto 16px -16px;
+    height: 34px;
+    filter: blur(12px);
+  }
+
+  body[data-page="home"] .brand-intro--threshold .brand-intro__visual {
+    border-radius: 20px;
+  }
+
+  body[data-page="home"] .brand-intro--threshold .brand-intro__visual img {
+    aspect-ratio: 4 / 4.8;
+  }
+
+  body[data-page="home"] .brand-intro--threshold .brand-intro__body {
+    gap: 22px;
+    margin-top: 30px;
+  }
+
+  body[data-page="home"] .brand-intro--threshold .brand-intro__copy .section-lead {
+    margin-top: 18px;
+  }
+
+  body[data-page="home"] .brand-intro--threshold .brand-intro__aside {
+    padding-top: 18px;
   }
 }
