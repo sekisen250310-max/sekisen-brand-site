@@ -755,37 +755,11 @@
       '<div class="product-stage__highlights">' +
       renderProductHighlights(home.product.highlights) +
       "</div>" +
-      '<div class="product-compare reveal-slide reveal-slide--delay-2">' +
-      '<p class="section-kicker">' +
-      escapeHtml(home.product.comparison.title) +
-      "</p>" +
-      '<div class="product-compare__head">' +
-      '<span></span>' +
-      "<span>石戦</span>" +
-      "<span>一般的なトマト</span>" +
-      "</div>" +
-      '<div class="product-compare__table">' +
-      renderProductComparisonRows(home.product.comparison.rows) +
-      "</div>" +
-      "</div>" +
-      '<div class="product-stage__meta">' +
-      '<div class="product-meta reveal-slide reveal-slide--delay-2">' +
-      '<p class="section-kicker">' +
-      escapeHtml(home.product.scenes.title) +
-      "</p>" +
-      '<ul class="product-scene">' +
-      renderSceneItems(home.product.scenes.items) +
-      "</ul>" +
-      "</div>" +
-      '<div class="product-meta reveal-slide reveal-slide--delay-3">' +
-      '<p class="section-kicker">' +
-      escapeHtml(home.product.specs.title) +
-      "</p>" +
-      '<div class="product-specs">' +
-      renderSpecItems(home.product.specs.items) +
-      "</div>" +
-      "</div>" +
-      "</div>" +
+      (home.product.summary
+        ? '<p class="product-stage__summary reveal-slide reveal-slide--delay-2">' +
+          escapeHtml(home.product.summary) +
+          "</p>"
+        : "") +
       '<div class="cta-row reveal-slide reveal-slide--delay-3">' +
       renderActionButtons(home.product.ctas) +
       "</div>" +
