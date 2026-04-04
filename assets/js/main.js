@@ -728,6 +728,14 @@
   function renderHome() {
     var home = content.home;
     var initialSlide = home.hero.slides[0];
+    var heroActions =
+      Array.isArray(home.hero.actions) && home.hero.actions.length
+        ? renderActionButtons(home.hero.actions)
+        : '<a class="button button--dark" data-hero-action href="' +
+          escapeHtml(initialSlide.actionHref) +
+          '">' +
+          escapeHtml(initialSlide.actionLabel) +
+          "</a>";
 
     return (
       '<main class="site-main site-main--home">' +
@@ -750,11 +758,7 @@
       escapeHtml(initialSlide.text) +
       "</p>" +
       '<div class="hero__actions">' +
-      '<a class="button button--dark" data-hero-action href="' +
-      escapeHtml(initialSlide.actionHref) +
-      '">' +
-      escapeHtml(initialSlide.actionLabel) +
-      "</a>" +
+      heroActions +
       "</div>" +
       "</div>" +
       '<div class="hero__controls reveal-up reveal-up--delay">' +
@@ -1335,8 +1339,10 @@
         heroEyebrow.textContent = slide.eyebrow;
         heroTitle.innerHTML = toMarkup(slide.title);
         heroDescription.textContent = slide.text;
-        heroAction.textContent = slide.actionLabel;
-        heroAction.href = slide.actionHref;
+        if (heroAction) {
+          heroAction.textContent = slide.actionLabel;
+          heroAction.href = slide.actionHref;
+        }
         heroCopy.classList.remove("is-changing");
       }
 

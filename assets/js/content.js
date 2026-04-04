@@ -40,42 +40,51 @@ window.SEKISEN_CONTENT = {
   },
   home: {
     hero: {
-      interval: 11800,
+      interval: 18000,
       slides: [
         {
           image: "./assets/images/hero-01.svg",
           alt: "SEKISEN premium tomato hero visual",
           eyebrow: "SEKISEN",
-          title: "一粒の印象を、\n静かな品格へ。",
-          text:
-            "静かな余白で、果実の印象を整える。",
-          actionLabel: "商品を見る",
-          actionHref: "#product-stage"
+          title: "甘さの先に、\n品位がある。",
+          text: "食卓にも、贈る場にも、静かに残る。",
+          actionLabel: "石戦とは",
+          actionHref: "#brand-intro"
         },
         {
           image: "./assets/images/hero-02.svg",
           alt: "SEKISEN gift visual",
-          eyebrow: "Gift Selection",
-          title: "贈る所作まで、\n味わいにする。",
-          text:
-            "贈るための美しさも、石戦の価値に含める。",
-          actionLabel: "オンラインショップへ",
-          actionHref: "#shop-stage"
+          eyebrow: "SEKISEN",
+          title: "甘さの先に、\n品位がある。",
+          text: "食卓にも、贈る場にも、静かに残る。",
+          actionLabel: "石戦とは",
+          actionHref: "#brand-intro"
         },
         {
           image: "./assets/images/hero-03.svg",
           alt: "SEKISEN experience visual",
-          eyebrow: "Quality",
-          title: "食べた瞬間に、\n理由が残る。",
-          text:
-            "価格ではなく、満足感で納得できる一箱へ。",
-          actionLabel: "価格の理由を見る",
-          actionHref: "#reason-stage"
+          eyebrow: "SEKISEN",
+          title: "甘さの先に、\n品位がある。",
+          text: "食卓にも、贈る場にも、静かに残る。",
+          actionLabel: "石戦とは",
+          actionHref: "#brand-intro"
+        }
+      ],
+      actions: [
+        {
+          label: "石戦とは",
+          href: "#brand-intro",
+          style: "button button--dark"
+        },
+        {
+          label: "商品を見る",
+          href: "#product-stage",
+          style: "button button--ghost-light"
         }
       ]
     },
     intro: {
-      eyebrow: "About SEKISEN",
+      eyebrow: "What SEKISEN Keeps",
       image: "./assets/images/intro-hand-fruit.svg",
       alt: "手に持った果実の温度感が伝わる石戦の仮ビジュアル",
       visuals: [
@@ -93,30 +102,30 @@ window.SEKISEN_CONTENT = {
         }
       ],
       visualLead: "Field / Hand / Profile",
-      caption: "畑、手元、人物の距離で、石戦の温度を伝えるための仮ビジュアルです。",
-      title: "甘さだけでは、\n選ばない。",
+      caption: "畑、手、眼差し。その三つを揃えて、石戦の基準を伝える導入ビジュアルです。",
+      title: "石戦は、品質と印象を\n一果で整えるブランドです。",
       lead:
-        "石戦は、出来の良い果実をそのまま売るだけのブランドではありません。育てる、見極める、届ける。その三つの基準を同じ温度で揃え、ひと粒の印象を整えています。",
+        "育て方、見極め方、届け方までを、同じ基準で整える。",
       text:
-        "畑での手間、手に取ったときの張り、箱を開けた瞬間の空気まで。普通の農産物のように『採れたものを並べる』のではなく、『どう届き、どう記憶に残るか』まで設計する。それが石戦です。",
+        "甘さだけでも、見た目だけでも終わらせない。口にしたあとと、手渡したあと、その両方に品位が残る一果を目指しています。",
       note: {
         label: "Three Standards",
-        title: "一粒で終わらせず、一箱で整える。",
+        title: "違いは、三つの基準で支える。",
         text:
-          "基準は味だけに置きません。ひと口目の印象、並んだときの美しさ、贈る場面での信頼感までをひと続きで見ます。だから石戦は、農産物でありながら、きちんとした贈り物になります。"
+          "畑での手間、収穫後の見極め、箱を開ける前の整い方。どれか一つではなく、すべてが揃って初めて石戦になります。"
       },
       facts: [
         {
           label: "育てる",
-          value: "印象が濁らない果実だけを見る。"
+          value: "味の輪郭から、静かに整える。"
         },
         {
-          label: "揃える",
-          value: "一箱で見たときの密度まで整える。"
+          label: "見極める",
+          value: "一粒ごとの張りと余韻を見る。"
         },
         {
           label: "届ける",
-          value: "開ける前から信頼が立つようにする。"
+          value: "開ける前から、信頼に変える。"
         }
       ]
     },

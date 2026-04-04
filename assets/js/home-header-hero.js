@@ -9,34 +9,46 @@
       { id: "experience", label: "法人のお客様へ", href: "./experience.html" }
     ];
 
-    content.home.hero.interval = 16000;
+    content.home.hero.interval = 18000;
     content.home.hero.slides = [
       {
         image: "./assets/images/hero-01.svg",
         alt: "SEKISEN premium tomato hero visual",
         eyebrow: "SEKISEN",
-        title: "赤は、\n静かに強い。",
-        text: "品を、ひと粒で伝える。",
+        title: "甘さの先に、\n品位がある。",
+        text: "食卓にも、贈る場にも、静かに残る。",
         actionLabel: "石戦とは",
         actionHref: "#brand-intro"
       },
       {
         image: "./assets/images/hero-02.svg",
         alt: "SEKISEN gift visual",
-        eyebrow: "Gift",
-        title: "贈る前から、\n整っている。",
-        text: "箱を開ける前に、信頼が立ち上がる。",
-        actionLabel: "商品を見る",
-        actionHref: "#product-stage"
+        eyebrow: "SEKISEN",
+        title: "甘さの先に、\n品位がある。",
+        text: "食卓にも、贈る場にも、静かに残る。",
+        actionLabel: "石戦とは",
+        actionHref: "#brand-intro"
       },
       {
         image: "./assets/images/hero-03.svg",
         alt: "SEKISEN experience visual",
-        eyebrow: "Taste",
-        title: "食べたあとに、\n余韻が残る。",
-        text: "甘さだけで終わらない。",
-        actionLabel: "価値の理由を見る",
-        actionHref: "#reason-stage"
+        eyebrow: "SEKISEN",
+        title: "甘さの先に、\n品位がある。",
+        text: "食卓にも、贈る場にも、静かに残る。",
+        actionLabel: "石戦とは",
+        actionHref: "#brand-intro"
+      }
+    ];
+    content.home.hero.actions = [
+      {
+        label: "石戦とは",
+        href: "#brand-intro",
+        style: "button button--dark"
+      },
+      {
+        label: "商品を見る",
+        href: "#product-stage",
+        style: "button button--ghost-light"
       }
     ];
   }
@@ -157,10 +169,10 @@
     visual.classList.add("brand-intro__visual-shell--lead");
 
     setRevealMode(visual, "reveal-slide");
-    setRevealMode(copy, "reveal-up", "reveal-up--delay-2");
+    setRevealMode(copy, "reveal-up", "reveal-up--delay");
 
     if (aside) {
-      setRevealMode(aside, "reveal-up", "reveal-up--delay-3");
+      setRevealMode(aside, "reveal-up", "reveal-up--delay-2");
     }
 
     if (!threshold) {
