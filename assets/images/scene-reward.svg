@@ -1,0 +1,21 @@
+<svg width="1200" height="960" viewBox="0 0 1200 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="960" fill="#F5EFE7"/>
+  <rect x="56" y="56" width="1088" height="848" rx="30" fill="#FBF7F2"/>
+  <rect x="96" y="112" width="1008" height="736" rx="24" fill="#F7F2EB"/>
+  <path d="M166 794C286 730 424 696 586 700C748 704 892 740 1010 802V850H166V794Z" fill="#E6D8CA"/>
+  <path d="M286 334C352 258 428 220 516 224C592 228 662 266 714 336C750 384 776 442 798 518C726 474 648 454 564 456C476 458 394 484 318 532C314 452 302 388 286 334Z" fill="#E9D8C9"/>
+  <circle cx="738" cy="560" r="124" fill="url(#fruit)"/>
+  <circle cx="654" cy="470" r="28" fill="#FFE5D6"/>
+  <circle cx="790" cy="626" r="18" fill="#FFEBDC"/>
+  <path d="M794 430C826 392 876 382 918 396" stroke="#516C4C" stroke-width="10" stroke-linecap="round"/>
+  <rect x="286" y="622" width="208" height="22" rx="11" fill="#E2D2C3"/>
+  <rect x="326" y="590" width="132" height="18" rx="9" fill="#EFE3D8"/>
+  <rect x="174" y="164" width="160" height="18" rx="9" fill="#E7DBD0"/>
+  <rect x="174" y="202" width="208" height="12" rx="6" fill="#D8C8BB"/>
+  <defs>
+    <radialGradient id="fruit" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(738 526) rotate(90) scale(148)">
+      <stop stop-color="#F8BD88"/>
+      <stop offset="1" stop-color="#882D27"/>
+    </radialGradient>
+  </defs>
+</svg>

@@ -1,0 +1,30 @@
+<svg width="1200" height="960" viewBox="0 0 1200 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="960" fill="#F6F0E8"/>
+  <rect x="56" y="56" width="1088" height="848" rx="30" fill="#FBF7F2"/>
+  <rect x="96" y="112" width="1008" height="736" rx="24" fill="#F7F2EB"/>
+  <path d="M196 790C320 724 462 692 630 696C798 700 944 736 1044 794V850H196V790Z" fill="#E4D6C8"/>
+  <path d="M326 418L610 330L846 448L564 538L326 418Z" fill="#F0E4D8"/>
+  <path d="M326 418L564 538V744L326 632V418Z" fill="#DECBB9"/>
+  <path d="M564 538L846 448V650L564 744V538Z" fill="#D4BCA4"/>
+  <circle cx="592" cy="490" r="76" fill="url(#fruitA)"/>
+  <circle cx="702" cy="474" r="72" fill="url(#fruitB)"/>
+  <circle cx="648" cy="584" r="80" fill="url(#fruitC)"/>
+  <path d="M880 516C930 460 984 434 1042 432" stroke="#D4C3B5" stroke-width="20" stroke-linecap="round"/>
+  <path d="M148 520C198 464 252 438 310 436" stroke="#D4C3B5" stroke-width="20" stroke-linecap="round"/>
+  <rect x="176" y="164" width="168" height="18" rx="9" fill="#E7DBD0"/>
+  <rect x="176" y="202" width="220" height="12" rx="6" fill="#D8C8BB"/>
+  <defs>
+    <radialGradient id="fruitA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(592 462) rotate(90) scale(92)">
+      <stop stop-color="#F7BE8C"/>
+      <stop offset="1" stop-color="#8B3028"/>
+    </radialGradient>
+    <radialGradient id="fruitB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(702 446) rotate(90) scale(88)">
+      <stop stop-color="#F5B67F"/>
+      <stop offset="1" stop-color="#832925"/>
+    </radialGradient>
+    <radialGradient id="fruitC" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(648 556) rotate(90) scale(96)">
+      <stop stop-color="#F8C292"/>
+      <stop offset="1" stop-color="#8D322A"/>
+    </radialGradient>
+  </defs>
+</svg>

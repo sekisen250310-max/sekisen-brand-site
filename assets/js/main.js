@@ -410,6 +410,42 @@
       .join("");
   }
 
+  function renderSceneCards(items) {
+    return items
+      .map(function (item, index) {
+        var classes =
+          "scene-card reveal-slide" +
+          getRevealSlideDelayClass(index) +
+          (item.featured ? " scene-card--featured" : "");
+
+        return (
+          '<article class="' +
+          classes +
+          '">' +
+          '<figure class="scene-card__media">' +
+          '<img src="' +
+          escapeHtml(item.image) +
+          '" alt="' +
+          escapeHtml(item.alt) +
+          '" loading="lazy" />' +
+          "</figure>" +
+          '<div class="scene-card__copy">' +
+          '<p class="section-kicker">' +
+          escapeHtml(item.label) +
+          "</p>" +
+          '<h3 class="scene-card__title">' +
+          escapeHtml(item.title) +
+          "</h3>" +
+          '<p class="scene-card__text">' +
+          escapeHtml(item.text) +
+          "</p>" +
+          "</div>" +
+          "</article>"
+        );
+      })
+      .join("");
+  }
+
   function renderTrustStats(items) {
     return items
       .map(function (item, index) {
@@ -801,6 +837,24 @@
       '<div class="cta-row">' +
       renderActionButtons(home.reason.ctas) +
       "</div>" +
+      "</div>" +
+      "</div>" +
+      "</section>" +
+      '<section class="section scene-stage" id="scene-stage">' +
+      '<div class="container">' +
+      '<div class="section-head section-head--compact reveal-slide">' +
+      '<p class="section-kicker">' +
+      escapeHtml(home.scenes.eyebrow) +
+      "</p>" +
+      '<h2 class="section-title">' +
+      escapeHtml(home.scenes.title) +
+      "</h2>" +
+      '<p class="section-text">' +
+      escapeHtml(home.scenes.text) +
+      "</p>" +
+      "</div>" +
+      '<div class="scene-stage__grid">' +
+      renderSceneCards(home.scenes.items) +
       "</div>" +
       "</div>" +
       "</section>" +

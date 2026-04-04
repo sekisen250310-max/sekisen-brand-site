@@ -1370,6 +1370,67 @@ button {
   color: var(--ink);
 }
 
+.scene-stage {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.scene-stage__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+  margin-top: 68px;
+}
+
+.scene-card {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  padding: 18px;
+  border: 1px solid rgba(24, 20, 18, 0.07);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-soft);
+}
+
+.scene-card--featured {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1.14fr) minmax(320px, 0.86fr);
+  gap: 30px;
+  padding: 22px;
+  align-items: center;
+}
+
+.scene-card__media {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #f6f1ea 0%, #eee6dc 100%);
+}
+
+.scene-card__media img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: var(--shadow-image);
+}
+
+.scene-card--featured .scene-card__media img {
+  aspect-ratio: 16 / 10;
+}
+
+.scene-card__title {
+  margin-top: 14px;
+  max-width: 12ch;
+  font-size: 1.46rem;
+  line-height: 1.42;
+}
+
+.scene-card__text {
+  margin: 12px 0 0;
+  max-width: 28rem;
+}
+
 .trust-stage {
   background: rgba(255, 255, 255, 0.18);
 }
@@ -2606,6 +2667,15 @@ button {
     gap: 48px;
   }
 
+  .scene-stage__grid {
+    gap: 22px;
+  }
+
+  .scene-card--featured {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .trust-stats {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -2956,6 +3026,32 @@ button {
   .reason-stage__stack {
     gap: 34px;
     margin-top: 42px;
+  }
+
+  .scene-stage__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 42px;
+  }
+
+  .scene-card,
+  .scene-card--featured {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .scene-card__media {
+    border-radius: 20px;
+  }
+
+  .scene-card__title {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .scene-card__text {
+    margin-top: 10px;
   }
 
   .process-step,

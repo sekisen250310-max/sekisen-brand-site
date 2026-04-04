@@ -278,6 +278,55 @@ window.SEKISEN_CONTENT = {
         }
       ]
     },
+    scenes: {
+      eyebrow: "Scenes / Occasion",
+      title: "選ばれるのは、味のためだけではない。",
+      text:
+        "石戦は、食べるためだけのものではありません。渡すとき、開けるとき、囲むとき。その場の空気を少し整えたい日に、静かに選ばれます。",
+      items: [
+        {
+          label: "Gift",
+          title: "大切な人へ、気持ちを整えて渡せる。",
+          text:
+            "言葉を足しすぎなくても、箱を開けた瞬間に気持ちが伝わる。石戦は、贈る側の緊張まできれいにしてくれます。",
+          image: "./assets/images/scene-gift.svg",
+          alt: "贈答シーンと美しい箱を表現した石戦の仮ビジュアル",
+          featured: true
+        },
+        {
+          label: "For Me",
+          title: "自分へのご褒美に、少しだけ良いものを。",
+          text:
+            "慌ただしい日でも、ひと口で空気が変わる。自分のために選ぶときも、石戦は特別すぎず、きちんと嬉しい。",
+          image: "./assets/images/scene-reward.svg",
+          alt: "自分へのご褒美の時間を表現した石戦の仮ビジュアル"
+        },
+        {
+          label: "Family Table",
+          title: "家族の食卓に、静かな主役を置く。",
+          text:
+            "切って並べるだけで、いつもの食卓に少しだけ緊張感が生まれる。会話のきっかけになる贅沢です。",
+          image: "./assets/images/scene-family.svg",
+          alt: "家族との食卓を表現した石戦の仮ビジュアル"
+        },
+        {
+          label: "Special Day",
+          title: "特別な日は、余白まで美しくしたい。",
+          text:
+            "記念日や季節の節目に、派手ではない上質さがよく似合う。料理の前から、その日の温度を整えます。",
+          image: "./assets/images/scene-special.svg",
+          alt: "特別な日の食卓と開封の情景を表現した石戦の仮ビジュアル"
+        },
+        {
+          label: "Corporate Gift",
+          title: "手土産にも、法人ギフトにも。",
+          text:
+            "かしこまりすぎず、軽すぎない。相手との距離を崩さずに、印象だけを上げたい場面で効きます。",
+          image: "./assets/images/scene-corporate.svg",
+          alt: "法人ギフトや手土産の情景を表現した石戦の仮ビジュアル"
+        }
+      ]
+    },
     trust: {
       eyebrow: "Trust / Story",
       title: "安心して選べる理由を、数字と声と背景で整える。",
