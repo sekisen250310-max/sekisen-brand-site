@@ -279,6 +279,39 @@
       .join("");
   }
 
+  function renderParagraphGroup(items, className) {
+    return items
+      .map(function (item) {
+        return (
+          '<p class="' +
+          className +
+          '">' +
+          toMarkup(item) +
+          "</p>"
+        );
+      })
+      .join("");
+  }
+
+  function renderProductBlocks(items) {
+    return items
+      .map(function (item, index) {
+        return (
+          '<article class="product-value reveal-slide' +
+          getRevealSlideDelayClass(index) +
+          '">' +
+          '<h3 class="product-value__title">' +
+          toMarkup(item.title) +
+          "</h3>" +
+          '<div class="product-value__body">' +
+          renderParagraphGroup(item.paragraphs, "product-value__text") +
+          "</div>" +
+          "</article>"
+        );
+      })
+      .join("");
+  }
+
   function renderProductVisuals(items) {
     return items
       .map(function (item, index) {
@@ -842,34 +875,19 @@
       "</section>" +
       '<section class="section product-stage" id="product-stage">' +
       '<div class="container">' +
-      '<div class="section-head section-head--compact reveal-slide">' +
+      '<div class="product-stage__header reveal-slide">' +
       '<p class="section-kicker">' +
       escapeHtml(home.product.eyebrow) +
       "</p>" +
       '<h2 class="section-title">' +
       escapeHtml(home.product.title) +
       "</h2>" +
-      '<p class="section-lead">' +
-      escapeHtml(home.product.lead) +
-      "</p>" +
       "</div>" +
-      '<div class="product-stage__layout">' +
-      '<div class="product-stage__visuals">' +
-      renderProductVisuals(home.product.visuals) +
+      '<div class="product-stage__intro reveal-slide reveal-slide--delay">' +
+      renderParagraphGroup(home.product.intro, "product-stage__intro-text") +
       "</div>" +
-      '<div class="product-stage__details">' +
-      '<div class="product-stage__highlights">' +
-      renderProductHighlights(home.product.highlights) +
-      "</div>" +
-      (home.product.summary
-        ? '<p class="product-stage__summary reveal-slide reveal-slide--delay-2">' +
-          escapeHtml(home.product.summary) +
-          "</p>"
-        : "") +
-      '<div class="cta-row reveal-slide reveal-slide--delay-3">' +
-      renderActionButtons(home.product.ctas) +
-      "</div>" +
-      "</div>" +
+      '<div class="product-stage__blocks">' +
+      renderProductBlocks(home.product.blocks) +
       "</div>" +
       "</div>" +
       "</section>" +

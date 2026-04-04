@@ -1292,6 +1292,80 @@ button {
   color: var(--ink-soft);
 }
 
+.product-stage {
+  background: #ffffff;
+}
+
+.product-stage__header {
+  max-width: 44rem;
+}
+
+.product-stage__header .section-kicker {
+  margin-bottom: 18px;
+  color: rgba(24, 20, 18, 0.44);
+}
+
+.product-stage__header .section-title {
+  max-width: 11ch;
+  font-size: clamp(2.56rem, 3.4vw, 4rem);
+  line-height: 1.14;
+}
+
+.product-stage__intro {
+  display: grid;
+  gap: 16px;
+  max-width: 31rem;
+  margin-top: 34px;
+}
+
+.product-stage__intro-text {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 2.06;
+  color: rgba(24, 20, 18, 0.82);
+}
+
+.product-stage__blocks {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 42px;
+  align-items: start;
+  margin-top: 84px;
+}
+
+.product-value {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.8fr) minmax(0, 1.2fr);
+  gap: 42px;
+  align-items: start;
+  padding-top: 24px;
+  border-top: 1px solid rgba(24, 20, 18, 0.1);
+}
+
+.product-value__title {
+  margin: 0;
+  max-width: none;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  font-size: 1.46rem;
+  line-height: 1.52;
+  color: var(--ink);
+}
+
+.product-value__body {
+  display: grid;
+  gap: 14px;
+  max-width: 36rem;
+}
+
+.product-value__text {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.98;
+  color: var(--ink-soft);
+}
+
 .reason-stage {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.56), rgba(247, 242, 236, 0.34));
 }
@@ -2829,6 +2903,25 @@ button {
     margin-top: 58px;
   }
 
+  .product-stage__blocks {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    margin-top: 68px;
+  }
+
+  .product-stage__intro {
+    max-width: 34rem;
+  }
+
+  .product-value {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .product-value__title {
+    max-width: none;
+  }
+
   .product-visual--secondary {
     max-width: 58%;
   }
@@ -3204,6 +3297,47 @@ button {
   .product-stage__layout {
     gap: 30px;
     margin-top: 42px;
+  }
+
+  .product-stage__header .section-title {
+    max-width: 7ch;
+    font-size: clamp(1.86rem, 7.2vw, 2.36rem);
+    line-height: 1.2;
+  }
+
+  .product-stage__intro {
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .product-stage__intro-text {
+    font-size: 0.76rem;
+    line-height: 1.9;
+  }
+
+  .product-stage__blocks {
+    gap: 30px;
+    margin-top: 48px;
+  }
+
+  .product-value {
+    gap: 16px;
+    padding-top: 20px;
+  }
+
+  .product-value__title {
+    max-width: 14ch;
+    font-size: 1.08rem;
+    line-height: 1.62;
+  }
+
+  .product-value__body {
+    gap: 10px;
+  }
+
+  .product-value__text {
+    font-size: 0.72rem;
+    line-height: 1.88;
   }
 
   .product-stage__visuals {
