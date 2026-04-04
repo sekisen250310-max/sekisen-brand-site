@@ -1,0 +1,40 @@
+<svg width="1200" height="960" viewBox="0 0 1200 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="960" fill="#F5EFE7"/>
+  <rect x="52" y="52" width="1096" height="856" rx="30" fill="url(#panel)"/>
+  <rect x="96" y="96" width="1008" height="768" rx="24" fill="#FBF7F2"/>
+  <path d="M160 774C246 712 332 680 436 678C540 676 644 712 748 784V864H160V774Z" fill="#E7D7C8"/>
+  <path d="M660 300C712 248 784 222 858 228C932 234 992 280 1028 350C1060 412 1062 496 1026 564C994 626 936 676 864 692C792 708 714 690 656 638C600 590 568 520 570 446C572 388 596 344 660 300Z" fill="#E7B99A"/>
+  <path d="M724 318C758 298 798 294 834 302C870 310 900 330 920 358C944 394 950 444 938 492C924 544 892 588 844 616C796 642 742 646 696 626C648 606 612 566 598 514C586 466 590 418 614 382C636 348 668 332 724 318Z" fill="#F4D1B8"/>
+  <path d="M762 428C780 414 806 410 826 416" stroke="#A97A64" stroke-width="8" stroke-linecap="round"/>
+  <path d="M724 516C756 540 804 548 850 540" stroke="#A97A64" stroke-width="8" stroke-linecap="round"/>
+  <path d="M516 552L718 470L914 568L712 652L516 552Z" fill="#EEDFD1"/>
+  <path d="M516 552L712 652V804L516 706V552Z" fill="#D8C0AB"/>
+  <path d="M712 652L914 568V718L712 804V652Z" fill="#CDAE93"/>
+  <circle cx="668" cy="594" r="56" fill="url(#fruitA)"/>
+  <circle cx="754" cy="570" r="52" fill="url(#fruitB)"/>
+  <circle cx="794" cy="642" r="58" fill="url(#fruitC)"/>
+  <path d="M752 500C776 474 814 466 846 476" stroke="#4E6A4A" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="754" cy="502" r="16" fill="#4E6A4A"/>
+  <path d="M504 604C462 592 418 600 374 628" stroke="#C7AF9B" stroke-width="22" stroke-linecap="round"/>
+  <path d="M916 610C958 598 996 604 1040 632" stroke="#C7AF9B" stroke-width="22" stroke-linecap="round"/>
+  <rect x="168" y="160" width="164" height="18" rx="9" fill="#E6D8C8"/>
+  <rect x="168" y="196" width="232" height="12" rx="6" fill="#D3C0AE"/>
+  <defs>
+    <linearGradient id="panel" x1="600" y1="52" x2="600" y2="908" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF6F1"/>
+      <stop offset="1" stop-color="#F1E8DE"/>
+    </linearGradient>
+    <radialGradient id="fruitA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(668 576) rotate(90) scale(64)">
+      <stop stop-color="#F7BC86"/>
+      <stop offset="1" stop-color="#8C3028"/>
+    </radialGradient>
+    <radialGradient id="fruitB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(754 550) rotate(90) scale(60)">
+      <stop stop-color="#F6B784"/>
+      <stop offset="1" stop-color="#842A24"/>
+    </radialGradient>
+    <radialGradient id="fruitC" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(794 622) rotate(90) scale(66)">
+      <stop stop-color="#F7C290"/>
+      <stop offset="1" stop-color="#8F332A"/>
+    </radialGradient>
+  </defs>
+</svg>

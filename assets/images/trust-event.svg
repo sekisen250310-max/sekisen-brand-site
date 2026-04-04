@@ -1,0 +1,40 @@
+<svg width="1200" height="960" viewBox="0 0 1200 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="960" fill="#F4EEE5"/>
+  <rect x="56" y="56" width="1088" height="848" rx="30" fill="#FBF7F2"/>
+  <rect x="96" y="96" width="1008" height="768" rx="24" fill="#F7F1E9"/>
+  <path d="M148 778C244 718 346 684 470 682C592 680 706 718 814 792V864H148V778Z" fill="#E5D4C5"/>
+  <path d="M250 406L442 250H858L960 406H250Z" fill="#EFE0D3"/>
+  <path d="M294 406L442 286H824L910 406H294Z" fill="#E9C7AE"/>
+  <rect x="322" y="406" width="552" height="250" fill="#FBF7F2"/>
+  <rect x="372" y="454" width="452" height="124" fill="#F3E4D7"/>
+  <path d="M448 560H742" stroke="#D8C3B0" stroke-width="10" stroke-linecap="round"/>
+  <path d="M398 618C454 592 518 578 592 576C668 574 732 590 790 622V706H398V618Z" fill="#D9BCA2"/>
+  <circle cx="520" cy="642" r="46" fill="url(#fruitA)"/>
+  <circle cx="592" cy="626" r="44" fill="url(#fruitB)"/>
+  <circle cx="652" cy="656" r="48" fill="url(#fruitC)"/>
+  <circle cx="742" cy="642" r="46" fill="url(#fruitD)"/>
+  <path d="M612 570C636 546 674 540 706 550" stroke="#4E6A4A" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="614" cy="572" r="16" fill="#4E6A4A"/>
+  <path d="M300 736C334 642 370 582 414 556C452 532 498 532 538 560C572 584 594 624 600 676C548 680 494 692 438 714C388 734 342 758 300 788V736Z" fill="#C9AF99"/>
+  <path d="M878 736C844 642 808 582 764 556C726 532 680 532 640 560C606 584 584 624 578 676C630 680 684 692 740 714C790 734 836 758 878 788V736Z" fill="#C9AF99"/>
+  <rect x="160" y="160" width="160" height="18" rx="9" fill="#E6D8C8"/>
+  <rect x="160" y="198" width="220" height="12" rx="6" fill="#D4C2B2"/>
+  <defs>
+    <radialGradient id="fruitA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(520 624) rotate(90) scale(54)">
+      <stop stop-color="#F6BC84"/>
+      <stop offset="1" stop-color="#882D28"/>
+    </radialGradient>
+    <radialGradient id="fruitB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(592 608) rotate(90) scale(52)">
+      <stop stop-color="#F2B17D"/>
+      <stop offset="1" stop-color="#7E2823"/>
+    </radialGradient>
+    <radialGradient id="fruitC" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(652 636) rotate(90) scale(56)">
+      <stop stop-color="#F7C08E"/>
+      <stop offset="1" stop-color="#8F342A"/>
+    </radialGradient>
+    <radialGradient id="fruitD" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(742 624) rotate(90) scale(54)">
+      <stop stop-color="#F4B781"/>
+      <stop offset="1" stop-color="#832A25"/>
+    </radialGradient>
+  </defs>
+</svg>

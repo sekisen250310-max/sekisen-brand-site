@@ -468,6 +468,29 @@
       .join("");
   }
 
+  function renderTrustVisuals(items) {
+    return items
+      .map(function (item, index) {
+        var classes =
+          "trust-visual reveal-slide" +
+          getRevealSlideDelayClass(index) +
+          (index === 0 ? " trust-visual--primary" : " trust-visual--secondary");
+
+        return (
+          '<figure class="' +
+          classes +
+          '">' +
+          '<img src="' +
+          escapeHtml(item.image) +
+          '" alt="' +
+          escapeHtml(item.alt) +
+          '" loading="lazy" />' +
+          "</figure>"
+        );
+      })
+      .join("");
+  }
+
   function renderTrustVoices(items) {
     return items
       .map(function (item, index) {
@@ -485,6 +508,38 @@
           escapeHtml(item.meta) +
           "</p>" +
           "</article>"
+        );
+      })
+      .join("");
+  }
+
+  function renderTrustSupports(items) {
+    return items
+      .map(function (item, index) {
+        return (
+          '<article class="trust-support reveal-slide' +
+          getRevealSlideDelayClass(index) +
+          '">' +
+          '<p class="section-kicker">' +
+          escapeHtml(item.label) +
+          "</p>" +
+          '<h3 class="trust-support__title">' +
+          escapeHtml(item.title) +
+          "</h3>" +
+          '<p class="trust-support__text">' +
+          escapeHtml(item.text) +
+          "</p>" +
+          "</article>"
+        );
+      })
+      .join("");
+  }
+
+  function renderTrustMediaItems(items) {
+    return items
+      .map(function (item) {
+        return (
+          '<span class="trust-media__item">' + escapeHtml(item) + "</span>"
         );
       })
       .join("");
@@ -870,6 +925,9 @@
       '<p class="section-text">' +
       escapeHtml(home.trust.text) +
       "</p>" +
+      '<div class="trust-stage__gallery">' +
+      renderTrustVisuals(home.trust.visuals) +
+      "</div>" +
       '<div class="trust-producer">' +
       '<p class="section-kicker">' +
       escapeHtml(home.trust.producer.label) +
@@ -883,11 +941,31 @@
       "</div>" +
       "</div>" +
       '<div class="trust-stage__proof reveal-slide reveal-slide--delay">' +
+      '<div class="trust-proof-block">' +
+      '<p class="section-kicker">Record / Repeat</p>' +
       '<div class="trust-stats">' +
       renderTrustStats(home.trust.stats) +
       "</div>" +
+      "</div>" +
+      '<div class="trust-proof-block">' +
+      '<p class="section-kicker">Review</p>' +
       '<div class="trust-voices">' +
       renderTrustVoices(home.trust.voices) +
+      "</div>" +
+      "</div>" +
+      '<div class="trust-proof-block trust-proof-block--support">' +
+      '<p class="section-kicker">Business / Media</p>' +
+      '<div class="trust-supports">' +
+      renderTrustSupports(home.trust.supports) +
+      "</div>" +
+      '<div class="trust-media">' +
+      '<p class="trust-media__label">' +
+      escapeHtml(home.trust.media.label) +
+      "</p>" +
+      '<div class="trust-media__items">' +
+      renderTrustMediaItems(home.trust.media.items) +
+      "</div>" +
+      "</div>" +
       "</div>" +
       '<p class="section-note">' +
       escapeHtml(home.trust.note) +
