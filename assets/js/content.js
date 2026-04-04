@@ -423,36 +423,41 @@ window.SEKISEN_CONTENT = {
       note: "※数値・レビュー・掲載表記は、現在のプレビュー用掲載例です。"
     },
     limited: {
-      eyebrow: "Season / Limited",
-      title: "今ご案内できる分だけを、きちんと届ける。",
+      eyebrow: "Final / Invitation",
+      title: "まずは一度、味わってほしい。",
       text:
-        "石戦は、数を優先して通年で大きく広げるブランドではありません。状態の良い時期だけ、無理のない数量だけを整えて案内することで、品質を保っています。",
+        "自分のためにも、贈り物にも。石戦は、強く売り込むためではなく、一箱で印象が整う体験として届けています。法人でのご相談も、静かに承ります。",
       items: [
         {
-          label: "数量限定",
+          label: "自分用にも",
           text:
-            "収穫状況に合わせて出荷数を調整しているため、贈答向け箱は週ごとに上限があります。"
+            "日々の食卓に、少しだけ良いものを置きたい日に。石戦は特別すぎず、きちんと嬉しい一箱です。"
         },
         {
-          label: "季節限定",
+          label: "贈り物にも",
           text:
-            "もっともみずみずしさと張りが美しく出る時期を中心に案内しています。"
+            "箱を開ける前から気持ちが伝わるように。渡す所作まで整えたい場面にも、自然に馴染みます。"
         },
         {
-          label: "在庫状況",
+          label: "法人相談も可能",
           text:
-            "人気の規格は在庫が少なく、埋まり次第その週の受付を終了します。"
+            "手土産、季節の贈答、掲載、数量相談など、用途に合わせたご相談も受け付けています。"
         }
       ],
       ctas: [
         {
-          label: "オンラインショップはこちら",
+          label: "商品を見る",
           href: "./lineup.html",
           style: "button button--dark"
         },
         {
-          label: "取扱情報を見る",
-          href: "./news.html",
+          label: "オンラインショップはこちら",
+          href: "./lineup.html",
+          style: "button button--line"
+        },
+        {
+          label: "法人のご相談",
+          href: "./contact.html",
           style: "button button--line"
         }
       ]
@@ -510,33 +515,51 @@ window.SEKISEN_CONTENT = {
       ]
     },
     shop: {
-      eyebrow: "Purchase / Contact",
-      title: "迷わず次の行動に進める入口だけを置く。",
+      eyebrow: "Product Guide",
+      title: "今の石戦を、迷わず見にいける入口だけを置く。",
       text:
-        "商品を見る、すぐに購入する、ブランド背景を確認する、相談する。必要な入口だけを、押し売りにならない温度で並べています。",
+        "気になった人がそのまま次へ進めるように。商品一覧、オンラインショップ、初めての方向け、贈答向け、おすすめ商品を、静かな温度で分けています。",
+      callout: {
+        label: "Main Entrance",
+        title: "まずは、今の石戦を見る。",
+        text:
+          "最初の一箱なら、全体が見える入口から。自分用か贈答向けかを見比べながら、無理なく次へ進めます。"
+      },
+      ctas: [
+        {
+          label: "商品を見る",
+          href: "./lineup.html",
+          style: "button button--dark"
+        },
+        {
+          label: "オンラインショップはこちら",
+          href: "./lineup.html",
+          style: "button button--line"
+        }
+      ],
       items: [
         {
-          label: "Products",
-          title: "商品を見る",
-          text: "ラインごとの違いや、贈答向けの構成を確認できます。",
+          label: "Recommended",
+          title: "おすすめ商品",
+          text: "季節の状態や石戦らしさが最も伝わりやすい入口から見ていただけます。",
           href: "./lineup.html"
         },
         {
-          label: "Online Shop",
-          title: "オンラインショップはこちら",
-          text: "購入導線へ、いちばん短くつながる入口です。",
+          label: "For First Order",
+          title: "初めての方向け",
+          text: "どれを選べばよいか迷う方が、最初の一箱を決めやすい導線です。",
           href: "./lineup.html"
         },
         {
-          label: "Brand",
-          title: "ブランドを見る",
-          text: "石戦の背景や、価格の理由になる考え方をご覧いただけます。",
-          href: "./about.html"
+          label: "For Gift",
+          title: "贈答向け",
+          text: "箱を開けた瞬間の印象まで大切にしたい方へ。贈り物に合う見せ方から入れます。",
+          href: "./lineup.html"
         },
         {
           label: "Contact",
           title: "問い合わせ",
-          text: "導入、掲載、取材、贈答のご相談はこちらからお送りいただけます。",
+          text: "購入前の相談から法人利用まで、必要な方だけが迷わず辿れる入口です。",
           href: "./contact.html"
         }
       ]

@@ -1822,6 +1822,7 @@ button {
 .shop-callout {
   position: relative;
   display: grid;
+  gap: 18px;
   align-content: end;
   min-height: 420px;
   padding: 34px 36px;
@@ -1844,6 +1845,10 @@ button {
 .shop-callout > * {
   position: relative;
   z-index: 1;
+}
+
+.shop-callout .cta-row {
+  margin-top: 8px;
 }
 
 .shop-rail {
@@ -1869,6 +1874,14 @@ button {
   max-width: 12ch;
   font-size: 1.38rem;
   line-height: 1.42;
+}
+
+.shop-stage {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(247, 242, 236, 0.34));
+}
+
+.shop-stage .section-head {
+  max-width: 720px;
 }
 
 .about-stage,
@@ -2817,6 +2830,21 @@ button {
     gap: 20px;
   }
 
+  .shop-stage__layout {
+    gap: 38px;
+    margin-top: 54px;
+  }
+
+  .shop-callout {
+    min-height: 0;
+    padding: 32px 30px;
+  }
+
+  .shop-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 28px;
+  }
+
   .trust-stage__story {
     gap: 30px;
   }
@@ -2848,11 +2876,6 @@ button {
   .news-section__layout,
   .service-section__layout {
     gap: 60px;
-  }
-
-  .shop-stage__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 26px 30px;
   }
 
   .site-footer__inner {
@@ -3112,6 +3135,20 @@ button {
     gap: 10px;
   }
 
+  .shop-stage__layout {
+    gap: 26px;
+    margin-top: 42px;
+  }
+
+  .shop-callout {
+    padding: 24px 22px;
+  }
+
+  .shop-rail {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
   .product-stage__layout {
     gap: 30px;
     margin-top: 42px;
@@ -3357,16 +3394,18 @@ button {
     aspect-ratio: 4 / 3.8;
   }
 
-  .shop-stage__grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-top: 36px;
+  .shop-callout {
+    gap: 14px;
+    padding: 22px 18px;
   }
 
-  .shop-link {
-    min-height: 0;
+  .shop-callout .cta-row {
+    margin-top: 2px;
+  }
+
+  .shop-rail__link {
     gap: 8px;
-    padding: 16px 0 6px;
+    padding-top: 18px;
   }
 
   .brand-row__title,
@@ -3376,7 +3415,6 @@ button {
   .commitment-item__title,
   .value-step__title,
   .shop-callout__title,
-  .shop-link__title,
   .shop-rail__title,
   .detail-row__title,
   .bottom-link__title,

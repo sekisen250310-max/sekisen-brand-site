@@ -614,7 +614,7 @@
   function renderShopLinks(items) {
     return items
       .map(function (item, index) {
-        var classes = "shop-link reveal-slide" + getRevealSlideDelayClass(index);
+        var classes = "shop-rail__link reveal-slide" + getRevealSlideDelayClass(index);
 
         return (
           '<a class="' +
@@ -622,13 +622,13 @@
           '" href="' +
           escapeHtml(item.href) +
           '">' +
-          '<span class="shop-link__label">' +
+          '<span class="shop-rail__label">' +
           escapeHtml(item.label) +
           "</span>" +
-          '<strong class="shop-link__title">' +
+          '<strong class="shop-rail__title">' +
           escapeHtml(item.title) +
           "</strong>" +
-          '<p class="shop-link__text">' +
+          '<p class="shop-rail__text">' +
           escapeHtml(item.text) +
           "</p>" +
           "</a>"
@@ -973,27 +973,6 @@
       "</div>" +
       "</div>" +
       "</section>" +
-      '<section class="section limited-stage" id="limited-stage">' +
-      '<div class="container">' +
-      '<div class="limited-stage__shell reveal-slide">' +
-      '<p class="section-kicker">' +
-      escapeHtml(home.limited.eyebrow) +
-      "</p>" +
-      '<h2 class="section-title">' +
-      escapeHtml(home.limited.title) +
-      "</h2>" +
-      '<p class="section-text">' +
-      escapeHtml(home.limited.text) +
-      "</p>" +
-      '<div class="limited-stage__items">' +
-      renderLimitedItems(home.limited.items) +
-      "</div>" +
-      '<div class="cta-row reveal-slide reveal-slide--delay-2">' +
-      renderActionButtons(home.limited.ctas) +
-      "</div>" +
-      "</div>" +
-      "</div>" +
-      "</section>" +
       '<section class="section news-section">' +
       '<div class="container news-section__layout">' +
       '<div class="section-head section-head--compact reveal-slide">' +
@@ -1045,8 +1024,44 @@
       escapeHtml(home.shop.text) +
       "</p>" +
       "</div>" +
-      '<div class="shop-stage__grid">' +
+      '<div class="shop-stage__layout">' +
+      '<div class="shop-callout reveal-slide">' +
+      '<p class="section-kicker">' +
+      escapeHtml(home.shop.callout.label) +
+      "</p>" +
+      '<h3 class="shop-callout__title">' +
+      escapeHtml(home.shop.callout.title) +
+      "</h3>" +
+      '<p class="shop-callout__text">' +
+      escapeHtml(home.shop.callout.text) +
+      "</p>" +
+      '<div class="cta-row">' +
+      renderActionButtons(home.shop.ctas) +
+      "</div>" +
+      "</div>" +
+      '<div class="shop-rail">' +
       renderShopLinks(home.shop.items) +
+      "</div>" +
+      "</div>" +
+      "</section>" +
+      '<section class="section limited-stage" id="limited-stage">' +
+      '<div class="container">' +
+      '<div class="limited-stage__shell reveal-slide">' +
+      '<p class="section-kicker">' +
+      escapeHtml(home.limited.eyebrow) +
+      "</p>" +
+      '<h2 class="section-title">' +
+      escapeHtml(home.limited.title) +
+      "</h2>" +
+      '<p class="section-text">' +
+      escapeHtml(home.limited.text) +
+      "</p>" +
+      '<div class="limited-stage__items">' +
+      renderLimitedItems(home.limited.items) +
+      "</div>" +
+      '<div class="cta-row reveal-slide reveal-slide--delay-2">' +
+      renderActionButtons(home.limited.ctas) +
+      "</div>" +
       "</div>" +
       "</div>" +
       "</section>" +
