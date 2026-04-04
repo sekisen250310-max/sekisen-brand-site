@@ -381,18 +381,29 @@
     return items
       .map(function (item, index) {
         return (
-          '<article class="reason-item reveal-slide' +
+          '<article class="process-step' +
+          (index % 2 === 1 ? " process-step--reverse" : "") +
+          " reveal-slide" +
           getRevealSlideDelayClass(index) +
           '">' +
+          '<figure class="process-step__media">' +
+          '<img src="' +
+          escapeHtml(item.image) +
+          '" alt="' +
+          escapeHtml(item.alt) +
+          '" loading="lazy" />' +
+          "</figure>" +
+          '<div class="process-step__copy">' +
           '<p class="section-kicker">' +
           escapeHtml(item.label) +
           "</p>" +
-          '<h3 class="reason-item__title">' +
+          '<h3 class="process-step__title">' +
           escapeHtml(item.title) +
           "</h3>" +
-          '<p class="reason-item__text">' +
+          '<p class="process-step__text">' +
           escapeHtml(item.text) +
           "</p>" +
+          "</div>" +
           "</article>"
         );
       })
@@ -780,7 +791,7 @@
       escapeHtml(home.reason.text) +
       "</p>" +
       "</div>" +
-      '<div class="reason-stage__grid">' +
+      '<div class="reason-stage__stack">' +
       renderReasonItems(home.reason.items) +
       "</div>" +
       '<div class="reason-stage__foot reveal-slide reveal-slide--delay-2">' +

@@ -210,46 +210,70 @@ window.SEKISEN_CONTENT = {
       ]
     },
     reason: {
-      eyebrow: "Why This Price",
-      title: "高いのではなく、理由のある価格に整える。",
+      eyebrow: "Craft / Quality",
+      title: "手間は、味の前から始まっている。",
       text:
-        "石戦の価格は、希少性だけで決まっているわけではありません。一般的なトマトとの違い、手間のかかり方、品質の揃え方、贈答として失敗しにくい価値まで含めて、納得できる価格をつくっています。",
+        "石戦の価値は、ひとつの強い説明ではなく、工程ごとの静かな積み重ねで生まれます。土づくりから箱詰めまで、一工程ずつ印象を整えています。",
       items: [
         {
-          label: "Difference",
-          title: "一般的なトマトとの違い",
+          label: "01 / Soil & Environment",
+          title: "土から、味の輪郭を整える。",
           text:
-            "味覚だけでなく、見た目、箱を開けた瞬間、贈る場面まで含めた総合的な満足感があります。"
+            "甘さを後から足すのではなく、根が無理なく張れる土と環境を先に整える。最初の静けさが、あと味のきれいさにつながります。",
+          image: "./assets/images/process-soil.svg",
+          alt: "土と環境づくりの工程を表現した石戦の仮ビジュアル"
         },
         {
-          label: "Process",
-          title: "手間や工程が多い",
+          label: "02 / Cultivation",
+          title: "育て方で、果実の品が決まる。",
           text:
-            "土や環境の調整、日々の見極め、収穫のタイミング、選別、品質管理まで、一粒の印象のために工程を重ねています。"
+            "勢いだけで大きくするのではなく、その日の表情を見ながら伸ばし方を調整する。張りと艶は、日々の手の入れ方で変わります。",
+          image: "./assets/images/process-house.svg",
+          alt: "ハウス内で栽培管理を行う工程を表現した石戦の仮ビジュアル"
         },
         {
-          label: "Quality",
-          title: "品質のばらつきを抑えている",
+          label: "03 / Water & Texture",
+          title: "水分は、多ければいいわけではない。",
           text:
-            "個体差を減らし、一箱としての密度を揃えるために、見た目と食感の両方で細かく整えています。"
+            "みずみずしさを残しながら、ぼやけない食感へ。含ませ方を見誤らないことで、ひと口目の密度が変わります。",
+          image: "./assets/images/process-water.svg",
+          alt: "水分量と食感の設計を表現した石戦の仮ビジュアル"
         },
         {
-          label: "Gift",
-          title: "贈答としての価値がある",
+          label: "04 / Harvest Timing",
+          title: "採る瞬間まで、待ち方がある。",
           text:
-            "味だけでなく、外したくない贈り物として選びやすいこと自体が、価格に見合う価値になります。"
+            "赤いだけで採らず、張りと香りが立つところを見極める。収穫の数時間の違いが、最初の印象を左右します。",
+          image: "./assets/images/process-harvest.svg",
+          alt: "収穫タイミングを見極める工程を表現した石戦の仮ビジュアル"
+        },
+        {
+          label: "05 / Selection & Control",
+          title: "一粒ずつ見て、一箱として整える。",
+          text:
+            "個体差をそのまま流さず、見た目、張り、並び方まで揃える。品質管理は、味を守るだけでなく信頼をつくる工程です。",
+          image: "./assets/images/process-sorting.svg",
+          alt: "選別と品質管理の工程を表現した石戦の仮ビジュアル"
+        },
+        {
+          label: "06 / Packing & Delivery",
+          title: "届いた瞬間までが、石戦の品質。",
+          text:
+            "箱詰めは梱包ではなく、最後の演出です。開ける前からきちんとしていると伝わることで、贈り物として完成します。",
+          image: "./assets/images/process-packing.svg",
+          alt: "箱詰めと届け方の工程を表現した石戦の仮ビジュアル"
         }
       ],
-      summary: "安さではなく、失敗しにくさと満足度に対する価格です。",
+      summary: "だから石戦は、ただ甘いだけで終わりません。",
       ctas: [
         {
-          label: "品質の理由を見る",
+          label: "事業内容を見る",
           href: "./experience.html",
           style: "button button--line"
         },
         {
-          label: "商品一覧へ",
-          href: "./lineup.html",
+          label: "お問い合わせ",
+          href: "./contact.html",
           style: "button button--line"
         }
       ]
