@@ -1,0 +1,45 @@
+<svg width="1200" height="1280" viewBox="0 0 1200 1280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1280" fill="#F6F0E8"/>
+  <rect x="60" y="60" width="1080" height="1160" rx="36" fill="url(#panel)"/>
+  <rect x="120" y="120" width="960" height="1040" rx="28" fill="#FBF8F4"/>
+  <ellipse cx="596" cy="1080" rx="358" ry="72" fill="#D9CABC" fill-opacity="0.42"/>
+  <path d="M276 958C332 866 428 804 540 786C618 774 690 790 738 830C772 858 802 900 834 912C878 928 926 898 956 860V1118H254L276 958Z" fill="url(#sleeve)"/>
+  <path d="M450 884C498 822 590 776 680 790C754 802 822 858 838 930C850 982 826 1038 786 1070C742 1106 676 1114 606 1098C536 1082 474 1042 440 988C418 952 420 922 450 884Z" fill="url(#hand)"/>
+  <path d="M504 910C530 884 570 866 610 866C642 866 664 878 676 902C690 930 682 964 654 986C626 1008 586 1020 550 1016C512 1010 486 988 482 958C478 938 486 926 504 910Z" fill="#E5B99B"/>
+  <path d="M702 874C738 844 798 838 842 860C886 882 916 928 920 976C922 1010 908 1038 882 1054C846 1078 790 1074 742 1048C698 1024 668 986 664 944C662 916 674 896 702 874Z" fill="#E3B494"/>
+  <circle cx="564" cy="618" r="238" fill="url(#fruitMain)"/>
+  <circle cx="770" cy="500" r="98" fill="url(#fruitSmall)"/>
+  <circle cx="740" cy="458" r="18" fill="#355F45"/>
+  <path d="M742 456C762 422 796 408 828 418" stroke="#355F45" stroke-width="9" stroke-linecap="round"/>
+  <path d="M544 374C574 336 626 320 678 334" stroke="#3A6648" stroke-width="11" stroke-linecap="round"/>
+  <path d="M544 374C524 344 480 334 444 346" stroke="#3A6648" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="622" cy="538" r="34" fill="#F7D2B2" fill-opacity="0.9"/>
+  <path d="M226 210C316 150 420 122 540 126C452 182 364 252 278 338C244 310 226 268 226 210Z" fill="#EDE4DA"/>
+  <rect x="868" y="170" width="156" height="20" rx="10" fill="#E6D8C8"/>
+  <rect x="868" y="212" width="208" height="14" rx="7" fill="#D4C1AE"/>
+  <rect x="868" y="242" width="188" height="14" rx="7" fill="#D4C1AE"/>
+  <defs>
+    <linearGradient id="panel" x1="600" y1="60" x2="600" y2="1220" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF6F0"/>
+      <stop offset="1" stop-color="#EFE6DB"/>
+    </linearGradient>
+    <linearGradient id="sleeve" x1="605" y1="786" x2="605" y2="1118" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C6358"/>
+      <stop offset="1" stop-color="#4C3A34"/>
+    </linearGradient>
+    <linearGradient id="hand" x1="636" y1="792" x2="636" y2="1107" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EFC9AA"/>
+      <stop offset="1" stop-color="#D9A987"/>
+    </linearGradient>
+    <radialGradient id="fruitMain" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(564 524) rotate(90) scale(290)">
+      <stop stop-color="#F7B581"/>
+      <stop offset="0.48" stop-color="#D46143"/>
+      <stop offset="1" stop-color="#8D3028"/>
+    </radialGradient>
+    <radialGradient id="fruitSmall" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(770 468) rotate(90) scale(126)">
+      <stop stop-color="#F6D09D"/>
+      <stop offset="0.54" stop-color="#DC7C57"/>
+      <stop offset="1" stop-color="#96382D"/>
+    </radialGradient>
+  </defs>
+</svg>

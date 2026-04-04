@@ -1,0 +1,41 @@
+<svg width="1200" height="960" viewBox="0 0 1200 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="960" fill="#F4EEE6"/>
+  <rect x="48" y="48" width="1104" height="864" rx="32" fill="url(#panel)"/>
+  <rect x="96" y="96" width="1008" height="768" rx="24" fill="#FBF8F3"/>
+  <rect x="96" y="96" width="1008" height="360" rx="24" fill="url(#sky)"/>
+  <circle cx="876" cy="218" r="72" fill="#F2D3A5" fill-opacity="0.86"/>
+  <path d="M96 440C228 374 344 348 484 348C636 348 742 388 848 446C934 492 1012 522 1104 534V864H96V440Z" fill="#D5C9B4"/>
+  <path d="M96 508C224 446 348 416 500 416C652 416 770 454 886 518C962 560 1032 594 1104 612V864H96V508Z" fill="#BCC3A3"/>
+  <path d="M96 580C224 516 370 486 530 492C682 498 826 548 934 622C998 666 1048 704 1104 734V864H96V580Z" fill="#97A779"/>
+  <path d="M96 650C242 592 396 576 560 596C726 618 864 678 964 758C1008 794 1052 826 1104 858V864H96V650Z" fill="#6F825A"/>
+  <path d="M202 486C322 562 422 648 500 744" stroke="#E7D9C6" stroke-width="12" stroke-linecap="round"/>
+  <path d="M326 472C444 548 544 636 626 734" stroke="#E7D9C6" stroke-width="12" stroke-linecap="round"/>
+  <path d="M456 466C570 542 670 630 758 730" stroke="#E7D9C6" stroke-width="12" stroke-linecap="round"/>
+  <path d="M596 474C706 548 806 632 904 726" stroke="#E7D9C6" stroke-width="12" stroke-linecap="round"/>
+  <path d="M742 494C840 560 926 630 1014 710" stroke="#E7D9C6" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="948" cy="516" r="92" fill="url(#fruitA)"/>
+  <circle cx="1034" cy="610" r="56" fill="url(#fruitB)"/>
+  <circle cx="912" cy="454" r="18" fill="#355E44"/>
+  <path d="M912 454C944 418 994 410 1038 426" stroke="#355E44" stroke-width="9" stroke-linecap="round"/>
+  <path d="M874 154C742 216 636 286 554 368" stroke="#C59D74" stroke-width="4" stroke-linecap="round" stroke-opacity="0.72"/>
+  <defs>
+    <linearGradient id="panel" x1="600" y1="48" x2="600" y2="912" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF5EE"/>
+      <stop offset="1" stop-color="#F1E8DD"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="600" y1="96" x2="600" y2="456" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEE4D8"/>
+      <stop offset="1" stop-color="#F7F1EA"/>
+    </linearGradient>
+    <radialGradient id="fruitA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(948 484) rotate(90) scale(116)">
+      <stop stop-color="#F8B27B"/>
+      <stop offset="0.48" stop-color="#D05A3E"/>
+      <stop offset="1" stop-color="#8B2F28"/>
+    </radialGradient>
+    <radialGradient id="fruitB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1034 588) rotate(90) scale(72)">
+      <stop stop-color="#F6C892"/>
+      <stop offset="0.56" stop-color="#D97650"/>
+      <stop offset="1" stop-color="#95372C"/>
+    </radialGradient>
+  </defs>
+</svg>

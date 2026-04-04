@@ -328,6 +328,18 @@ body[data-page="home"] .brand-intro--threshold .brand-intro__visual-meta {
   display: none;
 }
 
+body[data-page="home"] .brand-intro--threshold .brand-intro__visual-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.34fr) minmax(260px, 0.86fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__visual-stack {
+  display: grid;
+  gap: 18px;
+}
+
 body[data-page="home"] .brand-intro--threshold .brand-intro__visual {
   border-radius: 30px;
   background: linear-gradient(180deg, #f8f5f0 0%, #efe9e1 100%);
@@ -335,8 +347,17 @@ body[data-page="home"] .brand-intro--threshold .brand-intro__visual {
 }
 
 body[data-page="home"] .brand-intro--threshold .brand-intro__visual img {
+  display: block;
   aspect-ratio: 16 / 8.8;
   box-shadow: none;
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__visual--primary img {
+  aspect-ratio: 1.18 / 1;
+}
+
+body[data-page="home"] .brand-intro--threshold .brand-intro__visual--secondary img {
+  aspect-ratio: 1 / 0.95;
 }
 
 body[data-page="home"] .brand-intro--threshold .brand-intro__body {
@@ -357,7 +378,7 @@ body[data-page="home"] .brand-intro--threshold .brand-intro__copy .section-kicke
 }
 
 body[data-page="home"] .brand-intro--threshold .brand-intro__copy .section-title {
-  max-width: 12ch;
+  max-width: 8ch;
 }
 
 body[data-page="home"] .brand-intro--threshold .brand-intro__copy .section-lead {
@@ -428,6 +449,10 @@ body[data-page="home"] .brand-intro--threshold .brand-intro__fact:first-child {
     grid-template-columns: 1fr;
     gap: 28px;
     margin-top: 44px;
+  }
+
+  body[data-page="home"] .brand-intro--threshold .brand-intro__visual-grid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.84fr);
   }
 
   body[data-page="home"] .brand-intro--threshold .brand-intro__aside {
@@ -569,8 +594,26 @@ body[data-page="home"] .brand-intro--threshold .brand-intro__fact:first-child {
     border-radius: 20px;
   }
 
+  body[data-page="home"] .brand-intro--threshold .brand-intro__visual-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  body[data-page="home"] .brand-intro--threshold .brand-intro__visual-stack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
   body[data-page="home"] .brand-intro--threshold .brand-intro__visual img {
     aspect-ratio: 4 / 4.8;
+  }
+
+  body[data-page="home"] .brand-intro--threshold .brand-intro__visual--primary img {
+    aspect-ratio: 4 / 4.9;
+  }
+
+  body[data-page="home"] .brand-intro--threshold .brand-intro__visual--secondary img {
+    aspect-ratio: 4 / 4.4;
   }
 
   body[data-page="home"] .brand-intro--threshold .brand-intro__body {

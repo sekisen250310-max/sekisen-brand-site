@@ -162,6 +162,60 @@
       .join("");
   }
 
+  function renderIntroVisuals(intro) {
+    var visuals =
+      Array.isArray(intro.visuals) && intro.visuals.length
+        ? intro.visuals
+        : [
+            {
+              image: intro.image,
+              alt: intro.alt
+            }
+          ];
+
+    if (visuals.length === 1) {
+      return (
+        '<figure class="brand-intro__visual brand-intro__visual--primary">' +
+        '<img src="' +
+        escapeHtml(visuals[0].image) +
+        '" alt="' +
+        escapeHtml(visuals[0].alt) +
+        '" loading="lazy" />' +
+        "</figure>"
+      );
+    }
+
+    return (
+      '<div class="brand-intro__visual-grid">' +
+      '<figure class="brand-intro__visual brand-intro__visual--primary">' +
+      '<img src="' +
+      escapeHtml(visuals[0].image) +
+      '" alt="' +
+      escapeHtml(visuals[0].alt) +
+      '" loading="lazy" />' +
+      "</figure>" +
+      '<div class="brand-intro__visual-stack">' +
+      visuals
+        .slice(1)
+        .map(function (item, index) {
+          return (
+            '<figure class="brand-intro__visual brand-intro__visual--secondary brand-intro__visual--secondary-' +
+            (index + 1) +
+            '">' +
+            '<img src="' +
+            escapeHtml(item.image) +
+            '" alt="' +
+            escapeHtml(item.alt) +
+            '" loading="lazy" />' +
+            "</figure>"
+          );
+        })
+        .join("") +
+      "</div>" +
+      "</div>"
+    );
+  }
+
   function getRevealSlideDelayClass(index) {
     if (index === 1) {
       return " reveal-slide--delay";
@@ -657,13 +711,7 @@
       escapeHtml(home.intro.caption) +
       "</p>" +
       "</div>" +
-      '<figure class="brand-intro__visual">' +
-      '<img src="' +
-      escapeHtml(home.intro.image) +
-      '" alt="' +
-      escapeHtml(home.intro.alt) +
-      '" loading="lazy" />' +
-      "</figure>" +
+      renderIntroVisuals(home.intro) +
       "</div>" +
       "</div>" +
       "</section>" +

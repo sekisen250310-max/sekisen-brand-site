@@ -75,34 +75,48 @@ window.SEKISEN_CONTENT = {
       ]
     },
     intro: {
-      eyebrow: "Brand Story",
-      image: "./assets/images/editorial-cover.svg",
-      alt: "SEKISEN editorial overview visual",
-      visualLead: "Quiet precision / editorial cut",
-      caption: "味・整い方・贈る所作を、一枚の温度感にまとめた仮ビジュアルです。",
-      title: "味の良さだけでなく、\n選ばれる空気まで設計する。",
+      eyebrow: "About SEKISEN",
+      image: "./assets/images/intro-hand-fruit.svg",
+      alt: "手に持った果実の温度感が伝わる石戦の仮ビジュアル",
+      visuals: [
+        {
+          image: "./assets/images/intro-hand-fruit.svg",
+          alt: "手に持った果実を近い距離感で捉えた石戦の仮ビジュアル"
+        },
+        {
+          image: "./assets/images/intro-field.svg",
+          alt: "畑の空気感と栽培の基準が伝わる石戦の仮ビジュアル"
+        },
+        {
+          image: "./assets/images/intro-profile.svg",
+          alt: "人物の横顔と石戦の静かな緊張感を表した仮ビジュアル"
+        }
+      ],
+      visualLead: "Field / Hand / Profile",
+      caption: "畑、手元、人物の距離で、石戦の温度を伝えるための仮ビジュアルです。",
+      title: "甘さだけでは、\n選ばない。",
       lead:
-        "石戦は、糖度の高さだけで価値を語るブランドではありません。畑で育てるところから、箱を開ける瞬間の整った印象までをひと続きの体験として設計し、価格に見合う納得感をつくっています。",
+        "石戦は、出来の良い果実をそのまま売るだけのブランドではありません。育てる、見極める、届ける。その三つの基準を同じ温度で揃え、ひと粒の印象を整えています。",
       text:
-        "ヒーローの次に置く言葉も、売り込みより先に世界観と輪郭が伝わることを優先しています。味、選別、届け方の順に視点を絞り、短い文章と余白で温度を揃えることで、初見でもブランドの考え方が読み取りやすい構成に整えています。",
+        "畑での手間、手に取ったときの張り、箱を開けた瞬間の空気まで。普通の農産物のように『採れたものを並べる』のではなく、『どう届き、どう記憶に残るか』まで設計する。それが石戦です。",
       note: {
-        label: "Editorial Note",
-        title: "最初に伝えるのは、商品名よりもブランドの視点。",
+        label: "Three Standards",
+        title: "一粒で終わらせず、一箱で整える。",
         text:
-          "ローカルフード系アカウントのように、写真と短い見出しで温度感をそろえながら、まずは『どういう感覚で選ぶブランドか』が自然に伝わる並びに調整しています。"
+          "基準は味だけに置きません。ひと口目の印象、並んだときの美しさ、贈る場面での信頼感までをひと続きで見ます。だから石戦は、農産物でありながら、きちんとした贈り物になります。"
       },
       facts: [
         {
-          label: "Tone",
-          value: "静けさ / 密度 / 余白"
+          label: "育てる",
+          value: "印象が濁らない果実だけを見る。"
         },
         {
-          label: "Focus",
-          value: "味 / 届け方 / 贈答体験"
+          label: "揃える",
+          value: "一箱で見たときの密度まで整える。"
         },
         {
-          label: "Format",
-          value: "写真 + 短い見出し + 補足文"
+          label: "届ける",
+          value: "開ける前から信頼が立つようにする。"
         }
       ]
     },

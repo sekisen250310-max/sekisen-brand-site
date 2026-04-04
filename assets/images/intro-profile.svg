@@ -1,0 +1,33 @@
+<svg width="1200" height="960" viewBox="0 0 1200 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="960" fill="#F5EFE8"/>
+  <rect x="48" y="48" width="1104" height="864" rx="32" fill="url(#panel)"/>
+  <rect x="96" y="96" width="1008" height="768" rx="24" fill="#FBF8F4"/>
+  <rect x="96" y="96" width="1008" height="768" rx="24" fill="url(#glow)" opacity="0.82"/>
+  <circle cx="822" cy="420" r="138" fill="url(#fruit)"/>
+  <circle cx="778" cy="356" r="22" fill="#355E44"/>
+  <path d="M778 354C812 316 862 308 906 324" stroke="#355E44" stroke-width="10" stroke-linecap="round"/>
+  <path d="M388 786C420 666 462 586 520 526C568 474 634 450 692 444C658 426 632 394 624 350C614 294 636 238 686 208C736 178 796 170 860 192C902 206 940 228 972 258C904 166 804 120 686 120C540 120 430 188 354 324C290 438 246 598 222 786H388Z" fill="#D5B197"/>
+  <path d="M474 810C494 714 526 634 570 578C606 532 654 502 700 492C674 482 654 462 646 434C634 392 644 350 676 324C710 296 756 292 804 308C842 322 878 348 908 382C884 302 832 246 760 214C688 182 604 186 530 236C458 286 400 368 360 482C326 580 304 690 294 810H474Z" fill="#F0C8AB"/>
+  <path d="M534 318C578 278 642 258 698 258C748 258 792 276 820 312C848 348 858 402 842 452C826 502 786 546 732 564C678 582 616 574 570 542C520 506 492 446 494 390C496 362 508 340 534 318Z" fill="#E7BEA1"/>
+  <path d="M644 308C676 288 716 286 748 298C774 308 794 326 804 350C814 374 814 404 802 432C786 468 754 494 716 504C676 514 634 504 606 476C578 450 568 412 578 376C586 348 608 328 644 308Z" fill="#F6D0B4"/>
+  <path d="M668 372C690 360 716 360 736 370" stroke="#A87967" stroke-width="6" stroke-linecap="round"/>
+  <path d="M640 450C666 470 702 478 738 474" stroke="#A87967" stroke-width="6" stroke-linecap="round"/>
+  <path d="M586 612C658 592 714 608 760 660" stroke="#7A635A" stroke-width="14" stroke-linecap="round"/>
+  <rect x="184" y="170" width="146" height="20" rx="10" fill="#E6D8C8"/>
+  <rect x="184" y="210" width="206" height="14" rx="7" fill="#D2BFAE"/>
+  <defs>
+    <linearGradient id="panel" x1="600" y1="48" x2="600" y2="912" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF6F1"/>
+      <stop offset="1" stop-color="#F1E8DE"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(944 176) rotate(140.085) scale(898.77 737.777)">
+      <stop stop-color="#F6E9DA"/>
+      <stop offset="1" stop-color="#F6E9DA" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fruit" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(822 370) rotate(90) scale(176)">
+      <stop stop-color="#F8B981"/>
+      <stop offset="0.48" stop-color="#D46042"/>
+      <stop offset="1" stop-color="#8A3027"/>
+    </radialGradient>
+  </defs>
+</svg>
